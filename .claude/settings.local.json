@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import docx; print\\(''python-docx OK:'', docx.__version__\\)\")",
+      "Bash(py --version)",
+      "Bash(py -c \"import docx; print\\(''python-docx:'', docx.__version__\\)\")",
+      "Bash(gh api *)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(npx --version)",
+      "Bash(npx --yes http-server -p 8080 -c-1 --silent)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/)",
+      "WebFetch(domain:api.github.com)",
+      "Bash(ls \"C:\\\\Users\\\\minec\\\\.claude\\\\skills\" 2>&1 || echo \"Directory does not exist\")",
+      "Bash(Get-ChildItem \"C:\\\\Users\\\\minec\\\\.claude\\\\skills\" -Recurse -Filter \"SKILL.md\")",
+      "Bash(Select-Object FullName, LastWriteTime)",
+      "Bash(Format-Table -AutoSize)",
+      "Bash(npx http-server *)",
+      "Bash(git --version)",
+      "Bash(git -C /c/ClaudeAPP/aries status)",
+      "Bash(curl -s https://api.github.com/repos/QuamouyaPro/ARIES/pages)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('URL:', d.get\\('html_url','?'\\), '| Status:', d.get\\('status','?'\\)\\)\")",
+      "Skill(n8n-workflow-patterns)",
+      "Skill(n8n-workflow-patterns:*)",
+      "mcp__e15e9bbd-19f6-4052-b35d-a7f85bd28e45__whoami"
+    ]
+  }
+}
