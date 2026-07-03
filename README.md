@@ -23,19 +23,23 @@ Le projet repose sur une approche agile : une construction low-code et vibe codi
 | Brique | Technologie |
 |---|---|
 | Application web | Next.js (App Router) + TypeScript + Tailwind CSS — dossier `web/` |
-| Auth & base de données | Supabase (PostgreSQL, Row Level Security, Storage) |
-| Moteur d'analyse IA | Claude API (extraction de données, assistant conversationnel sourcé) |
+| Auth, base de données & stockage | Supabase (PostgreSQL, Row Level Security, Storage) |
+| Orchestration du pipeline documentaire | n8n (ingestion PDF, chunking, appels IA, chat RAG) |
+| Base vectorielle (RAG) | Qdrant |
+| Moteur d'analyse IA | API Anthropic — Claude (extraction de données, assistant conversationnel sourcé) |
+| Hébergement app | Vercel (déploiement final) — preview statique sur GitHub Pages en attendant |
+| Hébergement n8n / Qdrant | VPS (Coolify) |
 | Facturation | Stripe |
 
 ## Roadmap
 
 - [x] **Phase 0 — Repo & fondations** : dépôt GitHub, scaffold Next.js, structure du projet
 - [x] **Phase 1 — Landing page** : page vitrine premium présentant l'offre FinLens
-- [ ] **Phase 2 — Auth & données** : inscription/connexion, espace de travail par utilisateur (Supabase)
-- [ ] **Phase 3 — Ingestion documentaire** : upload de documents (PDF 10-K, bilans, rapports ESG), parsing et stockage
-- [ ] **Phase 4 — Extraction & synthèse** : extraction automatique des données clés (Claude API)
-- [ ] **Phase 5 — Assistant conversationnel** : Q&A sourcé strictement sur les documents fournis, avec citations
-- [ ] **Phase 6 — Facturation** : offres et abonnements via Stripe
+- [ ] **Phase 2 — Auth & données** : inscription/connexion, espaces de travail (Supabase), schéma SQL (`profiles`, `workspaces`, `documents`, `analyses`, `chat_messages`)
+- [ ] **Phase 3 — Ingestion documentaire** : upload de documents (PDF 10-K, bilans, rapports ESG) vers Supabase Storage, pipeline n8n de traitement
+- [ ] **Phase 4 — Extraction & synthèse** : Executive Summary automatique (API Anthropic), indexation vectorielle (Qdrant)
+- [ ] **Phase 5 — Assistant conversationnel** : chat RAG sourcé strictement sur les documents fournis, avec citations page par page
+- [ ] **Phase 6 — Facturation** : offres Pay-per-deal / Analyste Pro / Team via Stripe
 
 ## Développement local
 
@@ -44,5 +48,11 @@ cd web
 npm install
 npm run dev   # http://localhost:3000
 ```
+
+## Preview GitHub Pages
+
+La landing page est exportée en statique (`output: "export"`) et déployée automatiquement sur GitHub Pages à chaque push sur `main` touchant `web/` (voir [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml)).
+
+> Cette preview est temporaire : dès la Phase 2 (auth, API routes, middleware Supabase), l'app nécessitera un hébergement avec serveur (Vercel) — GitHub Pages ne supporte que du contenu statique.
 
 > Le dossier `aries/` est un projet indépendant (site ARIES), versionné sur son propre dépôt — il est ignoré par ce dépôt.
