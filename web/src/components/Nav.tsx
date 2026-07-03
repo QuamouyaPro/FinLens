@@ -9,6 +9,8 @@ const LINKS = [
   { href: "#pour-qui", label: "Pour qui" },
 ];
 
+const SHOW_LOGIN = process.env.NEXT_PUBLIC_GITHUB_PAGES !== "true";
+
 export default function Nav() {
   const [open, setOpen] = useState(false);
 
@@ -36,12 +38,14 @@ export default function Nav() {
             ))}
           </div>
 
-          <Link
-            href="/login"
-            className="hidden md:inline text-sm text-white/55 hover:text-white transition-colors duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]"
-          >
-            Se connecter
-          </Link>
+          {SHOW_LOGIN && (
+            <Link
+              href="/login"
+              className="hidden md:inline text-sm text-white/55 hover:text-white transition-colors duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]"
+            >
+              Se connecter
+            </Link>
+          )}
 
           <a
             href="#acces"
@@ -93,16 +97,18 @@ export default function Nav() {
               {l.label}
             </a>
           ))}
-          <Link
-            href="/login"
-            onClick={() => setOpen(false)}
-            style={{ transitionDelay: open ? "260ms" : "0ms" }}
-            className={`text-2xl font-medium tracking-tight text-white/60 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${
-              open ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-            }`}
-          >
-            Se connecter
-          </Link>
+          {SHOW_LOGIN && (
+            <Link
+              href="/login"
+              onClick={() => setOpen(false)}
+              style={{ transitionDelay: open ? "260ms" : "0ms" }}
+              className={`text-2xl font-medium tracking-tight text-white/60 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+                open ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+              }`}
+            >
+              Se connecter
+            </Link>
+          )}
           <a
             href="#acces"
             onClick={() => setOpen(false)}

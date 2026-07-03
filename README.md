@@ -52,6 +52,7 @@ npm run dev   # http://localhost:3000
 
 ## Déploiement
 
-La Phase 1 (landing page seule) a été prévisualisée temporairement sur GitHub Pages via export statique. Dès la Phase 2, l'app utilise l'authentification Supabase (cookies, `proxy.ts`) qui nécessite un serveur — incompatible avec l'hébergement statique de GitHub Pages. Le déploiement se fait donc désormais sur **Vercel** (import du repo GitHub, déploiement continu à chaque push sur `main`).
+- **App complète** (auth, dashboard) : **Vercel**, à connecter (import du repo GitHub, déploiement continu à chaque push sur `main`) — nécessaire dès la Phase 2 car l'authentification Supabase (cookies, `proxy.ts`) exige un serveur.
+- **Landing page publique seule** : preview statique sur **GitHub Pages**, déployée automatiquement à chaque push sur `main` touchant la landing (voir [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml)). Le job retire les routes serveur (`(auth)`, `(dashboard)`, `proxy.ts`) avant l'export statique — elles ne peuvent pas être servies par GitHub Pages.
 
 > Le dossier `aries/` est un projet indépendant (site ARIES), versionné sur son propre dépôt — il est ignoré par ce dépôt.
