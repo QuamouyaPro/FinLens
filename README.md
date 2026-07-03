@@ -30,7 +30,7 @@ Le projet repose sur une approche agile : une construction low-code et vibe codi
 ## Roadmap
 
 - [x] **Phase 0 — Repo & fondations** : dépôt GitHub, scaffold Next.js, structure du projet
-- [ ] **Phase 1 — Landing page** : page vitrine premium présentant l'offre FinLens
+- [x] **Phase 1 — Landing page** : page vitrine premium présentant l'offre FinLens
 - [ ] **Phase 2 — Auth & données** : inscription/connexion, espace de travail par utilisateur (Supabase)
 - [ ] **Phase 3 — Ingestion documentaire** : upload de documents (PDF 10-K, bilans, rapports ESG), parsing et stockage
 - [ ] **Phase 4 — Extraction & synthèse** : extraction automatique des données clés (Claude API)
