@@ -17,3 +17,32 @@ FinLens aide les investisseurs à analyser plus vite, plus profondément et sans
 ## Approche
 
 Le projet repose sur une approche agile : une construction low-code et vibe coding, propulsée par le modèle d'intelligence artificielle le plus performant du marché en finance (Claude Fable 5).
+
+## Architecture technique
+
+| Brique | Technologie |
+|---|---|
+| Application web | Next.js (App Router) + TypeScript + Tailwind CSS — dossier `web/` |
+| Auth & base de données | Supabase (PostgreSQL, Row Level Security, Storage) |
+| Moteur d'analyse IA | Claude API (extraction de données, assistant conversationnel sourcé) |
+| Facturation | Stripe |
+
+## Roadmap
+
+- [x] **Phase 0 — Repo & fondations** : dépôt GitHub, scaffold Next.js, structure du projet
+- [ ] **Phase 1 — Landing page** : page vitrine premium présentant l'offre FinLens
+- [ ] **Phase 2 — Auth & données** : inscription/connexion, espace de travail par utilisateur (Supabase)
+- [ ] **Phase 3 — Ingestion documentaire** : upload de documents (PDF 10-K, bilans, rapports ESG), parsing et stockage
+- [ ] **Phase 4 — Extraction & synthèse** : extraction automatique des données clés (Claude API)
+- [ ] **Phase 5 — Assistant conversationnel** : Q&A sourcé strictement sur les documents fournis, avec citations
+- [ ] **Phase 6 — Facturation** : offres et abonnements via Stripe
+
+## Développement local
+
+```bash
+cd web
+npm install
+npm run dev   # http://localhost:3000
+```
+
+> Le dossier `aries/` est un projet indépendant (site ARIES), versionné sur son propre dépôt — il est ignoré par ce dépôt.
