@@ -35,7 +35,7 @@ Le projet repose sur une approche agile : une construction low-code et vibe codi
 
 - [x] **Phase 0 — Repo & fondations** : dépôt GitHub, scaffold Next.js, structure du projet
 - [x] **Phase 1 — Landing page** : page vitrine premium présentant l'offre FinLens
-- [ ] **Phase 2 — Auth & données** : inscription/connexion, espaces de travail (Supabase), schéma SQL (`profiles`, `workspaces`, `documents`, `analyses`, `chat_messages`)
+- [x] **Phase 2 — Auth & données** : inscription/connexion, espaces de travail (Supabase), schéma SQL (`profiles`, `workspaces`, `documents`, `analyses`, `chat_messages`)
 - [ ] **Phase 3 — Ingestion documentaire** : upload de documents (PDF 10-K, bilans, rapports ESG) vers Supabase Storage, pipeline n8n de traitement
 - [ ] **Phase 4 — Extraction & synthèse** : Executive Summary automatique (API Anthropic), indexation vectorielle (Qdrant)
 - [ ] **Phase 5 — Assistant conversationnel** : chat RAG sourcé strictement sur les documents fournis, avec citations page par page
@@ -46,6 +46,7 @@ Le projet repose sur une approche agile : une construction low-code et vibe codi
 ```bash
 cd web
 npm install
+cp .env.local.example .env.local   # renseigner l'URL et la clé anon Supabase (Project Settings → API)
 npm run dev   # http://localhost:3000
 ```
 
