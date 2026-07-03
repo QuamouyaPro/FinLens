@@ -27,7 +27,7 @@ Le projet repose sur une approche agile : une construction low-code et vibe codi
 | Orchestration du pipeline documentaire | n8n (ingestion PDF, chunking, appels IA, chat RAG) |
 | Base vectorielle (RAG) | Qdrant |
 | Moteur d'analyse IA | API Anthropic — Claude (extraction de données, assistant conversationnel sourcé) |
-| Hébergement app | Vercel (déploiement final) — preview statique sur GitHub Pages en attendant |
+| Hébergement app | Vercel (déploiement continu depuis GitHub) |
 | Hébergement n8n / Qdrant | VPS (Coolify) |
 | Facturation | Stripe |
 
@@ -49,10 +49,8 @@ npm install
 npm run dev   # http://localhost:3000
 ```
 
-## Preview GitHub Pages
+## Déploiement
 
-La landing page est exportée en statique (`output: "export"`) et déployée automatiquement sur GitHub Pages à chaque push sur `main` touchant `web/` (voir [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml)).
-
-> Cette preview est temporaire : dès la Phase 2 (auth, API routes, middleware Supabase), l'app nécessitera un hébergement avec serveur (Vercel) — GitHub Pages ne supporte que du contenu statique.
+La Phase 1 (landing page seule) a été prévisualisée temporairement sur GitHub Pages via export statique. Dès la Phase 2, l'app utilise l'authentification Supabase (cookies, `proxy.ts`) qui nécessite un serveur — incompatible avec l'hébergement statique de GitHub Pages. Le déploiement se fait donc désormais sur **Vercel** (import du repo GitHub, déploiement continu à chaque push sur `main`).
 
 > Le dossier `aries/` est un projet indépendant (site ARIES), versionné sur son propre dépôt — il est ignoré par ce dépôt.
