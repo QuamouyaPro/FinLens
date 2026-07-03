@@ -1,14 +1,15 @@
 import Link from "next/link";
+import { FileText } from "lucide-react";
+import Card from "@/components/ui/Card";
+import Badge from "@/components/ui/Badge";
 import type { WorkspaceStatus } from "@/lib/types";
 
-const STATUS_LABEL: Record<WorkspaceStatus, string> = {
-  active: "Actif",
-  archived: "Archivé",
-};
-
-const STATUS_STYLE: Record<WorkspaceStatus, string> = {
-  active: "bg-emerald-50 text-emerald-700 ring-emerald-200",
-  archived: "bg-slate-100 text-slate-600 ring-slate-200",
+const STATUS: Record<
+  WorkspaceStatus,
+  { label: string; variant: "success" | "neutral" }
+> = {
+  active: { label: "Actif", variant: "success" },
+  archived: { label: "Archivé", variant: "neutral" },
 };
 
 export default function WorkspaceCard({
@@ -26,32 +27,35 @@ export default function WorkspaceCard({
   documentCount: number;
   updatedAt: string | null;
 }) {
+  const s = STATUS[status];
+
   return (
     <Link
       href={`/workspace/${id}`}
-      className="flex flex-col gap-3 rounded-xl bg-white p-6 shadow-sm ring-1 ring-slate-200 transition-shadow hover:shadow-md"
+      className="group rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
     >
-      <div className="flex items-start justify-between gap-2">
-        <h3 className="font-semibold text-navy-dark">{name}</h3>
-        <span
-          className={`shrink-0 rounded-full px-2.5 py-0.5 text-xs font-medium ring-1 ring-inset ${STATUS_STYLE[status]}`}
-        >
-          {STATUS_LABEL[status]}
-        </span>
-      </div>
-      {targetCompany && (
-        <p className="text-sm text-slate-500">{targetCompany}</p>
-      )}
-      <div className="mt-2 flex items-center justify-between text-xs text-slate-400">
-        <span>
-          {documentCount} document{documentCount !== 1 ? "s" : ""}
-        </span>
-        {updatedAt && (
-          <span>
-            Maj le {new Date(updatedAt).toLocaleDateString("fr-FR")}
-          </span>
+      <Card interactive className="flex h-full flex-col gap-3">
+        <div className="flex items-start justify-between gap-3">
+          <h3 className="font-semibold tracking-tight text-slate-900 transition-colors duration-200 group-hover:text-accent">
+            {name}
+          </h3>
+          <Badge variant={s.variant}>{s.label}</Badge>
+        </div>
+
+        {targetCompany && (
+          <p className="text-sm text-slate-500">{targetCompany}</p>
         )}
-      </div>
+
+        <div className="mt-auto flex items-center justify-between pt-3 text-xs text-slate-400">
+          <span className="inline-flex items-center gap-1.5">
+            <FileText className="h-3.5 w-3.5" strokeWidth={1.75} aria-hidden />
+            {documentCount} document{documentCount !== 1 ? "s" : ""}
+          </span>
+          {updatedAt && (
+            <span>Maj le {new Date(updatedAt).toLocaleDateString("fr-FR")}</span>
+          )}
+        </div>
+      </Card>
     </Link>
   );
 }

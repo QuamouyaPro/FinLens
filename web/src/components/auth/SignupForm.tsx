@@ -19,7 +19,9 @@ export default function SignupForm() {
   return (
     <form action={action} className="flex flex-col gap-5">
       <div>
-        <h1 className="text-xl font-semibold text-navy-dark">Créer un compte</h1>
+        <h1 className="text-xl font-semibold tracking-tight text-slate-900">
+          Créer un compte
+        </h1>
         <p className="mt-1 text-sm text-slate-500">
           Commencez à analyser vos documents financiers.
         </p>
@@ -34,7 +36,7 @@ export default function SignupForm() {
       />
 
       <div className="flex flex-col gap-1.5">
-        <label htmlFor="role" className="text-sm font-medium text-navy-dark">
+        <label htmlFor="role" className="text-sm font-medium text-slate-900">
           Rôle
         </label>
         <select
@@ -42,7 +44,7 @@ export default function SignupForm() {
           name="role"
           required
           defaultValue=""
-          className="rounded-md border border-slate-300 px-3 py-2 text-sm text-navy-dark focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+          className="h-10 rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-900 shadow-sm transition-all duration-200 ease-in-out focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
         >
           <option value="" disabled>
             Sélectionnez votre rôle
@@ -63,17 +65,25 @@ export default function SignupForm() {
         label="Mot de passe"
         minLength={6}
         required
+        hint="6 caractères minimum."
       />
 
-      {state?.error && <p className="text-sm text-red-600">{state.error}</p>}
+      {state?.error && (
+        <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">
+          {state.error}
+        </p>
+      )}
 
-      <Button type="submit" disabled={pending}>
-        {pending ? "Création..." : "Créer mon compte"}
+      <Button type="submit" loading={pending}>
+        {pending ? "Création du compte…" : "Créer mon compte"}
       </Button>
 
       <p className="text-center text-sm text-slate-500">
         Déjà un compte ?{" "}
-        <Link href="/login" className="text-accent hover:underline">
+        <Link
+          href="/login"
+          className="font-medium text-accent transition-colors duration-200 hover:text-accent-hover hover:underline"
+        >
           Se connecter
         </Link>
       </p>

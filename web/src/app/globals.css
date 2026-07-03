@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
+/*
+ * Fond global clair pour l'application (auth, dashboard).
+ * La landing page marketing pose son propre fond sombre (#050505) sur son wrapper.
+ */
 :root {
-  --background: #050505;
-  --foreground: #f4f4f1;
+  --background: #fafafa;
+  --foreground: #0f172a;
 }
 
 @theme inline {
@@ -12,10 +16,15 @@
   --font-mono: var(--font-geist-mono);
   --font-serif: var(--font-instrument-serif);
 
-  /* Design system de l'application (dashboard, auth) — sobre, distinct de la landing page */
+  /*
+   * Design system FinLens (application) — confiance, clarté, retenue.
+   * navy : structure & éléments de confiance · accent : CTA et liens actifs uniquement.
+   */
   --color-navy: #1e3a5f;
   --color-navy-dark: #0f2444;
   --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+  --color-accent-soft: #eff6ff;
 }
 
 html {
@@ -29,10 +38,16 @@ body {
 }
 
 ::selection {
+  background: rgba(37, 99, 235, 0.18);
+}
+
+/* La landing page conserve sa sélection émeraude sur fond sombre */
+.grain ::selection,
+.grain::selection {
   background: rgba(110, 231, 183, 0.25);
 }
 
-/* Grain fixe, hors flux de scroll — jamais sur un conteneur défilant */
+/* Grain fixe, hors flux de scroll — jamais sur un conteneur défilant (landing uniquement) */
 .grain::after {
   content: "";
   position: fixed;

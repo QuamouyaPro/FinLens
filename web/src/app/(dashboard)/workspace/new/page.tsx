@@ -3,7 +3,7 @@ import NewWorkspaceForm from "@/components/dashboard/NewWorkspaceForm";
 export default function NewWorkspacePage() {
   return (
     <div>
-      <h1 className="text-2xl font-semibold text-navy-dark">
+      <h1 className="text-2xl font-semibold tracking-tight text-slate-900">
         Nouvel espace de travail
       </h1>
       <p className="mt-1 text-sm text-slate-500">

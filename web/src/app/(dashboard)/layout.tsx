@@ -25,7 +25,9 @@ export default async function DashboardLayout({
   return (
     <div className="flex min-h-[100dvh] w-full bg-slate-50">
       <Sidebar fullName={profile?.full_name ?? null} />
-      <main className="flex-1 px-8 py-10">{children}</main>
+      <main className="flex-1 overflow-x-hidden">
+        <div className="mx-auto w-full max-w-6xl px-8 py-10">{children}</div>
+      </main>
     </div>
   );
 }
