@@ -19,24 +19,31 @@ export default function SignupForm() {
   return (
     <form action={action} className="flex flex-col gap-5">
       <div>
-        <h1 className="text-xl font-semibold tracking-tight text-slate-900">
+        <h1 className="text-xl font-semibold tracking-tight text-zinc-50">
           Créer un compte
         </h1>
-        <p className="mt-1 text-sm text-slate-500">
+        <p className="mt-1 text-sm text-zinc-400">
           Commencez à analyser vos documents financiers.
         </p>
       </div>
 
-      <Input id="full_name" name="full_name" label="Nom complet" required />
+      <Input
+        id="full_name"
+        name="full_name"
+        label="Nom complet"
+        tone="dark"
+        required
+      />
       <Input
         id="company_name"
         name="company_name"
         label="Nom de l'entreprise"
+        tone="dark"
         required
       />
 
       <div className="flex flex-col gap-1.5">
-        <label htmlFor="role" className="text-sm font-medium text-slate-900">
+        <label htmlFor="role" className="text-sm font-medium text-zinc-300">
           Rôle
         </label>
         <select
@@ -44,7 +51,7 @@ export default function SignupForm() {
           name="role"
           required
           defaultValue=""
-          className="h-10 rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-900 shadow-sm transition-all duration-200 ease-in-out focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+          className="h-10 rounded-lg border border-zinc-800 bg-zinc-900 px-3 text-sm text-zinc-100 outline-none transition-all duration-300 ease-in-out focus:border-zinc-500 focus:ring-1 focus:ring-zinc-500"
         >
           <option value="" disabled>
             Sélectionnez votre rôle
@@ -57,32 +64,40 @@ export default function SignupForm() {
         </select>
       </div>
 
-      <Input id="email" name="email" type="email" label="Email" required />
+      <Input
+        id="email"
+        name="email"
+        type="email"
+        label="Email"
+        tone="dark"
+        required
+      />
       <Input
         id="password"
         name="password"
         type="password"
         label="Mot de passe"
+        tone="dark"
         minLength={6}
         required
         hint="6 caractères minimum."
       />
 
       {state?.error && (
-        <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">
+        <p className="rounded-lg border border-red-500/20 bg-red-500/10 px-3 py-2 text-sm text-red-400">
           {state.error}
         </p>
       )}
 
-      <Button type="submit" loading={pending}>
+      <Button type="submit" variant="white" loading={pending}>
         {pending ? "Création du compte…" : "Créer mon compte"}
       </Button>
 
-      <p className="text-center text-sm text-slate-500">
+      <p className="text-center text-sm text-zinc-400">
         Déjà un compte ?{" "}
         <Link
           href="/login"
-          className="font-medium text-accent transition-colors duration-200 hover:text-accent-hover hover:underline"
+          className="font-medium text-zinc-50 transition-colors duration-300 hover:underline"
         >
           Se connecter
         </Link>

@@ -1,7 +1,7 @@
 import type { ButtonHTMLAttributes } from "react";
 import { Loader2 } from "lucide-react";
 
-type Variant = "primary" | "secondary" | "ghost" | "destructive";
+type Variant = "primary" | "secondary" | "ghost" | "destructive" | "white";
 type Size = "sm" | "md" | "lg";
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -13,13 +13,16 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
 
 const VARIANTS: Record<Variant, string> = {
   primary:
-    "bg-accent text-white shadow-sm hover:bg-accent-hover focus-visible:ring-accent",
+    "bg-accent text-white shadow-sm hover:bg-accent-hover focus-visible:ring-accent focus-visible:ring-offset-2",
   secondary:
-    "bg-slate-100 text-slate-900 hover:bg-slate-200 focus-visible:ring-slate-400",
+    "bg-slate-100 text-slate-900 hover:bg-slate-200 focus-visible:ring-slate-400 focus-visible:ring-offset-2",
   ghost:
-    "bg-transparent text-slate-600 hover:bg-slate-100 hover:text-slate-900 focus-visible:ring-slate-400",
+    "bg-transparent text-slate-600 hover:bg-slate-100 hover:text-slate-900 focus-visible:ring-slate-400 focus-visible:ring-offset-2",
   destructive:
-    "bg-red-500 text-white shadow-sm hover:bg-red-600 focus-visible:ring-red-500",
+    "bg-red-500 text-white shadow-sm hover:bg-red-600 focus-visible:ring-red-500 focus-visible:ring-offset-2",
+  // Pour les surfaces sombres (auth, landing) : contraste maximal, typique des UI haut de gamme.
+  white:
+    "bg-white text-zinc-950 shadow-sm hover:bg-zinc-200 focus-visible:ring-zinc-300 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950",
 };
 
 const SIZES: Record<Size, string> = {
@@ -40,7 +43,7 @@ export default function Button({
   return (
     <button
       disabled={disabled || loading}
-      className={`inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-95 disabled:pointer-events-none disabled:opacity-50 ${VARIANTS[variant]} ${SIZES[size]} ${className}`}
+      className={`inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 active:scale-95 disabled:pointer-events-none disabled:opacity-50 ${VARIANTS[variant]} ${SIZES[size]} ${className}`}
       {...props}
     >
       {loading && <Loader2 className="h-4 w-4 animate-spin" aria-hidden />}

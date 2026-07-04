@@ -2,152 +2,129 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
 
 const LINKS = [
-  { href: "#produit", label: "Produit" },
-  { href: "#methode", label: "Méthode" },
-  { href: "#pour-qui", label: "Pour qui" },
+  { href: "#fonctionnalites", label: "Fonctionnalités" },
+  { href: "#securite", label: "Sécurité" },
+  { href: "#cta", label: "Accès anticipé" },
 ];
 
-const SHOW_LOGIN = process.env.NEXT_PUBLIC_GITHUB_PAGES !== "true";
+// Le build GitHub Pages ne publie que la landing : pas de routes /login ni /signup.
+const IS_PAGES = process.env.NEXT_PUBLIC_GITHUB_PAGES === "true";
+
+function StartCta({ className = "" }: { className?: string }) {
+  const style = `inline-flex h-9 items-center justify-center rounded-lg bg-white px-4 text-sm font-medium text-zinc-950 transition-all duration-300 ease-in-out hover:bg-zinc-200 active:scale-95 ${className}`;
+  return IS_PAGES ? (
+    <a href="#cta" className={style}>
+      Démarrer
+    </a>
+  ) : (
+    <Link href="/signup" className={style}>
+      Démarrer
+    </Link>
+  );
+}
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      {/* Îlot de navigation flottant */}
-      <header className="fixed inset-x-0 top-0 z-50 flex justify-center pt-5 pointer-events-none">
-        <nav className="pointer-events-auto flex items-center gap-6 rounded-full bg-[#0b0b0b]/70 backdrop-blur-xl ring-1 ring-white/10 pl-5 pr-2 py-2 shadow-[0_12px_40px_rgba(0,0,0,0.55)]">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-zinc-950/80 backdrop-blur-md">
+        <nav className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 md:px-6">
           <a href="#" className="flex items-center gap-2.5">
-            <LensMark />
-            <span className="text-[15px] font-medium tracking-tight text-white">
+            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-white">
+              <span className="h-1.5 w-1.5 rounded-full bg-zinc-950" />
+            </span>
+            <span className="text-[15px] font-semibold tracking-tight text-zinc-50">
               FinLens
             </span>
           </a>
 
-          <div className="hidden md:flex items-center gap-6">
+          <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 md:flex">
             {LINKS.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                className="text-sm text-white/55 hover:text-white transition-colors duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]"
+                className="text-sm text-zinc-400 transition-colors duration-300 ease-in-out hover:text-zinc-50"
               >
                 {l.label}
               </a>
             ))}
           </div>
 
-          {SHOW_LOGIN && (
-            <Link
-              href="/login"
-              className="hidden md:inline text-sm text-white/55 hover:text-white transition-colors duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]"
-            >
-              Se connecter
-            </Link>
-          )}
+          <div className="hidden items-center gap-5 md:flex">
+            {!IS_PAGES && (
+              <Link
+                href="/login"
+                className="text-sm text-zinc-400 transition-colors duration-300 ease-in-out hover:text-zinc-50"
+              >
+                Connexion
+              </Link>
+            )}
+            <StartCta />
+          </div>
 
-          <a
-            href="#acces"
-            className="hidden md:flex items-center gap-2 rounded-full bg-white text-black text-sm font-medium pl-4 pr-1.5 py-1.5 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98] group"
-          >
-            Demander un accès
-            <span className="w-6 h-6 rounded-full bg-black/5 flex items-center justify-center transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-0.5 group-hover:-translate-y-px">
-              <ArrowUpRight className="w-3 h-3" />
-            </span>
-          </a>
-
-          {/* Hamburger → X (mobile) */}
+          {/* Menu mobile */}
           <button
             aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
             onClick={() => setOpen(!open)}
-            className="md:hidden relative w-9 h-9 rounded-full bg-white/5 ring-1 ring-white/10 flex items-center justify-center"
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-zinc-300 md:hidden"
           >
-            <span
-              className={`absolute h-px w-4 bg-white transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
-                open ? "rotate-45" : "-translate-y-[3px]"
-              }`}
-            />
-            <span
-              className={`absolute h-px w-4 bg-white transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
-                open ? "-rotate-45" : "translate-y-[3px]"
-              }`}
-            />
+            {open ? (
+              <X className="h-4 w-4" strokeWidth={1.75} />
+            ) : (
+              <Menu className="h-4 w-4" strokeWidth={1.75} />
+            )}
           </button>
         </nav>
       </header>
 
-      {/* Overlay plein écran (mobile) */}
+      {/* Overlay mobile plein écran */}
       <div
-        className={`fixed inset-0 z-40 md:hidden bg-black/85 backdrop-blur-3xl transition-opacity duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${
-          open ? "opacity-100" : "opacity-0 pointer-events-none"
+        className={`fixed inset-0 z-40 bg-zinc-950/90 backdrop-blur-xl transition-opacity duration-300 ease-in-out md:hidden ${
+          open ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
-        <div className="flex flex-col items-start justify-center min-h-[100dvh] px-8 gap-7">
+        <div className="flex min-h-[100dvh] flex-col items-start justify-center gap-7 px-8">
           {LINKS.map((l, i) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              style={{ transitionDelay: open ? `${120 + i * 60}ms` : "0ms" }}
-              className={`text-4xl font-medium tracking-tight text-white transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${
-                open ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+              style={{ transitionDelay: open ? `${100 + i * 50}ms` : "0ms" }}
+              className={`text-3xl font-semibold tracking-tight text-zinc-50 transition-all duration-300 ease-in-out ${
+                open ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
               }`}
             >
               {l.label}
             </a>
           ))}
-          {SHOW_LOGIN && (
+
+          {!IS_PAGES && (
             <Link
               href="/login"
               onClick={() => setOpen(false)}
-              style={{ transitionDelay: open ? "260ms" : "0ms" }}
-              className={`text-2xl font-medium tracking-tight text-white/60 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${
-                open ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+              style={{ transitionDelay: open ? "250ms" : "0ms" }}
+              className={`text-xl font-medium text-zinc-400 transition-all duration-300 ease-in-out ${
+                open ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
               }`}
             >
-              Se connecter
+              Connexion
             </Link>
           )}
-          <a
-            href="#acces"
-            onClick={() => setOpen(false)}
-            style={{ transitionDelay: open ? "320ms" : "0ms" }}
-            className={`mt-4 flex items-center gap-3 rounded-full bg-white text-black font-medium pl-6 pr-2 py-3 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${
-              open ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+
+          <div
+            style={{ transitionDelay: open ? "300ms" : "0ms" }}
+            className={`mt-2 transition-all duration-300 ease-in-out ${
+              open ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
           >
-            Demander un accès
-            <span className="w-8 h-8 rounded-full bg-black/5 flex items-center justify-center">
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </span>
-          </a>
+            <StartCta className="h-11 px-6" />
+          </div>
         </div>
       </div>
     </>
-  );
-}
-
-function LensMark() {
-  return (
-    <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" aria-hidden>
-      <circle cx="12" cy="12" r="9.5" stroke="#6ee7b7" strokeWidth="1" />
-      <circle cx="12" cy="12" r="4.5" stroke="white" strokeWidth="1" />
-      <path d="M12 2.5v5M21.5 12h-5" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.5" />
-    </svg>
-  );
-}
-
-function ArrowUpRight({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 16 16" className={className} fill="none" aria-hidden>
-      <path
-        d="M4.5 11.5l7-7M5.5 4.5h6v6"
-        stroke="currentColor"
-        strokeWidth="1.25"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
   );
 }
