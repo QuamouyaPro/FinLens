@@ -39,7 +39,7 @@ export function handleApiError(error: unknown) {
 
   const message = error instanceof Error ? error.message : "Erreur inconnue.";
 
-  if (error instanceof Error && error.name === "QuotaExceededError") {
+  if (error instanceof Error && (error.name === "QuotaExceededError" || error.name === "ThrottledError")) {
     return NextResponse.json({ error: message }, { status: 429 });
   }
 

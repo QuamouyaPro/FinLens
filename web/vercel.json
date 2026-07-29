@@ -1,7 +1,7 @@
 {
   "crons": [
     { "path": "/api/cron/purge-corbeille", "schedule": "0 3 * * *" },
-    { "path": "/api/cron/velocite", "schedule": "*/30 * * * *" },
+    { "path": "/api/cron/velocite", "schedule": "0 5 * * *" },
     { "path": "/api/cron/cout-contrats", "schedule": "0 4 * * *" }
   ]
 }

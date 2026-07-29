@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { requireAuthContext, handleApiError, ApiError } from "@/lib/api-context";
 import { assertQuotaAndIncrement } from "@/lib/quotas";
+import { assertNotBursting } from "@/lib/velocity";
 import { runChatMessage } from "@/lib/ai/router";
 import { embedTexts } from "@/lib/ai/embeddings";
 
@@ -21,6 +22,8 @@ export async function POST(request: NextRequest) {
   try {
     const { supabase, user, organizationId } = await requireAuthContext();
     const { dossier_id, question } = chatSchema.parse(await request.json());
+
+    await assertNotBursting(supabase, organizationId, user.id);
 
     const { data: dossier } = await supabase
       .from("dossiers")
