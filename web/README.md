@@ -25,6 +25,14 @@ Embeddings générés via **Voyage AI** (`voyage-3-large`), le fournisseur
 recommandé par Anthropic pour le RAG — l'API Anthropic ne propose pas
 d'embeddings.
 
+## Prototype cliquable
+
+Le prototype statique (`docs/finlens-plateforme-v1.html`, Note de fonctionnement
+V1) est servi tel quel depuis `public/prototype/index.html`, accessible à
+`/prototype` (redirection configurée dans `next.config.ts`). Fichier autonome
+sans dépendance au backend -- aucune donnée réelle, uniquement pour visualiser
+le parcours produit cible en attendant la reconstruction en pages Next.js.
+
 ## Démarrage
 
 ```bash
