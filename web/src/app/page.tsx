@@ -94,9 +94,9 @@ export default async function LandingPage() {
               <Link href={connecte ? "/dossiers?nouveau=1" : "/inscription"} className="btn btn--ink btn--lg">
                 Analyser un premier dossier
               </Link>
-              <AncreDouce cible="produit" className="btn btn--outline-ink btn--lg">
+              <Link href="/demo/tableau-de-bord" className="btn btn--outline-ink btn--lg">
                 Explorer la plateforme →
-              </AncreDouce>
+              </Link>
             </div>
             <div className="hero__facts">
               <div>

@@ -20,6 +20,8 @@ type Entree = {
 type Props = {
   onFermer: () => void;
   dossiers: DossierRaccourci[];
+  /** Préfixe des liens (ex. "/demo") pour réutiliser la palette hors session réelle. */
+  base?: string;
 };
 
 /**
@@ -28,7 +30,7 @@ type Props = {
  * Monté à l'ouverture uniquement : la saisie repart donc vierge à chaque fois,
  * sans effet de réinitialisation.
  */
-export function CommandPalette({ onFermer, dossiers }: Props) {
+export function CommandPalette({ onFermer, dossiers, base = "" }: Props) {
   const router = useRouter();
   const [requete, setRequete] = useState("");
   const [selection, setSelection] = useState(0);
@@ -41,7 +43,7 @@ export function CommandPalette({ onFermer, dossiers }: Props) {
         label: "Créer un dossier",
         detail: "Un espace de travail par entreprise étudiée",
         icon: "plus",
-        href: "/dossiers?nouveau=1",
+        href: `${base}/dossiers?nouveau=1`,
         hint: "N",
       },
       {
@@ -50,7 +52,7 @@ export function CommandPalette({ onFermer, dossiers }: Props) {
         label: "Interroger tous les dossiers",
         detail: "Une question, tous les dossiers actifs",
         icon: "srch",
-        href: "/recherche",
+        href: `${base}/recherche`,
       },
     ];
 
@@ -59,7 +61,7 @@ export function CommandPalette({ onFermer, dossiers }: Props) {
       groupe: "Navigation",
       label: item.label,
       icon: item.icon,
-      href: item.href,
+      href: `${base}${item.href}`,
     }));
 
     const dossiersEntrees: Entree[] = dossiers.map((d) => ({
@@ -68,11 +70,11 @@ export function CommandPalette({ onFermer, dossiers }: Props) {
       label: d.name,
       detail: d.secteur ?? undefined,
       icon: "folder",
-      href: `/dossiers/${d.id}`,
+      href: `${base}/dossiers/${d.id}`,
     }));
 
     return [...actions, ...navigation, ...dossiersEntrees];
-  }, [dossiers]);
+  }, [dossiers, base]);
 
   const resultats = useMemo(() => {
     const q = requete.trim().toLowerCase();

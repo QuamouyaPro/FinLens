@@ -18,6 +18,8 @@ type Props = {
   nomOrganisation: string;
   dossiersActifs: number;
   signauxOuverts: number;
+  /** Préfixe des liens (ex. "/demo") pour réutiliser le shell hors session réelle. */
+  base?: string;
 };
 
 export function Sidebar({
@@ -29,6 +31,7 @@ export function Sidebar({
   nomOrganisation,
   dossiersActifs,
   signauxOuverts,
+  base = "",
 }: Props) {
   const pathname = usePathname();
   const config = OFFRES[offre];
@@ -42,14 +45,15 @@ export function Sidebar({
     .join("") || "?";
 
   function rendreItem(item: NavItem) {
-    const actif = pathname === item.href || pathname.startsWith(`${item.href}/`);
+    const cible = `${base}${item.href}`;
+    const actif = pathname === cible || pathname.startsWith(`${cible}/`);
     const compte =
       item.compteur === "dossiers" ? dossiersActifs : item.compteur === "signaux" ? signauxOuverts : null;
 
     return (
       <Link
         key={item.href}
-        href={item.href}
+        href={cible}
         className={`nav__item${actif ? " is-active" : ""}`}
         aria-current={actif ? "page" : undefined}
         onClick={onFermer}
@@ -88,7 +92,7 @@ export function Sidebar({
       <div className="slots">
         <div className="h">
           <span>Espace de travail</span>
-          <Link href="/dossiers">Gérer</Link>
+          <Link href={`${base}/dossiers`}>Gérer</Link>
         </div>
         <div className="row">
           <span>Dossiers ouverts</span>
@@ -128,7 +132,7 @@ export function Sidebar({
         </div>
       </div>
 
-      <Link href="/reglages" className="userchip" onClick={onFermer}>
+      <Link href={`${base}/reglages`} className="userchip" onClick={onFermer}>
         <span className="avatar">{initiales}</span>
         <span className="who">
           {nomUtilisateur}

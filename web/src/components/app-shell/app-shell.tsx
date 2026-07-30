@@ -15,6 +15,10 @@ type Props = {
   dossiersActifs: number;
   signauxOuverts: number;
   dossiersRaccourcis: DossierRaccourci[];
+  /** Préfixe des liens (ex. "/demo") pour réutiliser le shell hors session réelle. */
+  base?: string;
+  /** Bannière optionnelle affichée au-dessus du contenu (mode démonstration). */
+  banniere?: React.ReactNode;
 };
 
 export function AppShell({
@@ -25,6 +29,8 @@ export function AppShell({
   dossiersActifs,
   signauxOuverts,
   dossiersRaccourcis,
+  base = "",
+  banniere,
 }: Props) {
   const [tiroirOuvert, setTiroirOuvert] = useState(false);
   const [paletteOuverte, setPaletteOuverte] = useState(false);
@@ -54,6 +60,7 @@ export function AppShell({
         nomOrganisation={nomOrganisation}
         dossiersActifs={dossiersActifs}
         signauxOuverts={signauxOuverts}
+        base={base}
       />
 
       {/* Fond assombri cliquable : referme le tiroir sur petit écran. */}
@@ -91,23 +98,29 @@ export function AppShell({
               <span className="kbd">⌘K</span>
             </button>
 
-            <Link href="/signaux" className="iconbtn" aria-label={`Signaux (${signauxOuverts} non traités)`}>
+            <Link href={`${base}/signaux`} className="iconbtn" aria-label={`Signaux (${signauxOuverts} non traités)`}>
               <Icon name="alert" />
               {signauxOuverts > 0 ? <span className="ping" /> : null}
             </Link>
 
-            <Link href="/dossiers?nouveau=1" className="btn btn--primary btn--sm">
+            <Link href={`${base}/dossiers?nouveau=1`} className="btn btn--primary btn--sm">
               <Icon name="plus" style={{ width: 15, height: 15 }} />
               Nouveau dossier
             </Link>
           </div>
         </header>
 
+        {banniere}
+
         <main className="content">{children}</main>
       </div>
 
       {paletteOuverte ? (
-        <CommandPalette onFermer={() => setPaletteOuverte(false)} dossiers={dossiersRaccourcis} />
+        <CommandPalette
+          onFermer={() => setPaletteOuverte(false)}
+          dossiers={dossiersRaccourcis}
+          base={base}
+        />
       ) : null}
     </div>
   );
