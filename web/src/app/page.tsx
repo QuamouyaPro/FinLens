@@ -3,6 +3,7 @@ import { IconSprite } from "@/components/ui/icon-sprite";
 import { Icon } from "@/components/ui/icon";
 import { Logo } from "@/components/ui/logo";
 import { TopbarPublique } from "@/components/landing/topbar-publique";
+import { AncreDouce } from "@/components/ui/anchor-link";
 import { DemoCopilote } from "@/components/landing/demo-copilote";
 import { CalculateurRoi } from "@/components/landing/calculateur-roi";
 import { Tarifs } from "@/components/landing/tarifs";
@@ -93,9 +94,9 @@ export default async function LandingPage() {
               <Link href={connecte ? "/dossiers?nouveau=1" : "/inscription"} className="btn btn--ink btn--lg">
                 Analyser un premier dossier
               </Link>
-              <a href="#produit" className="btn btn--outline-ink btn--lg">
+              <AncreDouce cible="produit" className="btn btn--outline-ink btn--lg">
                 Explorer la plateforme →
-              </a>
+              </AncreDouce>
             </div>
             <div className="hero__facts">
               <div>
@@ -373,7 +374,7 @@ export default async function LandingPage() {
           </div>
         </section>
 
-        <section className="section">
+        <section className="section" id="tarifs">
           <Tarifs />
         </section>
 
@@ -390,9 +391,9 @@ export default async function LandingPage() {
         <div className="wrap footer__in">
           <Logo size={15} />
           <nav>
-            <a href="#produit">Produit</a>
-            <a href="#tarifs">Tarifs</a>
-            <a href="#fiabilite">Sécurité</a>
+            <AncreDouce cible="produit">Produit</AncreDouce>
+            <AncreDouce cible="tarifs">Tarifs</AncreDouce>
+            <AncreDouce cible="fiabilite">Sécurité</AncreDouce>
             <Link href="/connexion">Se connecter</Link>
           </nav>
           <span>© {new Date().getFullYear()} FinLens — Hébergé en Union européenne</span>

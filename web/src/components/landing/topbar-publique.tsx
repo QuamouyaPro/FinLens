@@ -5,13 +5,14 @@ import Link from "next/link";
 import { Icon } from "@/components/ui/icon";
 import { Logo } from "@/components/ui/logo";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { AncreDouce } from "@/components/ui/anchor-link";
 
 const LIENS = [
-  { href: "#produit", label: "Produit" },
-  { href: "#comparatif", label: "Pourquoi FinLens" },
-  { href: "#roi", label: "ROI" },
-  { href: "#fiabilite", label: "Sécurité" },
-  { href: "#tarifs", label: "Tarifs" },
+  { cible: "produit", label: "Produit" },
+  { cible: "comparatif", label: "Pourquoi FinLens" },
+  { cible: "roi", label: "ROI" },
+  { cible: "fiabilite", label: "Sécurité" },
+  { cible: "tarifs", label: "Tarifs" },
 ];
 
 export function TopbarPublique({ connecte }: { connecte: boolean }) {
@@ -26,9 +27,9 @@ export function TopbarPublique({ connecte }: { connecte: boolean }) {
 
         <nav>
           {LIENS.map((lien) => (
-            <a key={lien.href} href={lien.href}>
+            <AncreDouce key={lien.cible} cible={lien.cible}>
               {lien.label}
-            </a>
+            </AncreDouce>
           ))}
         </nav>
 
@@ -61,9 +62,9 @@ export function TopbarPublique({ connecte }: { connecte: boolean }) {
 
         <div className={`topbar-drawer${tiroirOuvert ? " is-open" : ""}`}>
           {LIENS.map((lien) => (
-            <a key={lien.href} href={lien.href} onClick={() => setTiroirOuvert(false)}>
+            <AncreDouce key={lien.cible} cible={lien.cible} onApresClic={() => setTiroirOuvert(false)}>
               {lien.label}
-            </a>
+            </AncreDouce>
           ))}
           <div className="tdiv" />
           {connecte ? (
