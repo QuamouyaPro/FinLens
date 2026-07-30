@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-color",
+        "value": "#6e756e",
+        "createdAt": "2026-07-30T18:26:21.961Z",
+        "reason": "AA-contrast fix for the two demo-card labels (Assessment critique P2), on the always-light demo card surface"
+      }
+    ]
+  }
+}

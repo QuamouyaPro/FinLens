@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-30T18:02:56Z",
+  "title": "Design System: FinLens",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Verified Emerald",
+        "canonical": "#43D48D",
+        "tonalRamp": ["#04140C", "#0E4C2E", "#146B45", "#2CB975", "#43D48D", "#6EDFA6", "#9EEBC4", "#D2F6E3"]
+      },
+      "bg": {
+        "role": "neutral",
+        "displayName": "Near-Black Canvas",
+        "canonical": "#090A0A",
+        "tonalRamp": ["#090A0A", "#131516", "#1A1D1E", "#232627", "#3A3D3C", "#858C82", "#9AA29D", "#F2F4F2"]
+      },
+      "danger": {
+        "role": "error",
+        "displayName": "Contradiction Red",
+        "canonical": "#FF7C68",
+        "tonalRamp": ["#3A140C", "#6B2418", "#A63A2E", "#D45640", "#FF7C68", "#FF9C8C", "#FFC0B4", "#FFE3DC"]
+      },
+      "signal": {
+        "role": "warning",
+        "displayName": "Verify-Me Amber",
+        "canonical": "#F0B65E",
+        "tonalRamp": ["#3A2A0A", "#6B4C14", "#A9741A", "#D4941F", "#F0B65E", "#F5C784", "#FADCB0", "#FDEFDA"]
+      },
+      "info": {
+        "role": "info",
+        "displayName": "Neutral Screening Blue",
+        "canonical": "#6FB3E8",
+        "tonalRamp": ["#0E2436", "#1D4664", "#2E6B99", "#4A8FC0", "#6FB3E8", "#96C9EE", "#BFDFF5", "#E4F1FB"]
+      },
+      "ink-bg": {
+        "role": "neutral",
+        "displayName": "Fixed Ink Panel",
+        "canonical": "#08090A",
+        "tonalRamp": ["#08090A", "#0E1211", "#161B19", "#232A27", "#3A423E", "#616B65", "#97A19A", "#F3F5F3"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Fraunces Display", "purpose": "Hero headline only; italic sub-clause carries the accent color." },
+      "body": { "displayName": "Instrument Sans Body", "purpose": "All reading copy across public and app surfaces." },
+      "label": { "displayName": "Eyebrow / Label", "purpose": "Section eyebrows, field labels, source-list headers." },
+      "mono": { "displayName": "Sourced-Data Mono", "purpose": "KPI values, citation pills, page references, financial figures — anything traceable to a document or a computation." }
+    },
+    "shadows": [
+      { "name": "shadow-sm", "value": "0 1px 2px rgba(0,0,0,.4)", "purpose": "Resting cards, KPI tiles, inputs." },
+      { "name": "shadow", "value": "inset 0 1px 0 rgba(255,255,255,.03), 0 16px 36px -18px rgba(0,0,0,.65)", "purpose": "Modals, dropdowns, the hero demo card." },
+      { "name": "shadow-lg", "value": "0 32px 84px -26px rgba(0,0,0,.78)", "purpose": "Command palette, full-screen note reader." }
+    ],
+    "motion": [
+      { "name": "rise", "value": "translateY(14px) → none, opacity 0 → 1, .6-.7s ease", "purpose": "Sequenced entrance for hero text and the demo card." },
+      { "name": "fade", "value": "translateY(5px) → none, opacity 0 → 1, .18-.32s ease", "purpose": "View switches, dropdowns, modal open." },
+      { "name": "pulse", "value": "opacity 1 → .45 → 1, 2.4s infinite", "purpose": "The hero pill's live-status dot." },
+      { "name": "ambient-float", "value": "translateY(0) → -9px → 0, 7s ease-in-out infinite", "purpose": "Citation-pill signature drifting near the hero demo card." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "1080px" },
+      { "name": "sm", "value": "780px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one call to action per view.",
+      "html": "<button class=\"ds-btn-primary\">Analyser un premier dossier</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 42px; padding: 0 20px; border-radius: 8px; font-weight: 600; font-size: 14px; font-family: 'Instrument Sans', system-ui, sans-serif; background: var(--accent, #43D48D); color: var(--accent-ink, #04140C); box-shadow: 0 1px 0 rgba(255,255,255,.12) inset, 0 8px 22px -10px var(--accent-tint, rgba(67,212,141,.15)); transition: .16s ease; } .ds-btn-primary:hover { background: var(--accent-strong, #2CB975); transform: translateY(-1px); } .ds-btn-primary:focus-visible { outline: 2px solid var(--accent, #43D48D); outline-offset: 2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action, quiet by default.",
+      "html": "<button class=\"ds-btn-ghost\">Voir le dossier</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 42px; padding: 0 20px; border-radius: 8px; font-weight: 600; font-size: 14px; font-family: 'Instrument Sans', system-ui, sans-serif; background: var(--surface, #131516); color: var(--text, #F2F4F2); border: 1px solid var(--border, rgba(255,255,255,.085)); box-shadow: 0 1px 2px rgba(0,0,0,.4); transition: .16s ease; } .ds-btn-ghost:hover { border-color: var(--border-strong, rgba(255,255,255,.18)); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--accent, #43D48D); outline-offset: 2px; }"
+    },
+    {
+      "name": "Citation Pill",
+      "kind": "custom",
+      "refersTo": "cite-pill",
+      "description": "The product's signature: an inline, clickable page reference dropped next to any sourced fact.",
+      "html": "<span class=\"ds-cite\"><svg viewBox=\"0 0 24 24\" fill=\"none\" width=\"10\" height=\"10\"><circle cx=\"10.5\" cy=\"10.5\" r=\"7\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"15.8\" y1=\"15.8\" x2=\"21\" y2=\"21\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"10.5\" cy=\"10.5\" r=\"2.4\" fill=\"currentColor\"/></svg>p.148</span>",
+      "css": ".ds-cite { display: inline-flex; align-items: center; gap: 4px; background: var(--accent-tint, rgba(67,212,141,.15)); color: var(--accent, #43D48D); font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11.5px; font-weight: 500; padding: 1.5px 7px; border-radius: 6px; border: 1px solid transparent; cursor: pointer; transition: .13s; white-space: nowrap; } .ds-cite:hover { background: var(--accent, #43D48D); color: var(--accent-ink, #04140C); } .ds-cite:focus-visible { outline: 2px solid var(--accent, #43D48D); outline-offset: 2px; }"
+    },
+    {
+      "name": "KPI Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Dashboard metric tile: mono value, optional sparkline in the corner.",
+      "html": "<div class=\"ds-kpi\"><div class=\"ds-kpi-lbl\">Analyses ce mois</div><div class=\"ds-kpi-val\">14<small>&nbsp;/&nbsp;illimité</small></div><div class=\"ds-kpi-delta\">Extraction complète du dossier</div></div>",
+      "css": ".ds-kpi { background: var(--surface, #131516); border: 1px solid var(--border, rgba(255,255,255,.085)); border-radius: 12px; padding: 19px; box-shadow: 0 1px 2px rgba(0,0,0,.4); position: relative; overflow: hidden; font-family: 'Instrument Sans', system-ui, sans-serif; } .ds-kpi-lbl { font-size: 12.5px; color: var(--text-soft, #9AA29D); font-weight: 500; } .ds-kpi-val { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 29px; font-weight: 600; margin: 11px 0 3px; letter-spacing: -.03em; color: var(--text, #F2F4F2); } .ds-kpi-val small { font-size: 14px; color: var(--text-faint, #646B66); font-weight: 400; } .ds-kpi-delta { font-size: 12px; font-weight: 600; color: var(--text-faint, #646B66); }"
+    },
+    {
+      "name": "Status Badge",
+      "kind": "chip",
+      "refersTo": "badge",
+      "description": "Pill-shaped status tag; color drawn from the matching semantic token.",
+      "html": "<span class=\"ds-badge ds-badge-ok\">Démo</span>",
+      "css": ".ds-badge { display: inline-flex; align-items: center; gap: 6px; height: 23px; padding: 0 10px; border-radius: 100px; font-size: 12px; font-weight: 600; font-family: 'Instrument Sans', system-ui, sans-serif; } .ds-badge-ok { background: var(--accent-wash, rgba(67,212,141,.07)); color: var(--accent, #43D48D); }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Standard field: soft focus glow instead of a hard outline.",
+      "html": "<input class=\"ds-input\" placeholder=\"Rechercher un dossier…\" />",
+      "css": ".ds-input { width: 100%; height: 45px; padding: 0 15px; border: 1px solid var(--border, rgba(255,255,255,.085)); border-radius: 8px; background: var(--surface, #131516); color: var(--text, #F2F4F2); font-size: 14.5px; font-family: 'Instrument Sans', system-ui, sans-serif; transition: .15s; } .ds-input::placeholder { color: var(--text-faint, #646B66); } .ds-input:focus { outline: none; border-color: var(--accent, #43D48D); box-shadow: 0 0 0 3.5px var(--accent-wash, rgba(67,212,141,.07)); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quiet Auditor",
+    "overview": "FinLens looks like the work of someone who has already checked twice. The system is restrained everywhere except the one place that matters: the exact page a fact came from. A tempered serif (Fraunces) carries the authority of a printed report; a plain, humanist sans (Instrument Sans) carries the actual work of reading and deciding; a monospace (JetBrains Mono) marks anything that is data, a number, or a source — so the eye learns to trust mono text as \"this has been verified.\" The emerald accent is rare on purpose: it marks the one action, the one flagged number, the one citation pill per fact, never a whole surface. Dark \"ink\" panels (sidebar, hero, CTA bands) are a fixed signature that does not follow the light/dark theme toggle — the auditor's notebook stays the same color regardless of what time you're reading it.",
+    "keyCharacteristics": [
+      "Two-register typography: serif for authority, mono for anything sourced or numeric.",
+      "One accent color, spent almost exclusively on the citation pill and the primary action.",
+      "Fixed dark \"ink\" panels as a brand signature independent of theme.",
+      "Flat surfaces lifted only by soft, low-contrast shadows — never a hard drop shadow.",
+      "Pills (100px radius) for anything the user scans as a tag: badges, chips, citations, quick-search suggestions."
+    ],
+    "rules": [
+      { "name": "The Rare Accent Rule", "body": "Verified Emerald appears on at most one primary action and the citation pills per view — never as a section background or a decorative sweep.", "section": "colors" },
+      { "name": "The Fixed Ink Rule", "body": "Sidebar, public hero, and CTA bands stay on the dark ink palette in both light and dark theme.", "section": "colors" },
+      { "name": "The Mono-Means-Sourced Rule", "body": "If a number or short reference is set in JetBrains Mono, it must be traceable to a document or a live computation.", "section": "typography" },
+      { "name": "The No Hard Shadow Rule", "body": "Every shadow is soft, wide-spread, and low-opacity. A crisp, close, high-contrast shadow anywhere in the UI is a bug, not a variant.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do put a citation pill or source card next to every generated number or claim.",
+      "Do keep the sidebar, public hero, and CTA bands on the fixed ink palette in both themes.",
+      "Do use mono type only for numbers, dates, and references that are actually sourced or computed.",
+      "Do use soft, wide, low-opacity shadows for any elevation; scale strength down, not off, in the light theme."
+    ],
+    "donts": [
+      "Don't use the emerald accent as a section background, gradient, or decorative sweep.",
+      "Don't nest cards inside cards.",
+      "Don't apply a hard, close, high-contrast drop shadow anywhere.",
+      "Don't use JetBrains Mono decoratively for numerals that aren't traceable to a document or a live computation."
+    ]
+  }
+}

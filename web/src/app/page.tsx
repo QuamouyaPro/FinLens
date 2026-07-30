@@ -38,7 +38,6 @@ const MODULES = [
     titre: "Détection de contradictions",
     texte:
       "Le teaser annonce 14 M€ de CA, l'annexe du bilan en montre 12,8 M€. FinLens croise vos documents et met les deux passages côte à côte.",
-    accent: true,
   },
   {
     num: "05",
@@ -157,15 +156,15 @@ export default async function LandingPage() {
           <div className="grid-3">
             {MODULES.map((module, i) => (
               <div
-                className={`card feat reveal${module.accent ? " feat--accent" : ""}`}
+                className="card feat reveal"
                 key={module.num}
                 style={{ "--reveal-delay": `${i * 0.07}s` } as React.CSSProperties}
               >
                 <span className="num">{module.num}</span>
-                <div className="ic">
-                  <Icon name={module.icon} />
-                </div>
-                <h3>{module.titre}</h3>
+                <h3>
+                  <Icon name={module.icon} className="feat__icon" />
+                  {module.titre}
+                </h3>
                 <p>{module.texte}</p>
               </div>
             ))}
@@ -342,11 +341,11 @@ export default async function LandingPage() {
           </p>
           <div className="trust">
             <div className="t reveal">
-              <div className="ic">
-                <Icon name="lens" />
-              </div>
               <div>
-                <b>Le moteur ne répond que sur vos documents</b>
+                <b>
+                  <Icon name="lens" className="trust__icon" />
+                  Le moteur ne répond que sur vos documents
+                </b>
                 <p>
                   L&apos;architecture RAG contraint chaque réponse aux passages indexés. Quand
                   l&apos;information n&apos;y figure pas, le produit l&apos;indique au lieu de la deviner.
@@ -354,11 +353,11 @@ export default async function LandingPage() {
               </div>
             </div>
             <div className="t reveal" style={{ "--reveal-delay": "0.07s" } as React.CSSProperties}>
-              <div className="ic">
-                <Icon name="shield" />
-              </div>
               <div>
-                <b>Vos documents n&apos;entraînent aucun modèle</b>
+                <b>
+                  <Icon name="shield" className="trust__icon" />
+                  Vos documents n&apos;entraînent aucun modèle
+                </b>
                 <p>
                   Documents isolés par organisation, hébergés en Union européenne, jamais utilisés pour
                   entraîner un modèle public.
@@ -366,11 +365,11 @@ export default async function LandingPage() {
               </div>
             </div>
             <div className="t reveal" style={{ "--reveal-delay": "0.14s" } as React.CSSProperties}>
-              <div className="ic">
-                <Icon name="trash" />
-              </div>
               <div>
-                <b>Suppression réelle, pas un simple masquage</b>
+                <b>
+                  <Icon name="trash" className="trust__icon" />
+                  Suppression réelle, pas un simple masquage
+                </b>
                 <p>
                   Un dossier supprimé passe en corbeille 30 jours, puis est purgé de la base et de
                   l&apos;index. La suppression de compte est en self-service.

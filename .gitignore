@@ -23,6 +23,11 @@ venv/
 .DS_Store
 Thumbs.db
 
+# Impeccable: ephemeral runtime state only (skill + design docs are tracked)
+.claude/settings.local.json
+**/.impeccable/live/
+**/.impeccable/hook.cache.json
+
 # Editors
 .vscode/
 .idea/
