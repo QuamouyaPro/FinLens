@@ -43,24 +43,44 @@ npm install
 npm run dev
 ```
 
+## Clés à renseigner pour que tout fonctionne
+
+Le code est complet ; il attend uniquement ces secrets (voir `.env.example`) :
+
+| Variable | Sans elle |
+|---|---|
+| `SUPABASE_SERVICE_ROLE_KEY` | Indexation des documents et crons inopérants |
+| `ANTHROPIC_API_KEY` | Aucune analyse ni réponse du Copilote |
+| `VOYAGE_API_KEY` | Pas d'indexation vectorielle, donc pas de RAG |
+| `STRIPE_SECRET_KEY` + `STRIPE_PRICE_*` | Changement d'offre impossible |
+| `STRIPE_WEBHOOK_SECRET` | Les paiements ne mettent pas à jour l'offre |
+| `CRON_SECRET` | Les 3 crons refusent de s'exécuter (401) |
+
+Le reste de l'application (inscription, dossiers, navigation, exports d'une note
+déjà générée) fonctionne sans ces clés.
+
 ## Ce qui reste à faire avant la mise en production
 
 - Extraction Word/Excel (`src/app/api/documents/[id]/indexer/route.ts` ne
   supporte que le PDF pour l'instant).
-- Créer les produits/prix Stripe (3 offres) et renseigner leurs IDs.
-- Interface utilisateur : aucune page n'existe encore dans `src/app/` en
-  dehors de la page d'accueil par défaut de create-next-app. `docs/finlens-plateforme-v1.html`
-  sert de référence fonctionnelle et visuelle (Note de fonctionnement V1) à
-  reconstruire ici en pages Next.js consommant ces routes API.
-- Planifier les 3 crons (`vercel.json`) sur l'environnement de déploiement.
-- Revue juridique des clauses CGU (usage raisonnable, droit à l'effacement
+- Le module « Chiffres clés » (états financiers reconstruits, section 8 de la
+  Note de fonctionnement) n'est pas encore un onglet dédié : les indicateurs
+  sourcés apparaissent dans la synthèse de chaque profil.
+- Revue juridique des clauses CGU (usage raisonnable, droit à l'effacement des
   tiers mentionnés dans un dossier) — hors périmètre technique.
+- Confirmation d'e-mail : activée par défaut dans Supabase. Pour un accès
+  immédiat après inscription, la désactiver dans Authentication → Sign In / Up.
 
 ## Structure
 
 ```
 src/
-  app/api/            routes API (dossiers, documents, copilote, exports, stripe, cron...)
+  app/                 pages : landing (/), (auth) connexion/inscription,
+                       (app) tableau-de-bord, dossiers, signaux, recherche,
+                       comparateur, exports, facturation, equipe, reglages
+  app/api/             routes API (dossiers, documents, copilote, exports, stripe, cron...)
+  app/finlens.css      design system porté du prototype validé (tokens, composants)
+  components/          landing, app-shell, dossiers, compte, ui
   lib/ai/              routeur de modèles, prompts par tâche, cache de prompt, usage/coûts
   lib/export/          génération Word (docx) et PDF (pdf-lib)
   lib/supabase/        clients Supabase (browser, server RLS, admin service_role)

@@ -1,0 +1,8 @@
+/* Mappe les familles du design system sur les variables next/font (self-hosted,
+   pas d'appel réseau vers Google Fonts). Chargé après finlens.css pour écraser
+   les déclarations `'Fraunces',Georgia,serif` du prototype. */
+:root {
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-ui: var(--font-instrument), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "SF Mono", Menlo, monospace;
+}

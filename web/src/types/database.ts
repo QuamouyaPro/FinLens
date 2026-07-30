@@ -963,6 +963,22 @@ export type Database = {
           similarity: number
         }[]
       }
+      search_all_dossiers: {
+        Args: {
+          p_match_count?: number
+          p_query_embedding: string
+        }
+        Returns: {
+          chunk_id: string
+          content: string
+          document_id: string
+          document_name: string
+          dossier_id: string
+          dossier_name: string
+          page_number: number
+          similarity: number
+        }[]
+      }
     }
     Enums: {
       chat_role: "user" | "assistant"
