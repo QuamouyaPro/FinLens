@@ -30,8 +30,24 @@ d'embeddings.
 Le prototype statique (`docs/finlens-plateforme-v1.html`, Note de fonctionnement
 V1) est servi tel quel depuis `public/prototype/index.html`, accessible à
 `/prototype` (redirection configurée dans `next.config.ts`). Fichier autonome
-sans dépendance au backend -- aucune donnée réelle, uniquement pour visualiser
-le parcours produit cible en attendant la reconstruction en pages Next.js.
+sans dépendance au backend, conservé comme référence d'origine.
+
+## Mode démonstration
+
+`/demo/*` reproduit l'application complète avec les données du prototype, sans
+compte ni clé API (pages générées statiquement). C'est la cible du bouton
+« Explorer la plateforme » de la page d'accueil.
+
+Les données ne sont **pas** saisies à la main : elles sont extraites du
+prototype par script vers `src/lib/demo/data/*.json`. Pour corriger un contenu
+de démonstration, modifiez le prototype puis relancez :
+
+```bash
+npm run demo:extraire
+```
+
+Seuls les échanges du Copilote (`src/lib/demo/chat.ts`) sont rédigés à part, le
+prototype n'en fournissant que pour sa page publique.
 
 ## Démarrage
 

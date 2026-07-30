@@ -1,0 +1,1249 @@
+{
+  "lvmh": {
+    "unit": "Md€",
+    "years": [
+      "2023",
+      "2024"
+    ],
+    "docSet": "Rapport_annuel_2024.pdf (312 p.), Etats_financiers_consolides.xlsx",
+    "simple": [
+      {
+        "l": "Chiffre d’affaires",
+        "v": [
+          "76,7",
+          "84,7"
+        ],
+        "d": "+10,5 %",
+        "c": "up",
+        "src": "p148",
+        "est": false,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Marge opérationnelle courante",
+        "v": [
+          "26,4 %",
+          "25,6 %"
+        ],
+        "d": "−0,8 pt",
+        "c": "down",
+        "src": "p148",
+        "est": false,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Résultat opérationnel courant",
+        "v": [
+          "20,2",
+          "21,7"
+        ],
+        "d": "+7,1 %",
+        "c": "up",
+        "src": "p148",
+        "est": false,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Résultat net part du Groupe",
+        "v": [
+          "13,8",
+          "14,8"
+        ],
+        "d": "+7,2 %",
+        "c": "up",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Free cash-flow",
+        "v": [
+          "10,1",
+          "10,5"
+        ],
+        "d": "+4,2 %",
+        "c": "up",
+        "src": "p148",
+        "est": false,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Dette nette",
+        "v": [
+          "20,9",
+          "19,8"
+        ],
+        "d": "−5,3 %",
+        "c": "up",
+        "src": "p153",
+        "est": false,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Dette nette / EBITDA",
+        "v": [
+          "1,0×",
+          "0,9×"
+        ],
+        "d": "Conservateur",
+        "c": "up",
+        "src": "p153",
+        "est": false,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Stocks et en-cours",
+        "v": [
+          "21,3",
+          "23,7"
+        ],
+        "d": "+11,3 %",
+        "c": "down",
+        "src": "p160",
+        "est": false,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Capitaux propres",
+        "v": [
+          "52,0",
+          "56,8"
+        ],
+        "d": "+9,2 %",
+        "c": "up",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": false
+      }
+    ],
+    "compteResultat": [
+      {
+        "l": "Chiffre d’affaires",
+        "v": [
+          "76,7",
+          "84,7"
+        ],
+        "d": "+10,5 %",
+        "c": "up",
+        "src": "p148",
+        "est": false,
+        "bold": true,
+        "indent": false
+      },
+      {
+        "l": "Coût des ventes",
+        "v": [
+          "−26,8",
+          "−29,6"
+        ],
+        "d": "+10,4 %",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": true
+      },
+      {
+        "l": "Marge brute",
+        "v": [
+          "49,9",
+          "55,1"
+        ],
+        "d": "+10,4 %",
+        "c": "up",
+        "src": null,
+        "est": true,
+        "bold": true,
+        "indent": false
+      },
+      {
+        "l": "Charges commerciales, marketing et administratives",
+        "v": [
+          "−29,7",
+          "−33,4"
+        ],
+        "d": "+12,5 %",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": true
+      },
+      {
+        "l": "Résultat opérationnel courant",
+        "v": [
+          "20,2",
+          "21,7"
+        ],
+        "d": "+7,1 %",
+        "c": "up",
+        "src": "p148",
+        "est": false,
+        "bold": true,
+        "indent": false
+      },
+      {
+        "l": "Autres produits et charges opérationnels",
+        "v": [
+          "−0,3",
+          "−0,4"
+        ],
+        "d": "—",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": true
+      },
+      {
+        "l": "Résultat opérationnel",
+        "v": [
+          "19,9",
+          "21,3"
+        ],
+        "d": "+7,0 %",
+        "c": "up",
+        "src": null,
+        "est": true,
+        "bold": true,
+        "indent": false
+      },
+      {
+        "l": "Résultat financier net",
+        "v": [
+          "−0,6",
+          "−0,5"
+        ],
+        "d": "—",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": true
+      },
+      {
+        "l": "Résultat avant impôt",
+        "v": [
+          "19,3",
+          "20,8"
+        ],
+        "d": "+7,8 %",
+        "c": "up",
+        "src": null,
+        "est": true,
+        "bold": true,
+        "indent": false
+      },
+      {
+        "l": "Impôt sur les résultats",
+        "v": [
+          "−5,0",
+          "−5,4"
+        ],
+        "d": "—",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": true
+      },
+      {
+        "l": "Résultat net",
+        "v": [
+          "14,3",
+          "15,4"
+        ],
+        "d": "+7,7 %",
+        "c": "up",
+        "src": null,
+        "est": true,
+        "bold": true,
+        "indent": false
+      },
+      {
+        "l": "Intérêts minoritaires",
+        "v": [
+          "−0,5",
+          "−0,6"
+        ],
+        "d": "—",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": true
+      },
+      {
+        "l": "Résultat net part du Groupe",
+        "v": [
+          "13,8",
+          "14,8"
+        ],
+        "d": "+7,2 %",
+        "c": "up",
+        "src": null,
+        "est": true,
+        "bold": true,
+        "indent": false
+      }
+    ],
+    "bilanActif": [
+      {
+        "l": "Immobilisations corporelles et incorporelles",
+        "v": [
+          "58,4",
+          "63,2"
+        ],
+        "d": "+8,2 %",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Stocks et en-cours",
+        "v": [
+          "21,3",
+          "23,7"
+        ],
+        "d": "+11,3 %",
+        "c": "down",
+        "src": "p160",
+        "est": false,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Créances clients et comptes rattachés",
+        "v": [
+          "4,1",
+          "4,5"
+        ],
+        "d": "+9,8 %",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Trésorerie et équivalents de trésorerie",
+        "v": [
+          "7,8",
+          "8,6"
+        ],
+        "d": "+10,3 %",
+        "c": "up",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Autres actifs courants",
+        "v": [
+          "3,2",
+          "3,6"
+        ],
+        "d": "+12,5 %",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Total actif",
+        "v": [
+          "94,8",
+          "103,6"
+        ],
+        "d": "+9,3 %",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": true,
+        "indent": false
+      }
+    ],
+    "bilanPassif": [
+      {
+        "l": "Capitaux propres",
+        "v": [
+          "52,0",
+          "56,8"
+        ],
+        "d": "+9,2 %",
+        "c": "up",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Provisions",
+        "v": [
+          "3,1",
+          "3,4"
+        ],
+        "d": "+9,7 %",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Dettes financières",
+        "v": [
+          "28,7",
+          "28,4"
+        ],
+        "d": "−1,0 %",
+        "c": "up",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Dettes fournisseurs",
+        "v": [
+          "8,0",
+          "9,5"
+        ],
+        "d": "+18,8 %",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Autres passifs courants",
+        "v": [
+          "3,0",
+          "5,5"
+        ],
+        "d": "—",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Total passif",
+        "v": [
+          "94,8",
+          "103,6"
+        ],
+        "d": "+9,3 %",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": true,
+        "indent": false
+      }
+    ],
+    "fluxTresorerie": [
+      {
+        "l": "Résultat net",
+        "v": [
+          "14,3",
+          "15,4"
+        ],
+        "d": "+7,7 %",
+        "c": "up",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "+ Dotations aux amortissements",
+        "v": [
+          "4,2",
+          "4,5"
+        ],
+        "d": "—",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": true
+      },
+      {
+        "l": "= Capacité d’autofinancement",
+        "v": [
+          "18,5",
+          "19,9"
+        ],
+        "d": "+7,6 %",
+        "c": "up",
+        "src": null,
+        "est": true,
+        "bold": true,
+        "indent": false
+      },
+      {
+        "l": "Variation du besoin en fonds de roulement",
+        "v": [
+          "−2,1",
+          "−2,8"
+        ],
+        "d": "—",
+        "c": "down",
+        "src": "p160",
+        "est": false,
+        "bold": false,
+        "indent": true
+      },
+      {
+        "l": "= Flux de trésorerie d’exploitation",
+        "v": [
+          "16,4",
+          "17,1"
+        ],
+        "d": "+4,3 %",
+        "c": "up",
+        "src": null,
+        "est": true,
+        "bold": true,
+        "indent": false
+      },
+      {
+        "l": "Investissements corporels et incorporels (capex)",
+        "v": [
+          "−6,3",
+          "−6,6"
+        ],
+        "d": "—",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": true
+      },
+      {
+        "l": "Free cash-flow",
+        "v": [
+          "10,1",
+          "10,5"
+        ],
+        "d": "+4,2 %",
+        "c": "up",
+        "src": "p148",
+        "est": false,
+        "bold": true,
+        "indent": false
+      },
+      {
+        "l": "Acquisitions et cessions financières",
+        "v": [
+          "−1,3",
+          "−0,5"
+        ],
+        "d": "—",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": true
+      },
+      {
+        "l": "= Flux net d’investissement",
+        "v": [
+          "−7,6",
+          "−7,1"
+        ],
+        "d": "—",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": true,
+        "indent": false
+      },
+      {
+        "l": "Dividendes versés",
+        "v": [
+          "−8,3",
+          "−8,9"
+        ],
+        "d": "+7,2 %",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": true
+      },
+      {
+        "l": "Variation nette de l’endettement",
+        "v": [
+          "+0,5",
+          "−0,3"
+        ],
+        "d": "—",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": true
+      },
+      {
+        "l": "= Flux net de financement",
+        "v": [
+          "−7,8",
+          "−9,2"
+        ],
+        "d": "—",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": true,
+        "indent": false
+      },
+      {
+        "l": "Variation de trésorerie",
+        "v": [
+          "+1,0",
+          "+0,8"
+        ],
+        "d": "—",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": true,
+        "indent": false
+      },
+      {
+        "l": "Trésorerie à l’ouverture",
+        "v": [
+          "6,8",
+          "7,8"
+        ],
+        "d": "—",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": true
+      },
+      {
+        "l": "Trésorerie à la clôture",
+        "v": [
+          "7,8",
+          "8,6"
+        ],
+        "d": "+10,3 %",
+        "c": "up",
+        "src": null,
+        "est": true,
+        "bold": true,
+        "indent": false
+      }
+    ],
+    "evolutions": [
+      {
+        "t": "Croissance du chiffre d’affaires et effet de levier opérationnel",
+        "b": "Le chiffre d’affaires progresse de +10,5 % sur l’exercice {p148}, tandis que la marge opérationnelle courante recule de 0,8 point, de 26,4 % à 25,6 % {p148}. Malgré cette érosion, le résultat opérationnel courant augmente de +7,1 % (20,2 à 21,7 Md€) : la croissance du chiffre d’affaires compense largement la baisse de marge. C’est un effet de levier opérationnel positif — l’entreprise gagne en valeur absolue même si elle en cède un peu en pourcentage."
+      },
+      {
+        "t": "Pourquoi la marge se contracte",
+        "b": "La direction attribue cette érosion à l’accélération du plan d’investissement dans le réseau de distribution en propre, ainsi qu’à un effet de change défavorable d’environ 40 points de base {p151}. La hausse estimée des immobilisations corporelles et incorporelles sur le bilan (+8,2 %, ligne non détaillée dans les documents mais cohérente avec cette trajectoire d’investissement) va dans le même sens : l’entreprise dépense aujourd’hui pour préparer la marge de demain."
+      },
+      {
+        "t": "Génération de trésorerie et allocation du capital",
+        "b": "Le free cash-flow progresse de +4,2 % pour atteindre 10,5 Md€ {p148}, une régularité qui finance à la fois un taux de distribution stable autour de 58 % du résultat net (estimé) et un désendettement mesuré — la dette nette recule de 20,9 à 19,8 Md€, ramenant le ratio dette nette / EBITDA à 0,9×, contre environ 1,0× l’exercice précédent {p153}."
+      },
+      {
+        "t": "Le point de vigilance : le besoin en fonds de roulement",
+        "b": "Les stocks progressent de +11,3 %, plus vite que le chiffre d’affaires (+10,5 %), avec une rotation qui se dégrade de 212 à 219 jours {p160}. Cette dérive du BFR absorbe une partie de la trésorerie générée par l’exploitation ; elle reste toutefois largement compensée par le niveau élevé du free cash-flow."
+      },
+      {
+        "t": "Ce que ce tableau ne couvre pas",
+        "b": "Une sensibilité accrue de la demande chinoise est mentionnée en annexe sans être quantifiée {p187} — un facteur qui pourrait peser sur la trajectoire du chiffre d’affaires sans que son ampleur soit mesurable à partir des documents disponibles. Plus largement, les lignes marquées « estimé » complètent le tableau par recoupement et par les ratios usuels du secteur, faute de détail explicite dans les documents indexés ; elles ne portent pas le même niveau de certitude que les lignes directement sourcées."
+      }
+    ]
+  },
+  "helios": {
+    "unit": "k€",
+    "years": [
+      "2023",
+      "2024"
+    ],
+    "docSet": "Etats_financiers_consolides.xlsx, Teaser_investisseurs.pdf, Pacte_actionnaires.pdf",
+    "simple": [
+      {
+        "l": "Chiffre d’affaires net",
+        "v": [
+          "9 280",
+          "12 800"
+        ],
+        "d": "+37,9 %",
+        "c": "up",
+        "src": "a41",
+        "est": false,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "dont revenus récurrents",
+        "v": [
+          "7 940",
+          "11 200"
+        ],
+        "d": "+41,1 %",
+        "c": "up",
+        "src": "a41",
+        "est": false,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Marge brute",
+        "v": [
+          "6 590",
+          "9 340"
+        ],
+        "d": "+41,7 %",
+        "c": "up",
+        "src": "a41",
+        "est": false,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "EBITDA",
+        "v": [
+          "−1 240",
+          "420"
+        ],
+        "d": "Retournement",
+        "c": "up",
+        "src": "a41",
+        "est": false,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Résultat net",
+        "v": [
+          "−1 810",
+          "−260"
+        ],
+        "d": "+85,6 %",
+        "c": "up",
+        "src": "a41",
+        "est": false,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Trésorerie disponible",
+        "v": [
+          "4 100",
+          "3 380"
+        ],
+        "d": "−17,6 %",
+        "c": "down",
+        "src": "a41",
+        "est": false,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Dette financière",
+        "v": [
+          "1 500",
+          "1 200"
+        ],
+        "d": "−20,0 %",
+        "c": "up",
+        "src": "a41",
+        "est": false,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Capitaux propres",
+        "v": [
+          "3 260",
+          "3 010"
+        ],
+        "d": "−7,7 %",
+        "c": "down",
+        "src": "a41",
+        "est": false,
+        "bold": false,
+        "indent": false
+      }
+    ],
+    "compteResultat": [
+      {
+        "l": "Chiffre d’affaires net",
+        "v": [
+          "9 280",
+          "12 800"
+        ],
+        "d": "+37,9 %",
+        "c": "up",
+        "src": "a41",
+        "est": false,
+        "bold": true,
+        "indent": false
+      },
+      {
+        "l": "Coût des ventes",
+        "v": [
+          "−2 690",
+          "−3 460"
+        ],
+        "d": "+28,6 %",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": true
+      },
+      {
+        "l": "Marge brute",
+        "v": [
+          "6 590",
+          "9 340"
+        ],
+        "d": "+41,7 %",
+        "c": "up",
+        "src": "a41",
+        "est": false,
+        "bold": true,
+        "indent": false
+      },
+      {
+        "l": "Charges opérationnelles (hors amortissements)",
+        "v": [
+          "−7 830",
+          "−8 920"
+        ],
+        "d": "+13,9 %",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": true
+      },
+      {
+        "l": "EBITDA",
+        "v": [
+          "−1 240",
+          "420"
+        ],
+        "d": "Retournement",
+        "c": "up",
+        "src": "a41",
+        "est": false,
+        "bold": true,
+        "indent": false
+      },
+      {
+        "l": "Dotations aux amortissements",
+        "v": [
+          "−350",
+          "−380"
+        ],
+        "d": "—",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": true
+      },
+      {
+        "l": "Résultat opérationnel",
+        "v": [
+          "−1 590",
+          "40"
+        ],
+        "d": "Retournement",
+        "c": "up",
+        "src": null,
+        "est": true,
+        "bold": true,
+        "indent": false
+      },
+      {
+        "l": "Résultat financier net",
+        "v": [
+          "−120",
+          "−95"
+        ],
+        "d": "—",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": true
+      },
+      {
+        "l": "Résultat avant impôt",
+        "v": [
+          "−1 710",
+          "−55"
+        ],
+        "d": "+96,8 %",
+        "c": "up",
+        "src": null,
+        "est": true,
+        "bold": true,
+        "indent": false
+      },
+      {
+        "l": "Impôts et taxes",
+        "v": [
+          "−100",
+          "−205"
+        ],
+        "d": "—",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": true
+      },
+      {
+        "l": "Résultat net",
+        "v": [
+          "−1 810",
+          "−260"
+        ],
+        "d": "+85,6 %",
+        "c": "up",
+        "src": "a41",
+        "est": false,
+        "bold": true,
+        "indent": false
+      }
+    ],
+    "bilanActif": [
+      {
+        "l": "Immobilisations (dont R&D capitalisée)",
+        "v": [
+          "900",
+          "610"
+        ],
+        "d": "−32,2 %",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Créances clients et comptes rattachés",
+        "v": [
+          "1 450",
+          "2 050"
+        ],
+        "d": "+41,4 %",
+        "c": "down",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Trésorerie et équivalents de trésorerie",
+        "v": [
+          "4 100",
+          "3 380"
+        ],
+        "d": "−17,6 %",
+        "c": "down",
+        "src": "a41",
+        "est": false,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Autres actifs courants",
+        "v": [
+          "310",
+          "420"
+        ],
+        "d": "+35,5 %",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Total actif",
+        "v": [
+          "6 760",
+          "6 460"
+        ],
+        "d": "−4,4 %",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": true,
+        "indent": false
+      }
+    ],
+    "bilanPassif": [
+      {
+        "l": "Capitaux propres",
+        "v": [
+          "3 260",
+          "3 010"
+        ],
+        "d": "−7,7 %",
+        "c": "down",
+        "src": "a41",
+        "est": false,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Dettes financières",
+        "v": [
+          "1 500",
+          "1 200"
+        ],
+        "d": "−20,0 %",
+        "c": "up",
+        "src": "a41",
+        "est": false,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Dettes fournisseurs",
+        "v": [
+          "1 450",
+          "1 650"
+        ],
+        "d": "+13,8 %",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Autres passifs courants",
+        "v": [
+          "550",
+          "600"
+        ],
+        "d": "+9,1 %",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "Total passif",
+        "v": [
+          "6 760",
+          "6 460"
+        ],
+        "d": "−4,4 %",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": true,
+        "indent": false
+      }
+    ],
+    "fluxTresorerie": [
+      {
+        "l": "Résultat net",
+        "v": [
+          "—",
+          "−260"
+        ],
+        "d": "—",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": false
+      },
+      {
+        "l": "+ Dotations aux amortissements",
+        "v": [
+          "—",
+          "380"
+        ],
+        "d": "—",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": true
+      },
+      {
+        "l": "= Capacité d’autofinancement",
+        "v": [
+          "—",
+          "120"
+        ],
+        "d": "—",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": true,
+        "indent": false
+      },
+      {
+        "l": "Variation du besoin en fonds de roulement",
+        "v": [
+          "—",
+          "−450"
+        ],
+        "d": "—",
+        "c": "down",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": true
+      },
+      {
+        "l": "= Flux de trésorerie d’exploitation",
+        "v": [
+          "—",
+          "−330"
+        ],
+        "d": "—",
+        "c": "down",
+        "src": null,
+        "est": true,
+        "bold": true,
+        "indent": false
+      },
+      {
+        "l": "Investissements (capex, R&D capitalisée)",
+        "v": [
+          "—",
+          "−90"
+        ],
+        "d": "—",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": false,
+        "indent": true
+      },
+      {
+        "l": "= Flux net d’investissement",
+        "v": [
+          "—",
+          "−90"
+        ],
+        "d": "—",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": true,
+        "indent": false
+      },
+      {
+        "l": "Remboursement d’emprunts",
+        "v": [
+          "—",
+          "−300"
+        ],
+        "d": "—",
+        "c": "flat",
+        "src": "a41",
+        "est": false,
+        "bold": false,
+        "indent": true
+      },
+      {
+        "l": "= Flux net de financement",
+        "v": [
+          "—",
+          "−300"
+        ],
+        "d": "—",
+        "c": "flat",
+        "src": null,
+        "est": true,
+        "bold": true,
+        "indent": false
+      },
+      {
+        "l": "Variation de trésorerie",
+        "v": [
+          "—",
+          "−720"
+        ],
+        "d": "—",
+        "c": "down",
+        "src": null,
+        "est": true,
+        "bold": true,
+        "indent": false
+      },
+      {
+        "l": "Trésorerie à l’ouverture",
+        "v": [
+          "—",
+          "4 100"
+        ],
+        "d": "—",
+        "c": "flat",
+        "src": "a41",
+        "est": false,
+        "bold": false,
+        "indent": true
+      },
+      {
+        "l": "Trésorerie à la clôture",
+        "v": [
+          "—",
+          "3 380"
+        ],
+        "d": "−17,6 %",
+        "c": "down",
+        "src": "a41",
+        "est": false,
+        "bold": true,
+        "indent": false
+      }
+    ],
+    "fluxNote": "Exercice 2024 uniquement — le détail des flux 2023 n’est pas disponible dans les documents indexés de ce dossier.",
+    "evolutions": [
+      {
+        "t": "Un retournement opérationnel réel, porté par la croissance",
+        "b": "La société bascule d’un EBITDA négatif (−1 240 k€) à un EBITDA positif (420 k€) sur l’exercice {a41}, porté par une croissance du chiffre d’affaires net de +37,9 % {a41} et un gain de 2 points de marge brute (71,0 % à 73,0 %) {a41}. Les charges opérationnelles progressent nettement moins vite (+13,9 %, estimé) que le chiffre d’affaires : un signal classique d’effet d’échelle pour un modèle logiciel."
+      },
+      {
+        "t": "Le chiffre d’affaires à retenir n’est pas celui du teaser",
+        "b": "Le teaser investisseurs affiche un chiffre d’affaires 2024 de 14,0 M€ {t12}, contre 12,8 M€ nets dans l’annexe des états financiers {a41} — un écart de 1,2 M€ qui inclut des refacturations et du carnet signé non facturé. Toute la reconstruction ci-dessus retient volontairement la base nette de 12,8 M€, seule base auditable. Le détail de cet écart est traité dans l’onglet Contrôles."
+      },
+      {
+        "t": "Une consommation de trésorerie qui appelle un tableau de flux",
+        "b": "La trésorerie recule de 4 100 à 3 380 k€ sur l’exercice {a41}, une baisse qui pourrait sembler préoccupante lue isolément. Le tableau de flux reconstruit ci-dessus montre qu’elle s’explique principalement par un remboursement de dette de 300 k€ {a41} et une consommation de BFR liée à la croissance des créances clients (estimée), plutôt que par une détérioration de l’activité elle-même — le flux d’exploitation reste proche de l’équilibre."
+      },
+      {
+        "t": "Ce que ce tableau ne couvre pas",
+        "b": "La table de capitalisation entièrement diluée n’est pas disponible dans les documents indexés, ce qui empêche de vérifier l’effet de la clause de liquidation préférentielle de 1,5× {d08} sur la répartition du capital. Les lignes marquées « estimé » complètent le bilan et le compte de résultat par recoupement à partir des seuls agrégats communiqués (chiffre d’affaires, marge brute, EBITDA, résultat net, trésorerie, dette, capitaux propres) ; elles ne portent pas le même niveau de certitude que les lignes directement sourcées."
+      }
+    ]
+  }
+}

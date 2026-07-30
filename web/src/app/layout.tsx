@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Instrument_Sans, JetBrains_Mono } from "next/font/google";
 import "./finlens.css";
+import "./finlens-overrides.css";
 import "./fonts.css";
 
 /* Les trois rôles typographiques du design system (Note de fonctionnement, 17.2) :

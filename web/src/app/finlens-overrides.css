@@ -1,0 +1,59 @@
+/* Ajustements appliqués après finlens.css (portage fidèle du prototype).
+   Séparés pour que le fichier porté reste comparable à sa référence. */
+
+/* Le prototype cale le contenu à gauche : sur un écran large, cela laisse une
+   bande vide importante à droite. On centre la colonne et on l'élargit pour les
+   tableaux financiers, qui sont denses. */
+.content {
+  margin-inline: auto;
+  max-width: 1400px;
+}
+
+/* Les actions de bloc sont des <a> dans le prototype ; en React ce sont des
+   <button>, qui n'héritaient donc d'aucun style et devenaient illisibles. */
+.block-h button {
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 600;
+  cursor: pointer;
+}
+.block-h button:hover {
+  text-decoration: underline;
+}
+
+/* Passage surligné dans un extrait de recherche. */
+mark.surligne {
+  background: var(--accent-tint);
+  color: var(--accent);
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+
+/* Bandeau du mode démonstration, collé sous la barre d'application. */
+.demo-banner {
+  background: var(--accent-wash);
+  border-bottom: 1px solid var(--accent-tint);
+  padding: 10px 32px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--accent);
+  font-weight: 500;
+}
+.demo-banner svg {
+  width: 15px;
+  height: 15px;
+  flex: none;
+}
+.demo-banner .txt {
+  flex: 1;
+}
+
+@media (max-width: 780px) {
+  .demo-banner {
+    padding: 10px 16px;
+    font-size: 12.5px;
+    align-items: flex-start;
+  }
+}

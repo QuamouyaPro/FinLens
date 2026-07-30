@@ -2,18 +2,15 @@ import Link from "next/link";
 import { IconSprite } from "@/components/ui/icon-sprite";
 import { AppShell } from "@/components/app-shell/app-shell";
 import { Icon } from "@/components/ui/icon";
-import { DEMO_DOSSIERS, DEMO_SIGNAUX } from "@/lib/demo/fixtures";
+import { DOSSIERS_ACTIFS, signauxNonLus } from "@/lib/demo";
 
 /**
  * Mode démonstration ("Explorer la plateforme" de la landing, Note de
- * fonctionnement section 2.1) : données entièrement fictives et codées en dur,
- * aucun appel à Supabase ni à l'API Anthropic. Offre "fonds" pour montrer les
- * six profils et le comparateur sans restriction.
+ * fonctionnement section 2.1). Toutes les données viennent du prototype et sont
+ * statiques : aucun appel à Supabase ni à l'API Anthropic. L'offre "fonds"
+ * permet de montrer les six profils, le comparateur et l'équipe sans blocage.
  */
 export default function DemoLayout({ children }: { children: React.ReactNode }) {
-  const dossiersActifs = DEMO_DOSSIERS.length;
-  const signauxOuverts = DEMO_SIGNAUX.filter((s) => s.nonLu).length;
-
   return (
     <>
       <IconSprite />
@@ -22,26 +19,18 @@ export default function DemoLayout({ children }: { children: React.ReactNode }) 
         offre="fonds"
         nomUtilisateur="Camille Rousseau"
         nomOrganisation="Meridian Capital (démo)"
-        dossiersActifs={dossiersActifs}
-        signauxOuverts={signauxOuverts}
-        dossiersRaccourcis={DEMO_DOSSIERS.map((d) => ({ id: d.id, name: d.name, secteur: d.sector }))}
+        dossiersActifs={DOSSIERS_ACTIFS.length}
+        signauxOuverts={signauxNonLus()}
+        dossiersRaccourcis={DOSSIERS_ACTIFS.map((d) => ({
+          id: d.id,
+          name: d.name,
+          secteur: d.sector,
+        }))}
         banniere={
-          <div
-            style={{
-              background: "var(--accent-wash)",
-              borderBottom: "1px solid var(--accent-tint)",
-              padding: "10px 32px",
-              display: "flex",
-              alignItems: "center",
-              gap: 10,
-              fontSize: 13.5,
-              color: "var(--accent)",
-              fontWeight: 500,
-            }}
-          >
-            <Icon name="lens" style={{ width: 15, height: 15, flex: "none" }} />
-            <span style={{ flex: 1 }}>
-              Mode démonstration — dossiers et réponses fictifs, préconstruits pour illustrer le
+          <div className="demo-banner">
+            <Icon name="lens" />
+            <span className="txt">
+              Mode démonstration — dossiers, analyses et réponses préconstruits pour illustrer le
               produit. Aucune donnée n&apos;est envoyée à un moteur d&apos;analyse.
             </span>
             <Link href="/inscription" className="btn btn--primary btn--sm" style={{ flex: "none" }}>

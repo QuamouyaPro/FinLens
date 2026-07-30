@@ -1,0 +1,27 @@
+[
+  [
+    "screening",
+    "Screening",
+    "var(--info)"
+  ],
+  [
+    "dd",
+    "Due diligence",
+    "var(--accent)"
+  ],
+  [
+    "comite",
+    "Comité",
+    "var(--signal)"
+  ],
+  [
+    "closing",
+    "Closing",
+    "var(--accent-strong)"
+  ],
+  [
+    "abandon",
+    "Écarté",
+    "var(--text-faint)"
+  ]
+]

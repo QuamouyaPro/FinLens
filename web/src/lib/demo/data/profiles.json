@@ -1,0 +1,2186 @@
+{
+  "pevc": {
+    "label": "Private Equity / Venture Capital",
+    "short": "PE / VC",
+    "ic": "rocket",
+    "tier": "pro",
+    "tag": "Thèse, levier, multiples",
+    "score": 37,
+    "axes": [
+      [
+        "Solidité de la thèse d’investissement",
+        28
+      ],
+      [
+        "Effet de levier soutenable",
+        22
+      ],
+      [
+        "Trajectoire de croissance",
+        34
+      ],
+      [
+        "Cohérence des multiples de valorisation",
+        46
+      ],
+      [
+        "Qualité de l’information",
+        55
+      ]
+    ],
+    "sections": [
+      [
+        "b",
+        "list",
+        "Lecture d’ensemble",
+        [
+          [
+            "Actif mature à forte génération de trésorerie, dont la structure de bilan soutient à la fois une <b>thèse de rendement</b> (dividendes, levier) et une <b>thèse de croissance</b> (relais géographiques, montée en gamme) {p148} {p62}.",
+            0
+          ],
+          [
+            "L’absence de tout covenant financier {p171} laisse une latitude de structuration inhabituelle, qu’il s’agisse d’un montage à effet de levier ou d’un tour de financement en capital.",
+            0
+          ],
+          [
+            "Le point d’arbitrage central est la <b>trajectoire de marge</b> : son érosion sur trois ans {p148} pèse à la fois sur le multiple de sortie et sur la capacité de désendettement.",
+            0
+          ]
+        ]
+      ],
+      [
+        "g",
+        "check",
+        "Points d’appui de la thèse",
+        [
+          [
+            "Free cash-flow de 10,5 Md€, en progression de 4,2 %, couvrant largement le service de la dette et le programme de distribution {p148}.",
+            0
+          ],
+          [
+            "Dette nette sur EBITDA à 0,9×, qualifiée de conservatrice par la direction — capacité d’endettement additionnelle significative pour financer la croissance ou un LBO {p153}.",
+            0
+          ],
+          [
+            "Croissance organique de 10 % portée par la division principale, dont la marge reste supérieure à la moyenne du groupe {p62}.",
+            0
+          ],
+          [
+            "Relais de croissance identifié en Asie hors Chine, à deux chiffres — argument de thèse pour un scénario d’expansion {p62}.",
+            0
+          ]
+        ]
+      ],
+      [
+        "o",
+        "alert",
+        "Zones de vigilance pour la thèse",
+        [
+          [
+            "Érosion de la marge opérationnelle de 26,6 % à 25,6 % sur trois exercices {p148}, qui pèse mécaniquement sur tout multiple assis sur l’EBITDA courant.",
+            1
+          ],
+          [
+            "Effet de change défavorable estimé à 40 points de base {p151} : une composante non structurelle de l’érosion, à isoler dans tout modèle.",
+            1
+          ],
+          [
+            "Exposition à la demande chinoise mentionnée en annexe sans être quantifiée {p187} — facteur de volatilité de la trajectoire de croissance non modélisable en l’état.",
+            1
+          ],
+          [
+            "Aucune donnée de comparables ou de transactions récentes dans les pièces fournies : le multiple d’entrée ne peut être ancré sur ce seul dossier.",
+            1
+          ]
+        ]
+      ],
+      [
+        "b",
+        "star",
+        "Éléments déterminants pour la décision",
+        [
+          [
+            "Deux lectures de la même donnée sont possibles : un prêteur PE lit l’absence de covenant {p171} comme une facilité de structuration ; un investisseur VC y lirait plutôt un manque de discipline financière à instaurer post-investissement.",
+            0
+          ],
+          [
+            "Le multiple de sortie doit être assis sur une <b>marge normalisée</b> hors effet de change, et non sur la marge 2024 telle que publiée {p148} {p151}.",
+            0
+          ],
+          [
+            "La régularité de la progression du FCF sur plusieurs exercices est un signal plus robuste que son niveau absolu pour construire une thèse de rendement {p148}.",
+            0
+          ]
+        ]
+      ],
+      [
+        "o",
+        "folder",
+        "Ce qu’il manque pour conclure",
+        [
+          [
+            "Comparables sectoriels et transactions récentes, pour ancrer un multiple d’entrée ou de sortie défendable.",
+            1
+          ],
+          [
+            "Plan d’affaires à trois-cinq ans avec hypothèses explicites de marge, d’investissement et de change.",
+            1
+          ],
+          [
+            "Tableau de flux de trésorerie détaillé, pour isoler le free cash-flow réellement récurrent.",
+            1
+          ],
+          [
+            "Cartographie de la concentration client — angle mort pour toute thèse à effet de levier.",
+            1
+          ]
+        ]
+      ]
+    ],
+    "note": [
+      {
+        "n": "01",
+        "t": "Synthèse et thèse retenue",
+        "lead": "Ce que le dossier permet de conclure, selon l’angle rendement ou l’angle croissance.",
+        "b": [
+          [
+            "p",
+            "L’examen des pièces indexées conduit à qualifier la cible d’<b>actif à double lecture</b> : une thèse de rendement, appuyée sur un free cash-flow de 10,5 Md€ {p148} et un bilan à 0,9× EBITDA {p153} ; et une thèse de croissance, appuyée sur une progression organique de 10 % {p62} et un relais identifié en Asie hors Chine."
+          ],
+          [
+            "p",
+            "Ces deux lectures partagent une même réserve : l’érosion d’un point de marge opérationnelle sur trois exercices {p148} affecte simultanément la capacité de désendettement (lecture PE) et le multiple de croissance soutenable (lecture VC)."
+          ],
+          [
+            "call",
+            "Recommandation",
+            "Poursuivre l’instruction sous réserve d’obtenir un plan d’affaires chiffré et des comparables de marché. Le dossier ne permet pas en l’état de trancher entre thèse de rendement et thèse de croissance — il permet les deux, à des prix d’entrée différents."
+          ],
+          [
+            "p",
+            "Aucune contradiction n’a été détectée entre les documents de ce dossier lors du recoupement automatique."
+          ]
+        ]
+      },
+      {
+        "n": "02",
+        "t": "Effet de levier et structure de capital",
+        "lead": "La lecture PE : ce que le bilan permet de financer.",
+        "b": [
+          [
+            "p",
+            "Le ratio de dette nette sur EBITDA ressort à 0,9×, un niveau que le groupe qualifie lui-même de conservateur {p153}. Les emprunts obligataires et les 12,2 Md€ de lignes confirmées non tirées ne comportent aucun covenant financier {p171}."
+          ],
+          [
+            "tbl",
+            [
+              "Indicateur",
+              "Niveau",
+              "Lecture PE"
+            ],
+            [
+              [
+                "Dette nette / EBITDA",
+                "0,9×",
+                "Capacité d’endettement additionnelle"
+              ],
+              [
+                "Covenants",
+                "Aucun",
+                "Latitude de structuration à l’entrée"
+              ],
+              [
+                "Maturité moyenne dette",
+                "6,2 ans",
+                "Pas de mur de refinancement avant 2028"
+              ],
+              [
+                "FCF",
+                "10,5 Md€",
+                "Base de service d’une dette d’acquisition"
+              ]
+            ]
+          ],
+          [
+            "callw",
+            "Réserve",
+            "Le FCF publié n’est pas retraité de la variation du besoin en fonds de roulement, laquelle est défavorable sur l’exercice {p160}. Le FCF réellement disponible pour un service de dette est inférieur au montant affiché."
+          ]
+        ]
+      },
+      {
+        "n": "03",
+        "t": "Trajectoire de croissance et relais identifiés",
+        "lead": "La lecture VC : ce qui soutient un scénario d’expansion.",
+        "b": [
+          [
+            "p",
+            "La division principale enregistre une croissance organique de 10 % dans un environnement de consommation plus sélectif, avec une marge qui demeure supérieure à celle de l’ensemble du groupe {p62}."
+          ],
+          [
+            "p",
+            "La croissance à deux chiffres enregistrée en Asie hors Chine {p62} constitue le relais le plus explicitement documenté. Aucun chiffrage de l’investissement nécessaire pour capter ce relais n’est cependant fourni dans les pièces indexées."
+          ],
+          [
+            "ulw",
+            [
+              "La trajectoire de croissance dépend en partie d’un facteur non quantifié : l’exposition à la demande chinoise, mentionnée en annexe uniquement {p187}.",
+              "Le calendrier de retour sur investissement retail annoncé — 2026-2027 {p151} — n’est adossé à aucun montant d’investissement communiqué."
+            ]
+          ]
+        ]
+      },
+      {
+        "n": "04",
+        "t": "Trajectoire de marge et multiples de valorisation",
+        "lead": "Le facteur qui conditionne à la fois le rendement et le multiple.",
+        "b": [
+          [
+            "p",
+            "La marge opérationnelle courante recule de 26,6 % à 25,6 % sur trois exercices {p148}. La direction attribue cette évolution à l’accélération des investissements dans le réseau de distribution en propre et à un effet de change défavorable d’environ 40 points de base {p151}."
+          ],
+          [
+            "h3",
+            "Note méthodologique sur les multiples"
+          ],
+          [
+            "p",
+            "Les documents indexés dans ce dossier ne contiennent aucune donnée de marché externe — comparables sectoriels, transactions récentes ou multiples observés. Toute estimation de multiple présentée ci-dessous constitue un <b>repère indicatif</b>, non sourcé aux documents, à vérifier auprès de bases de données de marché."
+          ],
+          [
+            "callc",
+            "Hors documents — à vérifier",
+            "À titre de repère non sourcé : sur la base d’un EBITDA courant proche du résultat opérationnel de 21,7 Md€, une fourchette de 10× à 13× EBITDA appliquée aux acteurs comparables du luxe donnerait un ordre de grandeur de valorisation. Ce repère doit être confirmé par une base de comparables externe avant tout usage en comité."
+          ],
+          [
+            "p",
+            "En scénario de marge normalisée hors effet de change, la marge ressortirait environ 0,4 point plus haute que celle publiée — un écart suffisant pour déplacer sensiblement un multiple appliqué à l’EBITDA."
+          ]
+        ]
+      },
+      {
+        "n": "05",
+        "t": "Besoin en fonds de roulement",
+        "lead": "Le poste qui rogne le free cash-flow disponible pour le service de la dette ou le réinvestissement.",
+        "b": [
+          [
+            "p",
+            "Les stocks et en-cours progressent de 11,3 %, au-delà de la croissance du chiffre d’affaires (+10,5 %), avec une rotation qui se dégrade de 212 à 219 jours {p160}."
+          ],
+          [
+            "tbl",
+            [
+              "Poste",
+              "2023",
+              "2024",
+              "Écart"
+            ],
+            [
+              [
+                "Stocks et en-cours",
+                "21,3 Md€",
+                "23,7 Md€",
+                "+11,3 %"
+              ],
+              [
+                "Rotation des stocks",
+                "212 j",
+                "219 j",
+                "+7 j"
+              ]
+            ]
+          ],
+          [
+            "callw",
+            "Point à instruire",
+            "Le groupe relie cette évolution à une politique d’inventaire stratégique sur les matières précieuses {p160}. Demander la part réversible de ce stock et la trajectoire cible de rotation avant de retenir le FCF publié comme base de valorisation."
+          ]
+        ]
+      },
+      {
+        "n": "06",
+        "t": "Risques et signaux faibles",
+        "lead": "Ce qui pèse sur la thèse, quelle que soit sa nature.",
+        "b": [
+          [
+            "callc",
+            "Signal faible",
+            "Une sensibilité accrue de la demande chinoise, susceptible d’affecter significativement les volumes de la division principale, figure en note 34 des annexes sans être quantifiée ni reprise dans le corps du rapport {p187}. Le groupe indique la suivre par des indicateurs internes non publiés."
+          ],
+          [
+            "ulc",
+            [
+              "Concentration client non documentée dans les pièces fournies.",
+              "Aucun chiffrage de l’investissement retail nécessaire pour capter les relais de croissance identifiés.",
+              "Absence de comparables de marché pour ancrer un multiple d’entrée ou de sortie."
+            ]
+          ]
+        ]
+      },
+      {
+        "n": "07",
+        "t": "Points à instruire avant comité",
+        "lead": "Liste des demandes à adresser au management, commune aux deux lectures.",
+        "b": [
+          [
+            "ul",
+            [
+              "Plan d’affaires à trois-cinq ans avec hypothèses explicites de marge, d’investissement retail et de change.",
+              "Tableau de flux de trésorerie détaillé, pour isoler le FCF récurrent du FCF exceptionnel.",
+              "Comparables sectoriels et transactions récentes pour ancrer un multiple défendable.",
+              "Quantification de l’exposition à la demande chinoise évoquée en note 34.",
+              "Analyse de la concentration client, absente des pièces fournies."
+            ]
+          ],
+          [
+            "call",
+            "Position recommandée",
+            "Le dossier justifie de poursuivre l’instruction sous les deux angles. Le prix d’entrée devra explicitement trancher entre une lecture rendement (assise sur le FCF et le levier) et une lecture croissance (assise sur les relais géographiques), les deux n’étant pas nécessairement compatibles au même multiple."
+          ]
+        ]
+      }
+    ],
+    "kpiOrder": [
+      "fcf",
+      "detteEbitda",
+      "croissanceDivision",
+      "marge",
+      "multiple",
+      "covenant",
+      "maturite",
+      "ca",
+      "stockCroissance"
+    ]
+  },
+  "ma": {
+    "label": "M&A / Banque d’affaires",
+    "short": "M&A",
+    "ic": "split",
+    "tier": "pro",
+    "tag": "Synergies, clauses, risques juridiques",
+    "score": 44,
+    "axes": [
+      [
+        "Attractivité de la cible",
+        26
+      ],
+      [
+        "Synergies identifiables",
+        52
+      ],
+      [
+        "Comparabilité des multiples",
+        45
+      ],
+      [
+        "Risques juridiques & clauses",
+        58
+      ],
+      [
+        "Qualité de l’information",
+        61
+      ]
+    ],
+    "sections": [
+      [
+        "b",
+        "list",
+        "Lecture d’ensemble",
+        [
+          [
+            "Actif de premier plan sur son marché, dont les fondamentaux financiers supportent une valorisation dans le haut de la fourchette sectorielle {p148} {p153}.",
+            0
+          ],
+          [
+            "La <b>structuration juridique</b> de l’opération est facilitée par l’absence de covenant financier {p171}, mais les pièces fournies ne documentent ni les clauses de changement de contrôle, ni les engagements hors bilan.",
+            0
+          ],
+          [
+            "Les synergies mobilisables se concentrent sur la distribution et la logistique amont — aucune n’est chiffrée dans les documents indexés.",
+            0
+          ]
+        ]
+      ],
+      [
+        "g",
+        "check",
+        "Arguments de valorisation",
+        [
+          [
+            "Génération de trésorerie de 10,5 Md€ en progression, argument central de toute discussion de prix {p148}.",
+            0
+          ],
+          [
+            "Structure de bilan saine à 0,9× EBITDA, qui limite la reprise de passif et simplifie le financement de l’opération {p153}.",
+            0
+          ],
+          [
+            "Division principale à marge supérieure à la moyenne du groupe {p62} — support d’une prime de mix dans la valorisation.",
+            0
+          ],
+          [
+            "Aucun covenant financier à reprendre ni à renégocier avec les prêteurs en place {p171}.",
+            0
+          ]
+        ]
+      ],
+      [
+        "o",
+        "alert",
+        "Points de négociation et risques juridiques",
+        [
+          [
+            "Trajectoire de marge en repli d’un point sur trois ans {p148} : argument à opposer à une demande de prime, ou base d’une clause d’earn-out indexée sur la marge.",
+            1
+          ],
+          [
+            "Alourdissement du BFR de sept jours de rotation {p160} : impact direct sur le calcul de la dette nette normative et donc sur le prix d’équité.",
+            1
+          ],
+          [
+            "Aucune clause de changement de contrôle documentée dans les pièces fournies — angle mort juridique à couvrir par déclarations et garanties.",
+            1
+          ],
+          [
+            "Exposition chinoise non quantifiée {p187} : justifie une clause de déclaration spécifique ou une retenue de garantie.",
+            1
+          ]
+        ]
+      ],
+      [
+        "b",
+        "star",
+        "Éléments déterminants pour la décision",
+        [
+          [
+            "Le <b>BFR normatif</b> doit être négocié explicitement : sept jours de rotation supplémentaires {p160} représentent un montant significatif dans l’ajustement de prix à la clôture.",
+            0
+          ],
+          [
+            "La base de marge retenue pour un éventuel complément de prix doit être pluriannuelle, la marge du seul exercice 2024 étant atypique {p148}.",
+            0
+          ],
+          [
+            "L’absence de covenant {p171} permet d’envisager une structuration en une seule étape, sans consentement préalable des prêteurs.",
+            0
+          ]
+        ]
+      ],
+      [
+        "o",
+        "folder",
+        "Ce qu’il manque pour conclure",
+        [
+          [
+            "Comparables sectoriels et transactions récentes, indispensables pour borner la fourchette de valorisation.",
+            1
+          ],
+          [
+            "Cartographie des contrats comportant une clause de changement de contrôle.",
+            1
+          ],
+          [
+            "Détail des engagements hors bilan susceptibles d’être requalifiés en dette.",
+            1
+          ],
+          [
+            "Chiffrage des synergies de distribution et d’achat mobilisables post-acquisition.",
+            1
+          ]
+        ]
+      ]
+    ],
+    "note": [
+      {
+        "n": "01",
+        "t": "Synthèse et position de négociation",
+        "lead": "Où se situe le point d’équilibre entre les arguments des deux parties.",
+        "b": [
+          [
+            "p",
+            "La cible présente un profil financier qui supporte une valorisation dans le haut de la fourchette sectorielle : génération de trésorerie de 10,5 Md€ {p148}, bilan à 0,9× EBITDA {p153}, croissance organique de 10 % {p62}. Ces éléments constituent le socle de la position vendeuse."
+          ],
+          [
+            "p",
+            "Trois éléments alimentent la position acheteuse : l’érosion d’un point de marge sur trois exercices {p148}, la dérive du besoin en fonds de roulement {p160}, et une absence de documentation sur les clauses de changement de contrôle et les engagements hors bilan."
+          ],
+          [
+            "call",
+            "Position recommandée",
+            "Ne pas contester la qualité de l’actif — elle est établie — mais concentrer la négociation sur la définition des références (BFR normatif, dette nette de référence, base de marge) et sur la couverture juridique des zones non documentées."
+          ]
+        ]
+      },
+      {
+        "n": "02",
+        "t": "Fondamentaux et attractivité",
+        "lead": "Ce qui justifie l’intérêt stratégique.",
+        "b": [
+          [
+            "p",
+            "La division principale confirme son rôle de moteur avec une croissance organique de 10 % et une marge opérationnelle supérieure à celle de l’ensemble du groupe {p62}. Cette configuration soutient une prime de mix dans la valorisation."
+          ],
+          [
+            "tbl",
+            [
+              "Indicateur",
+              "Niveau",
+              "Rôle dans la valorisation"
+            ],
+            [
+              [
+                "Chiffre d’affaires",
+                "84,7 Md€",
+                "Base de multiple"
+              ],
+              [
+                "Marge opérationnelle",
+                "25,6 %",
+                "Prime de mix sur division principale"
+              ],
+              [
+                "Free cash-flow",
+                "10,5 Md€",
+                "Support d’une approche par les flux"
+              ],
+              [
+                "Dette nette / EBITDA",
+                "0,9×",
+                "Faible reprise de passif"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "n": "03",
+        "t": "Synergies identifiables",
+        "lead": "Ce que les documents laissent entrevoir, sans le chiffrer.",
+        "b": [
+          [
+            "p",
+            "Les pièces indexées ne contiennent aucun chiffrage explicite de synergies — attendu, s’agissant de documents de reporting et non d’un mémorandum de rapprochement. Deux zones de synergie potentielle ressortent néanmoins de la lecture croisée des sections opérationnelles."
+          ],
+          [
+            "ul",
+            [
+              "Distribution : l’investissement dans le réseau en propre {p151} suggère une infrastructure logistique et retail mobilisable pour un acquéreur disposant déjà d’un réseau complémentaire.",
+              "Achats amont : la constitution d’inventaires stratégiques sur les matières précieuses {p160} indique un pouvoir de négociation fournisseur qui pourrait bénéficier à un acquéreur de taille inférieure."
+            ]
+          ],
+          [
+            "callw",
+            "Réserve méthodologique",
+            "Ces pistes sont déduites des documents, non déclarées comme synergies par la société elle-même. Leur chiffrage exige un accès à la data room opérationnelle, hors périmètre des pièces actuellement indexées."
+          ]
+        ]
+      },
+      {
+        "n": "04",
+        "t": "Comparabilité des indicateurs et multiples",
+        "lead": "La difficulté méthodologique centrale du dossier.",
+        "b": [
+          [
+            "p",
+            "Les indicateurs communiqués ne reposent pas systématiquement sur le même périmètre selon les documents. Le commentaire de gestion mentionne une marge de 25,6 % {p151} sans rappeler la base 2022, tandis que le compte de résultat expose la série complète — 25,6 %, 26,4 %, 26,6 % {p148}."
+          ],
+          [
+            "callw",
+            "Effet pratique",
+            "La lecture du seul commentaire de gestion minore optiquement l’érosion sur trois ans. L’acquéreur doit systématiquement remonter au compte de résultat pour établir ses références."
+          ],
+          [
+            "p",
+            "Aucun comparable sectoriel ni transaction récente ne figure dans les pièces fournies. La fourchette de valorisation ne peut donc pas être ancrée sur le seul dossier."
+          ]
+        ]
+      },
+      {
+        "n": "05",
+        "t": "Éléments d’ajustement de prix",
+        "lead": "Là où se joue l’écart réel entre offre et demande.",
+        "b": [
+          [
+            "h3",
+            "Besoin en fonds de roulement normatif"
+          ],
+          [
+            "p",
+            "La rotation des stocks se dégrade de 212 à 219 jours sur l’exercice {p160}. Retenir la photographie de clôture comme BFR de référence ferait supporter à l’acquéreur une immobilisation de trésorerie constituée avant la cession."
+          ],
+          [
+            "callw",
+            "Recommandation",
+            "Négocier un BFR normatif établi sur une moyenne pluriannuelle plutôt que sur la clôture."
+          ],
+          [
+            "h3",
+            "Base de marge pour un complément de prix"
+          ],
+          [
+            "p",
+            "La marge 2024 (25,6 %) intègre un effet de change défavorable d’environ 40 points de base présenté comme conjoncturel {p151}. Retenir cette seule année comme base d’un earn-out avantagerait mécaniquement le vendeur si le change se normalise."
+          ]
+        ]
+      },
+      {
+        "n": "06",
+        "t": "Risques juridiques et clauses contractuelles",
+        "lead": "Ce qui relève des déclarations et garanties, faute de documentation directe.",
+        "b": [
+          [
+            "p",
+            "Aucune clause de changement de contrôle n’est documentée dans les pièces indexées de ce dossier — ce silence ne signifie pas leur absence, mais leur non-communication à ce stade. Sur un actif de cette taille, leur cartographie est une priorité de data room."
+          ],
+          [
+            "p",
+            "Une sensibilité accrue de la demande chinoise figure en note 34 sans quantification {p187}. Le groupe indique en assurer un suivi interne non publié — une asymétrie d’information qui justifie une déclaration spécifique du vendeur."
+          ],
+          [
+            "callc",
+            "Traitement recommandé",
+            "Prévoir une déclaration exhaustive sur les contrats à clause de changement de contrôle, une garantie spécifique sur la valorisation des stocks à la clôture, et une retenue de garantie proportionnée à l’exposition géographique non quantifiée."
+          ],
+          [
+            "ul",
+            [
+              "Déclaration exhaustive sur les contrats à clause de changement de contrôle.",
+              "Déclaration sur l’absence d’engagement hors bilan non communiqué.",
+              "Garantie spécifique sur la valorisation et la rotation des stocks à la clôture."
+            ]
+          ]
+        ]
+      },
+      {
+        "n": "07",
+        "t": "Prochaines étapes",
+        "lead": "Séquence recommandée.",
+        "b": [
+          [
+            "ul",
+            [
+              "Constituer la table de comparables sectoriels et de transactions récentes.",
+              "Négocier la définition contractuelle du BFR normatif et de la dette nette de référence.",
+              "Obtenir la cartographie des clauses de changement de contrôle.",
+              "Chiffrer les synergies de distribution et d’achat avec l’équipe opérationnelle.",
+              "Quantifier l’exposition géographique signalée en annexe."
+            ]
+          ]
+        ]
+      }
+    ],
+    "kpiOrder": [
+      "ca",
+      "fcf",
+      "detteEbitda",
+      "covenant",
+      "stockCroissance",
+      "expositionChine",
+      "marge",
+      "maturite",
+      "lignesNonTirees"
+    ]
+  },
+  "family": {
+    "label": "Analyste indépendant / Family Office",
+    "short": "Family Office",
+    "ic": "shield",
+    "tier": "essentiel",
+    "tag": "Solidité patrimoniale, diversification",
+    "score": 24,
+    "axes": [
+      [
+        "Solidité patrimoniale",
+        16
+      ],
+      [
+        "Concentration du risque",
+        44
+      ],
+      [
+        "Préservation du capital long terme",
+        14
+      ],
+      [
+        "Régularité des revenus",
+        20
+      ],
+      [
+        "Résilience aux cycles",
+        36
+      ]
+    ],
+    "sections": [
+      [
+        "b",
+        "list",
+        "Lecture d’ensemble",
+        [
+          [
+            "Actif présentant les caractéristiques recherchées pour une allocation patrimoniale de long terme : trésorerie abondante, endettement faible, activité établie depuis des décennies {p148} {p153}.",
+            0
+          ],
+          [
+            "La question centrale n’est pas la performance de l’exercice, mais la <b>régularité</b> de la génération de valeur sur un horizon de dix à vingt ans, et son exposition à des facteurs de rupture.",
+            0
+          ],
+          [
+            "Deux facteurs de cyclicité identifiés — le change et la demande chinoise {p151} {p187} — méritent d’être suivis pour calibrer le poids de cette ligne dans un portefeuille diversifié.",
+            0
+          ]
+        ]
+      ],
+      [
+        "g",
+        "check",
+        "Facteurs de solidité",
+        [
+          [
+            "Free cash-flow de 10,5 Md€, en progression régulière (+4,2 %) — une génération de trésorerie qui finance le programme de distribution sans recours à l’endettement {p148}.",
+            0
+          ],
+          [
+            "Endettement net à seulement 0,9× l’EBITDA, sans covenant, sans mur de refinancement avant 2028 {p153} {p171} — une structure qui traverse les cycles sans contrainte de refinancement.",
+            0
+          ],
+          [
+            "Activité diversifiée par division, avec un cœur de métier dont la marge résiste mieux que la moyenne du groupe {p62}.",
+            0
+          ],
+          [
+            "Aucune contradiction détectée entre les documents de ce dossier — un point positif pour la fiabilité de l’information sur laquelle repose la décision d’allocation.",
+            0
+          ]
+        ]
+      ],
+      [
+        "o",
+        "alert",
+        "Facteurs de concentration à surveiller",
+        [
+          [
+            "Exposition à la demande chinoise, susceptible d’affecter significativement les volumes de la division principale, mentionnée en annexe sans être quantifiée {p187}.",
+            1
+          ],
+          [
+            "Sensibilité au change, à hauteur d’environ 40 points de base de marge sur l’exercice {p151} — un facteur de volatilité des résultats d’un exercice à l’autre.",
+            1
+          ],
+          [
+            "Érosion d’un point de marge sur trois ans {p148} : à surveiller sur la durée, sans constituer à ce stade un signal d’alerte.",
+            1
+          ]
+        ]
+      ],
+      [
+        "b",
+        "star",
+        "Ce qui compte pour une décision d’allocation",
+        [
+          [
+            "Cette ligne s’apparente à un actif de <b>fond de portefeuille</b> plutôt qu’à un pari directionnel : la thèse repose sur la régularité plus que sur la croissance.",
+            0
+          ],
+          [
+            "Le poids à lui accorder dans une allocation diversifiée dépend de l’exposition déjà présente à la consommation discrétionnaire et à l’Asie dans le reste du patrimoine.",
+            0
+          ],
+          [
+            "L’absence de contrainte de refinancement avant 2028 {p171} sécurise l’horizon de détention sur le moyen terme, indépendamment des cycles de marché.",
+            0
+          ]
+        ]
+      ],
+      [
+        "o",
+        "folder",
+        "Ce qu’il manque pour affiner l’allocation",
+        [
+          [
+            "Historique de distribution sur dix ans, pour évaluer la régularité du rendement au-delà du seul exercice observé.",
+            1
+          ],
+          [
+            "Ventilation géographique précise du chiffre d’affaires, au-delà des mentions qualitatives disponibles.",
+            1
+          ],
+          [
+            "Sensibilité chiffrée du résultat aux principales devises d’exposition.",
+            1
+          ]
+        ]
+      ]
+    ],
+    "note": [
+      {
+        "n": "01",
+        "t": "Synthèse patrimoniale",
+        "lead": "Ce que ce dossier apporte à une réflexion d’allocation de long terme.",
+        "b": [
+          [
+            "p",
+            "Sur les seuls éléments financiers disponibles, cet actif présente les traits recherchés pour une allocation patrimoniale : une génération de trésorerie abondante et régulière {p148}, un endettement faible et sans contrainte {p153} {p171}, et une activité établie sur un temps long."
+          ],
+          [
+            "p",
+            "La réserve ne porte pas sur la solidité actuelle mais sur deux facteurs de cyclicité — change et exposition géographique {p151} {p187} — qui peuvent faire varier le rendement d’un exercice à l’autre sans remettre en cause la solidité de fond."
+          ],
+          [
+            "call",
+            "Conclusion",
+            "Profil compatible avec une détention de long terme, à condition d’en calibrer le poids en fonction du reste du patrimoine et de la tolérance à la volatilité des résultats annuels."
+          ]
+        ]
+      },
+      {
+        "n": "02",
+        "t": "Solidité du bilan et capacité de résistance",
+        "lead": "Ce qui protège le capital en cas de choc de marché.",
+        "b": [
+          [
+            "p",
+            "Le ratio de dette nette sur EBITDA ressort à 0,9×, un niveau conservateur qui préserve une flexibilité importante {p153}. Les financements ne comportent aucun covenant financier {p171}, ce qui écarte le risque d’un défaut technique déclenché par un ratio en cas de choc temporaire de résultat."
+          ],
+          [
+            "tbl",
+            [
+              "Indicateur",
+              "Niveau",
+              "Lecture patrimoniale"
+            ],
+            [
+              [
+                "Dette nette / EBITDA",
+                "0,9×",
+                "Capacité de résistance élevée"
+              ],
+              [
+                "Covenants",
+                "Aucun",
+                "Pas de risque de défaut technique"
+              ],
+              [
+                "Maturité moyenne dette",
+                "6,2 ans",
+                "Pas de refinancement contraint avant 2028"
+              ],
+              [
+                "FCF",
+                "10,5 Md€",
+                "Autofinancement de la distribution"
+              ]
+            ]
+          ],
+          [
+            "p",
+            "Cette structure de bilan est celle d’un actif capable d’absorber un ou plusieurs exercices dégradés sans mettre en péril sa solvabilité — un critère central pour un horizon de détention long."
+          ]
+        ]
+      },
+      {
+        "n": "03",
+        "t": "Régularité de la génération de trésorerie",
+        "lead": "Le vrai sujet pour un objectif de préservation du capital.",
+        "b": [
+          [
+            "p",
+            "Le free cash-flow progresse de manière continue, de 4,2 % sur l’exercice, pour atteindre 10,5 milliards d’euros {p148}. Cette régularité est un indicateur plus pertinent que le niveau de marge d’un exercice isolé pour juger de la qualité d’un actif de long terme."
+          ],
+          [
+            "p",
+            "La marge opérationnelle recule d’un point sur trois exercices, de 26,6 % à 25,6 % {p148}, sous l’effet conjugué d’un choix d’investissement et d’un effet de change {p151}. Le premier facteur est un choix réversible de gestion ; le second est structurellement volatil et ne doit pas être extrapolé."
+          ],
+          [
+            "callw",
+            "Point de suivi",
+            "Sur un horizon de détention long, ce n’est pas le niveau de marge d’une année qui importe, mais sa moyenne mobile sur cycle. Les documents disponibles ne permettent pas de reconstituer cette moyenne au-delà de trois exercices."
+          ]
+        ]
+      },
+      {
+        "n": "04",
+        "t": "Diversification et concentration du risque",
+        "lead": "Cette ligne, dans le contexte d’un patrimoine diversifié.",
+        "b": [
+          [
+            "p",
+            "L’activité repose sur plusieurs divisions, dont une division principale à la marge supérieure à la moyenne du groupe {p62} — un facteur de diversification interne qui limite la dépendance à un seul segment."
+          ],
+          [
+            "p",
+            "Deux concentrations méritent en revanche d’être intégrées dans une réflexion de diversification globale du patrimoine : l’exposition au secteur de la consommation discrétionnaire haut de gamme, et l’exposition — non quantifiée dans les documents — à la demande chinoise {p187}."
+          ],
+          [
+            "callw",
+            "Question à se poser",
+            "Si le patrimoine comporte déjà une exposition significative à la consommation discrétionnaire ou à l’Asie via d’autres lignes, le poids de cet actif doit être ajusté en conséquence pour préserver l’effet de diversification recherché."
+          ]
+        ]
+      },
+      {
+        "n": "05",
+        "t": "Facteurs de préservation du capital sur le long terme",
+        "lead": "Ce qui protège, ce qui expose.",
+        "b": [
+          [
+            "ulc",
+            [
+              "Protège : absence de covenant et de mur de refinancement avant 2028 — la solvabilité n’est pas otage d’une échéance de marché {p171}.",
+              "Protège : free cash-flow largement supérieur au service de la dette et à la distribution {p148}.",
+              "Expose : sensibilité au change, susceptible de faire varier le résultat d’un exercice à l’autre indépendamment de la performance opérationnelle {p151}.",
+              "Expose : dépendance non quantifiée à une zone géographique spécifique, signalée mais non chiffrée {p187}."
+            ]
+          ],
+          [
+            "p",
+            "Aucun de ces facteurs d’exposition ne remet en cause la solidité de fond de l’actif ; ils déterminent en revanche l’amplitude attendue des variations de résultat d’un exercice à l’autre, un paramètre pertinent pour le dimensionnement de la ligne dans le patrimoine global."
+          ]
+        ]
+      },
+      {
+        "n": "06",
+        "t": "Éléments complémentaires utiles à la décision",
+        "lead": "Ce qui manque pour affiner le dimensionnement de la ligne.",
+        "b": [
+          [
+            "ul",
+            [
+              "Historique de distribution sur dix ans, pour évaluer la régularité du rendement au-delà de l’exercice observé.",
+              "Ventilation géographique précise du chiffre d’affaires, au-delà des mentions qualitatives disponibles dans ce dossier.",
+              "Sensibilité chiffrée du résultat aux principales devises d’exposition.",
+              "Politique de distribution formalisée — visibilité sur la pérennité du rendement au-delà du seul exercice publié."
+            ]
+          ],
+          [
+            "call",
+            "Position recommandée",
+            "Les éléments disponibles soutiennent une détention de long terme à titre de fond de portefeuille. Le dimensionnement précis de la ligne devrait attendre l’historique de distribution et la ventilation géographique, non disponibles dans les pièces actuellement indexées."
+          ]
+        ]
+      }
+    ],
+    "kpiOrder": [
+      "fcf",
+      "detteEbitda",
+      "maturite",
+      "covenant",
+      "croissanceDivision",
+      "expositionChine",
+      "marge",
+      "lignesNonTirees",
+      "stockRotation"
+    ]
+  },
+  "cfo": {
+    "label": "CFO / Direction financière",
+    "short": "CFO",
+    "ic": "grid",
+    "tier": "essentiel",
+    "tag": "Benchmark sectoriel, positionnement pairs",
+    "score": 33,
+    "axes": [
+      [
+        "Positionnement face aux pairs",
+        30
+      ],
+      [
+        "Dynamique de marché",
+        38
+      ],
+      [
+        "Efficacité opérationnelle",
+        44
+      ],
+      [
+        "Exposition géographique",
+        62
+      ],
+      [
+        "Disponibilité de données de benchmark",
+        70
+      ]
+    ],
+    "sections": [
+      [
+        "b",
+        "list",
+        "Lecture d’ensemble",
+        [
+          [
+            "Acteur en position dominante sur son marché, dont la stratégie actuelle privilégie <b>l’investissement dans la distribution en propre</b> au détriment de la marge de court terme {p151}.",
+            0
+          ],
+          [
+            "Ce choix constitue un signal sectoriel : il suggère que la maîtrise du canal de distribution devient un enjeu concurrentiel prioritaire, potentiellement transposable au benchmark de votre organisation.",
+            0
+          ],
+          [
+            "Ce dossier seul ne permet pas un <b>positionnement chiffré face aux pairs</b> : aucun document de comparables sectoriels n’est actuellement indexé.",
+            0
+          ]
+        ]
+      ],
+      [
+        "g",
+        "check",
+        "Enseignements exploitables",
+        [
+          [
+            "Croissance organique de 10 % maintenue dans un environnement de consommation plus sélectif {p62} — repère de résilience du segment haut de gamme.",
+            0
+          ],
+          [
+            "Arbitrage assumé marge contre contrôle du canal, avec un retour annoncé à horizon 2026-2027 {p151} : un calendrier de référence pour comparer un investissement interne similaire.",
+            0
+          ],
+          [
+            "Capacité financière quasi intacte : 0,9× EBITDA et 12,2 Md€ de lignes confirmées non tirées {p153} {p171} — un repère de la marge de manœuvre d’un acteur de référence du secteur.",
+            0
+          ]
+        ]
+      ],
+      [
+        "o",
+        "alert",
+        "Signaux à surveiller",
+        [
+          [
+            "Compression de marge d’un point sur trois ans chez cet acteur de référence {p148} : si la tendance se confirme, elle redéfinit la norme sectorielle de rentabilité à laquelle comparer vos propres résultats.",
+            1
+          ],
+          [
+            "Dérive du besoin en fonds de roulement, sept jours de rotation supplémentaires {p160} : à rapprocher de votre propre trajectoire de BFR si le secteur est comparable.",
+            1
+          ],
+          [
+            "Exposition chinoise signalée mais non quantifiée {p187} — prudence d’un acteur de référence sur un marché structurant pour tout le secteur.",
+            1
+          ]
+        ]
+      ],
+      [
+        "b",
+        "star",
+        "Éléments déterminants pour votre réflexion",
+        [
+          [
+            "Si un acteur de cette taille accepte de sacrifier un point de marge pour contrôler sa distribution {p151}, la question se pose de la soutenabilité d’un <b>modèle indirect</b> pour des acteurs de taille inférieure.",
+            0
+          ],
+          [
+            "La constitution d’inventaires stratégiques sur les matières précieuses {p160} peut préfigurer une tension d’approvisionnement à anticiper dans votre propre planification.",
+            0
+          ],
+          [
+            "Le calendrier de retour annoncé — 2026-2027 {p151} — fournit un repère de comparaison pour tout plan d’investissement interne de nature similaire.",
+            0
+          ]
+        ]
+      ],
+      [
+        "o",
+        "folder",
+        "Pour un vrai benchmark chiffré",
+        [
+          [
+            "Déposer les rapports annuels de deux à trois pairs sectoriels dans un dossier séparé, puis utiliser le Comparateur pour un positionnement chiffré ligne à ligne.",
+            1
+          ],
+          [
+            "Ventilation du chiffre d’affaires par zone géographique et par canal, absente de ce dossier.",
+            1
+          ],
+          [
+            "Montant précis de l’investissement retail engagé et prévu par l’acteur observé.",
+            1
+          ]
+        ]
+      ]
+    ],
+    "note": [
+      {
+        "n": "01",
+        "t": "Synthèse de veille",
+        "lead": "Ce que ce dossier apprend sur le marché, et ses limites en l’état.",
+        "b": [
+          [
+            "p",
+            "Au-delà de la performance de l’entreprise elle-même, ce dossier livre trois enseignements sectoriels : la résistance du segment haut de gamme dans un environnement de consommation plus sélectif {p62}, un arbitrage assumé en faveur du contrôle de la distribution {p151}, et une réallocation géographique vers l’Asie hors Chine {p62}."
+          ],
+          [
+            "callw",
+            "Limite de l’exercice",
+            "Ce dossier ne contient qu’un seul acteur. Un positionnement face aux pairs digne de ce nom suppose de déposer les rapports de deux à trois comparables sectoriels et d’utiliser le Comparateur pour un rapprochement ligne à ligne."
+          ],
+          [
+            "call",
+            "Enseignement principal",
+            "Le leader observé accepte de céder un point de marge opérationnelle sur trois exercices pour reprendre le contrôle de son canal de distribution — un choix qui redéfinit potentiellement le standard de rentabilité du secteur."
+          ]
+        ]
+      },
+      {
+        "n": "02",
+        "t": "Positionnement et dynamique de marché",
+        "lead": "Ce que ce dossier permet d’observer, faute de comparables directs.",
+        "b": [
+          [
+            "p",
+            "La division principale enregistre une croissance organique de 10 % et conserve une marge opérationnelle supérieure à celle de l’ensemble du groupe, témoignant de la résilience du positionnement prix dans un environnement de consommation plus sélectif {p62}."
+          ],
+          [
+            "p",
+            "La croissance à deux chiffres en Asie hors Chine {p62} indique une réallocation géographique active — un mouvement qui précède généralement de deux à trois ans les repositionnements des acteurs de rang inférieur."
+          ],
+          [
+            "tbl",
+            [
+              "Indicateur",
+              "Niveau 2024",
+              "Lecture sectorielle"
+            ],
+            [
+              [
+                "Croissance organique",
+                "+10 %",
+                "Segment haut de gamme résistant"
+              ],
+              [
+                "Marge opérationnelle",
+                "25,6 %",
+                "Repère, en l’absence de comparable direct"
+              ],
+              [
+                "Croissance Asie hors Chine",
+                "Deux chiffres",
+                "Réallocation en cours"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "n": "03",
+        "t": "Stratégie observée : le contrôle du canal",
+        "lead": "Le signal le plus exploitable du dossier.",
+        "b": [
+          [
+            "p",
+            "La direction attribue la compression de marge à l’accélération du plan d’investissement dans le réseau de distribution en propre, ainsi qu’à un effet de change défavorable estimé à environ 40 points de base {p151}. Ces investissements sont concentrés sur les emplacements des capitales asiatiques et américaines."
+          ],
+          [
+            "p",
+            "Un retour est annoncé à horizon <b>2026-2027</b> {p151}. Ce calendrier constitue un repère utile pour évaluer la durée d’amortissement d’un plan d’investissement interne de même nature."
+          ],
+          [
+            "callw",
+            "Question à se poser",
+            "Si le contrôle du canal justifie un point de marge chez un acteur disposant de moyens considérables, quel est le coût — et la faisabilité — d’une démarche équivalente pour une structure de taille inférieure ?"
+          ]
+        ]
+      },
+      {
+        "n": "04",
+        "t": "Efficacité opérationnelle et signaux amont",
+        "lead": "Ce que la gestion du bilan révèle.",
+        "b": [
+          [
+            "p",
+            "Les stocks progressent de 11,3 %, au-delà de la croissance du chiffre d’affaires, avec une rotation qui passe de 212 à 219 jours {p160}. Le groupe relie cette évolution à la constitution d’inventaires stratégiques sur les matières précieuses."
+          ],
+          [
+            "callw",
+            "Lecture de veille",
+            "Un acteur de référence qui constitue délibérément des stocks de matières au-delà de son rythme d’activité anticipe généralement une tension d’approvisionnement ou une hausse des prix amont — un signal à croiser avec votre propre planification d’achats si le secteur est comparable."
+          ]
+        ]
+      },
+      {
+        "n": "05",
+        "t": "Capacité d’investissement observée",
+        "lead": "Ce que l’acteur de référence peut encore faire.",
+        "b": [
+          [
+            "p",
+            "Le ratio de dette nette sur EBITDA de 0,9× {p153} et l’existence de 12,2 Md€ de lignes de crédit confirmées non tirées, sans covenant financier {p171}, signifient que la capacité d’action de cet acteur reste pratiquement intacte."
+          ],
+          [
+            "callc",
+            "Implication concurrentielle",
+            "Une opération de croissance externe majeure serait finançable immédiatement par cet acteur, sans consentement préalable de prêteurs ni contrainte de ratio — un paramètre à intégrer dans toute analyse de risque concurrentiel."
+          ]
+        ]
+      },
+      {
+        "n": "06",
+        "t": "Constituer un vrai benchmark",
+        "lead": "Ce qu’il faut ajouter pour dépasser l’observation d’un seul acteur.",
+        "b": [
+          [
+            "ul",
+            [
+              "Déposer les rapports annuels de deux à trois pairs sectoriels dans un dossier dédié.",
+              "Utiliser le module Comparateur pour un rapprochement chiffré ligne à ligne.",
+              "Obtenir la ventilation du chiffre d’affaires par zone et par canal, non communiquée dans ce dossier.",
+              "Chiffrer le montant de l’investissement retail engagé, pour évaluer la crédibilité du retour annoncé pour 2026-2027."
+            ]
+          ],
+          [
+            "p",
+            "Ce dossier fournit un point de référence solide mais isolé. Sa valeur pour un exercice de benchmark se démultiplie dès qu’il est mis en regard d’au moins deux comparables sectoriels traités de la même façon."
+          ]
+        ]
+      }
+    ],
+    "kpiOrder": [
+      "croissanceDivision",
+      "marge",
+      "croissanceAsie",
+      "detteEbitda",
+      "stockRotation",
+      "expositionChine",
+      "fcf",
+      "lignesNonTirees",
+      "maturite"
+    ]
+  },
+  "audit": {
+    "label": "Audit & Conseil financier",
+    "short": "Audit",
+    "ic": "scale",
+    "tier": "pro",
+    "tag": "Conformité, provisions, incohérences",
+    "score": 32,
+    "axes": [
+      [
+        "Cohérence des états financiers",
+        12
+      ],
+      [
+        "Provisions et engagements",
+        42
+      ],
+      [
+        "Exhaustivité annexe vs corps du rapport",
+        66
+      ],
+      [
+        "Communication des risques",
+        58
+      ],
+      [
+        "Continuité d’exploitation",
+        10
+      ]
+    ],
+    "sections": [
+      [
+        "b",
+        "list",
+        "Lecture d’ensemble",
+        [
+          [
+            "Les états financiers sont <b>internement cohérents</b> : aucun écart de recoupement n’a été détecté entre le compte de résultat, le bilan et les commentaires de gestion de ce dossier.",
+            0
+          ],
+          [
+            "La réserve porte sur la <b>hiérarchisation de l’information</b> : un élément significatif ne figure qu’en annexe, sans reprise dans les sections les plus lues du rapport {p187}.",
+            0
+          ],
+          [
+            "La continuité d’exploitation n’appelle aucune observation : génération de trésorerie robuste et absence de covenant écartent tout risque à court terme {p148} {p171}.",
+            0
+          ]
+        ]
+      ],
+      [
+        "g",
+        "check",
+        "Éléments satisfaisants",
+        [
+          [
+            "Série pluriannuelle de marge présentée intégralement au compte de résultat : 25,6 %, 26,4 %, 26,6 % {p148} — pas d’occultation de la tendance à ce niveau de l’état.",
+            0
+          ],
+          [
+            "Explication documentée de la variation de stocks, rattachée à une politique d’inventaire identifiée {p160}.",
+            0
+          ],
+          [
+            "Information complète sur la structure de la dette, les maturités et l’absence de covenant {p171}.",
+            0
+          ],
+          [
+            "Aucune incohérence comptable détectée entre les pièces du dossier lors du recoupement automatique.",
+            0
+          ]
+        ]
+      ],
+      [
+        "o",
+        "alert",
+        "Observations",
+        [
+          [
+            "<b>Risque significatif communiqué en annexe uniquement</b> : la sensibilité à la demande chinoise figure en note 34 sans quantification ni reprise dans le rapport de gestion {p187}.",
+            1
+          ],
+          [
+            "Le groupe déclare suivre cette exposition par des indicateurs hebdomadaires internes qu’il ne publie pas {p187} — l’information existe mais n’est pas communiquée.",
+            1
+          ],
+          [
+            "Le commentaire de gestion mentionne la marge 2024 sans rappeler la base 2022 {p151}, ce qui minore optiquement l’érosion pour un lecteur qui s’en tiendrait à cette seule section.",
+            1
+          ],
+          [
+            "La dégradation de la rotation des stocks (212 à 219 jours) est présentée comme délibérée, sans indication de trajectoire cible ni de réversibilité {p160}.",
+            1
+          ]
+        ]
+      ],
+      [
+        "b",
+        "star",
+        "Éléments déterminants pour l’opinion",
+        [
+          [
+            "La question n’est pas l’exactitude des chiffres — elle n’est pas en cause ici — mais l’<b>équilibre de la présentation</b> entre le corps du rapport et les annexes.",
+            0
+          ],
+          [
+            "Un risque mesuré en interne et non publié {p187} constitue une asymétrie qui mérite d’être documentée dans les travaux.",
+            0
+          ],
+          [
+            "La continuité d’exploitation ne soulève aucune difficulté : couverture large du service de la dette et absence de contrainte contractuelle {p148} {p171}.",
+            0
+          ]
+        ]
+      ],
+      [
+        "o",
+        "folder",
+        "Diligences complémentaires à mener",
+        [
+          [
+            "Obtenir les indicateurs internes de suivi de l’exposition géographique évoqués en note 34.",
+            1
+          ],
+          [
+            "Vérifier l’exhaustivité des engagements hors bilan, non détaillés dans les pièces fournies.",
+            1
+          ],
+          [
+            "Contrôler la méthode de valorisation des stocks et la justification de l’inventaire stratégique.",
+            1
+          ],
+          [
+            "Rapprocher le périmètre de consolidation des entités mentionnées dans les commentaires sectoriels.",
+            1
+          ]
+        ]
+      ]
+    ],
+    "note": [
+      {
+        "n": "01",
+        "t": "Synthèse des observations",
+        "lead": "Le niveau de confiance que le dossier permet d’accorder à l’information.",
+        "b": [
+          [
+            "p",
+            "Le recoupement automatique des pièces indexées n’a relevé <b>aucune incohérence chiffrée</b> entre le compte de résultat, le bilan et les commentaires de gestion. Les montants se réconcilient d’un document à l’autre, et les variations significatives font l’objet d’une explication."
+          ],
+          [
+            "p",
+            "Les observations formulées portent en conséquence non sur l’exactitude, mais sur la <b>hiérarchisation de l’information</b> : un élément significatif n’est accessible qu’en annexe, sans reprise dans les sections que la majorité des lecteurs consultent."
+          ],
+          [
+            "call",
+            "Conclusion générale",
+            "Information sincère et cohérente, mais présentation dont l’équilibre mérite d’être signalé. Aucune observation sur la continuité d’exploitation."
+          ]
+        ]
+      },
+      {
+        "n": "02",
+        "t": "Cohérence interne des états financiers",
+        "lead": "Travaux de recoupement réalisés.",
+        "b": [
+          [
+            "p",
+            "Le compte de résultat expose la série de marge opérationnelle courante sur trois exercices — 25,6 % en 2024, 26,4 % en 2023 et 26,6 % en 2022 {p148}. Cette présentation complète est un point positif : la tendance n’est pas occultée au niveau de l’état lui-même."
+          ],
+          [
+            "p",
+            "Le free cash-flow de 10,5 Md€ {p148} se réconcilie avec la dette financière nette de 19,8 Md€ et le ratio de 0,9× {p153}. La variation des stocks du bilan {p160} est cohérente avec les commentaires du rapport de gestion."
+          ],
+          [
+            "tbl",
+            [
+              "Recoupement effectué",
+              "Résultat"
+            ],
+            [
+              [
+                "Marge opérationnelle CR / commentaire de gestion",
+                "Concordant"
+              ],
+              [
+                "Dette nette bilan / note financement",
+                "Concordant"
+              ],
+              [
+                "Variation stocks bilan / annexe",
+                "Concordant"
+              ],
+              [
+                "Covenants note 18 / section financement",
+                "Concordant"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "n": "03",
+        "t": "Information communiquée en annexe uniquement",
+        "lead": "L’observation principale de cette note.",
+        "b": [
+          [
+            "p",
+            "Une sensibilité accrue de la demande de la clientèle chinoise, tant domestique qu’en voyage, susceptible d’affecter de manière significative les volumes de la division principale, figure en note 34 des annexes {p187}. Cette exposition n’est <b>pas quantifiée</b> et n’est pas reprise dans le corps du rapport de gestion."
+          ],
+          [
+            "callc",
+            "Observation",
+            "Le groupe indique suivre cette exposition au travers d’indicateurs hebdomadaires de trafic et de conversion, sans publier ces données {p187}. Un risque qualifié de significatif, mesuré en interne mais non chiffré publiquement, appelle une diligence complémentaire."
+          ],
+          [
+            "p",
+            "Cette configuration n’est pas irrégulière en soi : l’annexe est le lieu normal de l’information sur les facteurs de risque. L’observation porte sur le fait que l’élément est simultanément qualifié de significatif, mesuré en interne, et non quantifié dans la publication."
+          ]
+        ]
+      },
+      {
+        "n": "04",
+        "t": "Provisions, stocks et engagements",
+        "lead": "Postes appelant une vérification renforcée.",
+        "b": [
+          [
+            "p",
+            "Les stocks et en-cours passent de 21,3 à 23,7 Md€, soit une progression de 11,3 % supérieure à celle du chiffre d’affaires {p160}. Le groupe relie cette évolution à la constitution d’inventaires stratégiques sur les matières précieuses."
+          ],
+          [
+            "callw",
+            "Diligence recommandée",
+            "L’explication fournie est cohérente avec le modèle économique mais ne s’accompagne d’aucune indication de trajectoire cible ni de test de dépréciation spécifique. La méthode de valorisation et l’absence d’obsolescence sur les stocks anciens doivent être contrôlées."
+          ],
+          [
+            "p",
+            "Les engagements hors bilan ne sont pas détaillés dans les pièces indexées. Sur ce type d’activité, la structure des baux commerciaux constitue un poste structurellement important dont l’exhaustivité doit être vérifiée."
+          ]
+        ]
+      },
+      {
+        "n": "05",
+        "t": "Continuité d’exploitation",
+        "lead": "Aucune observation.",
+        "b": [
+          [
+            "p",
+            "Le free cash-flow de 10,5 Md€ {p148} couvre largement le service de la dette et le programme de distribution. Le ratio de dette nette sur EBITDA de 0,9× {p153} et l’absence de tout covenant financier {p171} écartent le risque d’un défaut technique ou d’une exigibilité anticipée."
+          ],
+          [
+            "p",
+            "La maturité moyenne de la dette obligataire de 6,2 années, sans mur de refinancement avant 2028 {p171}, confirme l’absence de tension prévisible à court et moyen terme."
+          ],
+          [
+            "call",
+            "Conclusion",
+            "Aucune incertitude significative de nature à jeter un doute sur la continuité d’exploitation n’a été identifiée dans les pièces examinées."
+          ]
+        ]
+      },
+      {
+        "n": "06",
+        "t": "Diligences complémentaires",
+        "lead": "Programme de travaux recommandé.",
+        "b": [
+          [
+            "ul",
+            [
+              "Obtenir les indicateurs internes de suivi de l’exposition géographique évoqués en note 34, et évaluer leur cohérence avec l’information publiée.",
+              "Contrôler la méthode de valorisation des stocks et les tests de dépréciation sur l’inventaire stratégique.",
+              "Vérifier l’exhaustivité des engagements hors bilan, en particulier la structure des baux.",
+              "Rapprocher le périmètre de consolidation des entités citées dans les commentaires sectoriels.",
+              "Obtenir la ventilation du chiffre d’affaires par zone géographique, non disponible dans les pièces fournies."
+            ]
+          ]
+        ]
+      }
+    ],
+    "kpiOrder": [
+      "marge",
+      "stockCroissance",
+      "expositionChine",
+      "contradictions",
+      "covenant",
+      "maturite",
+      "fcf",
+      "detteEbitda",
+      "resOp"
+    ]
+  },
+  "general": {
+    "label": "Généraliste / Étudiant",
+    "short": "Généraliste",
+    "ic": "star",
+    "tier": "essentiel",
+    "tag": "Résumé simple, sans jargon",
+    "score": 30,
+    "axes": [
+      [
+        "L’entreprise gagne-t-elle de l’argent régulièrement ?",
+        20
+      ],
+      [
+        "A-t-elle beaucoup de dettes ?",
+        16
+      ],
+      [
+        "Dépend-elle de peu de clients ou d’une seule zone ?",
+        46
+      ],
+      [
+        "L’information est-elle bien expliquée partout ?",
+        52
+      ],
+      [
+        "Y a-t-il des risques cachés dans les petites lignes ?",
+        58
+      ]
+    ],
+    "sections": [
+      [
+        "b",
+        "list",
+        "En bref",
+        [
+          [
+            "Cette entreprise est <b>en bonne santé financière</b> : elle vend plus chaque année, elle génère beaucoup plus d’argent qu’elle n’en dépense, et elle n’a presque pas de dettes risquées {p148} {p153}.",
+            0
+          ],
+          [
+            "Un petit bémol : elle gagne un peu moins d’argent, proportionnellement, sur chaque produit vendu qu’il y a trois ans {p148}. Rien d’inquiétant, mais un point à surveiller.",
+            0
+          ],
+          [
+            "Un risque est mentionné dans les petites lignes du rapport, mais pas expliqué en détail dans le résumé officiel {p187} — nous vous le signalons ci-dessous.",
+            0
+          ]
+        ]
+      ],
+      [
+        "g",
+        "check",
+        "Ce qui va bien (en clair)",
+        [
+          [
+            "Elle a généré 10,5 milliards d’euros de trésorerie disponible cette année, soit 4,2 % de plus que l’an dernier {p148} — c’est comme si vous gagniez plus d’argent net chaque mois, après toutes vos dépenses.",
+            0
+          ],
+          [
+            "Sa dette est très faible par rapport à ce qu’elle gagne : à peine 0,9 fois son bénéfice annuel avant charges {p153}. À titre de comparaison, une dette de 3 à 4 fois commence à être considérée comme élevée.",
+            0
+          ],
+          [
+            "Elle n’a signé <b>aucun engagement</b> qui l’obligerait à rembourser sa dette plus tôt si ses résultats se dégradaient {p171} — une sécurité importante en cas de coup dur.",
+            0
+          ]
+        ]
+      ],
+      [
+        "o",
+        "alert",
+        "Ce qui mérite votre attention",
+        [
+          [
+            "Sa rentabilité a légèrement baissé sur trois ans : elle gardait 26,6 € sur 100 € vendus il y a trois ans, elle n’en garde plus que 25,6 € aujourd’hui {p148}. La direction explique que c’est un choix — elle investit pour l’avenir {p151}.",
+            1
+          ],
+          [
+            "Une partie de ses ventes dépend de la demande d’un seul grand pays, sans que l’entreprise dise précisément à quel point {p187} — un peu comme dépendre d’un seul gros client sans savoir combien il pèse vraiment.",
+            1
+          ],
+          [
+            "Son stock de marchandises augmente plus vite que ses ventes {p160} — cela immobilise de l’argent qui pourrait servir ailleurs.",
+            1
+          ]
+        ]
+      ],
+      [
+        "b",
+        "star",
+        "Ce qu’il faut retenir pour un exposé ou une analyse",
+        [
+          [
+            "C’est un bon exemple d’<b>entreprise mature</b> : elle ne grandit plus à toute vitesse, mais elle est stable, rentable et solide financièrement.",
+            0
+          ],
+          [
+            "La baisse de marge n’est pas un signal d’alarme : elle est expliquée, et l’entreprise a largement les moyens financiers de la traverser.",
+            0
+          ],
+          [
+            "Le point le plus intéressant à commenter est l’écart entre ce que dit le résumé officiel (rassurant) et ce que révèlent les petites lignes (un risque non chiffré) {p187}.",
+            0
+          ]
+        ]
+      ],
+      [
+        "o",
+        "folder",
+        "Pour aller plus loin",
+        [
+          [
+            "Un document présentant plusieurs années de dividendes versés permettrait de voir si l’entreprise récompense régulièrement ses actionnaires.",
+            1
+          ],
+          [
+            "Un détail des ventes par pays permettrait de vérifier concrètement l’ampleur du risque évoqué en petites lignes.",
+            1
+          ]
+        ]
+      ]
+    ],
+    "note": [
+      {
+        "n": "01",
+        "t": "En bref",
+        "lead": "Les trois choses à retenir, sans jargon.",
+        "b": [
+          [
+            "p",
+            "Cette entreprise va bien financièrement. Elle vend plus chaque année, elle génère beaucoup d’argent, et elle n’est presque pas endettée {p148} {p153}."
+          ],
+          [
+            "p",
+            "Elle gagne un tout petit peu moins d’argent, en proportion, sur chaque produit vendu qu’il y a trois ans {p148}. La direction dit que c’est volontaire : elle investit pour préparer l’avenir {p151}."
+          ],
+          [
+            "call",
+            "À retenir",
+            "Une entreprise solide, qui traverse une phase d’investissement. Le point le plus intéressant : un risque mentionné seulement dans les petites lignes du rapport, sans être détaillé dans le résumé officiel {p187}."
+          ]
+        ]
+      },
+      {
+        "n": "02",
+        "t": "Comment cette entreprise gagne de l’argent",
+        "lead": "Le contexte, en langage simple.",
+        "b": [
+          [
+            "p",
+            "L’entreprise vend des produits de luxe partout dans le monde, via différentes marques regroupées par familles d’activité (on appelle ça des « divisions »). Sa division la plus importante est aussi celle qui gagne le mieux sa vie : elle a une meilleure rentabilité que la moyenne de l’entreprise {p62}."
+          ],
+          [
+            "p",
+            "Cette division principale a vendu 10 % de plus cette année que l’année précédente {p62} — une croissance solide pour une entreprise de cette taille, dans un contexte où les clients sont globalement plus prudents dans leurs achats."
+          ]
+        ]
+      },
+      {
+        "n": "03",
+        "t": "Est-ce que l’entreprise va bien financièrement ?",
+        "lead": "Les deux chiffres qui comptent vraiment, expliqués.",
+        "b": [
+          [
+            "h3",
+            "Glossaire éclair"
+          ],
+          [
+            "p",
+            "<b>Marge opérationnelle</b> : sur 100 € de produits vendus, combien l’entreprise garde-t-elle après avoir payé ses coûts (fabrication, salaires, loyers…) ? Plus ce chiffre est élevé, plus l’activité est rentable."
+          ],
+          [
+            "p",
+            "<b>Free cash-flow</b> (flux de trésorerie disponible) : l’argent qui reste vraiment dans les caisses de l’entreprise après toutes les dépenses, y compris les investissements. C’est l’argent qu’elle peut utiliser librement — rembourser des dettes, verser des dividendes, racheter une autre entreprise."
+          ],
+          [
+            "p",
+            "Cette année, l’entreprise garde 25,6 € sur 100 € vendus {p148} — c’est une bonne marge pour ce secteur. Et elle a généré 10,5 milliards d’euros de trésorerie disponible, 4,2 % de plus que l’année précédente {p148}."
+          ],
+          [
+            "callw",
+            "Le petit bémol",
+            "Il y a trois ans, elle gardait 26,6 € sur 100 € vendus, contre 25,6 € aujourd’hui {p148}. Ce n’est pas dramatique — un point de moins — mais c’est une tendance à surveiller sur plusieurs années."
+          ]
+        ]
+      },
+      {
+        "n": "04",
+        "t": "Est-ce que l’entreprise a des dettes dangereuses ?",
+        "lead": "Comprendre le niveau de dette sans jargon financier.",
+        "b": [
+          [
+            "p",
+            "Pour savoir si une dette est dangereuse, on la compare généralement au bénéfice annuel de l’entreprise avant charges (l’« EBITDA »). Une dette de 3 à 4 fois ce bénéfice commence à être considérée comme élevée ; au-delà de 5 à 6 fois, c’est franchement risqué."
+          ],
+          [
+            "p",
+            "Cette entreprise a une dette de seulement <b>0,9 fois</b> son bénéfice annuel {p153} — c’est très faible. Et surtout, elle n’a signé aucun engagement (les financiers appellent ça des « covenants ») qui l’obligerait à rembourser plus vite si ses résultats se dégradaient {p171}."
+          ],
+          [
+            "call",
+            "Pourquoi c’est important",
+            "En cas de mauvaise année, cette entreprise ne risque pas de se retrouver en difficulté à cause de sa dette. C’est un vrai point de solidité, à mettre en avant dans une analyse."
+          ]
+        ]
+      },
+      {
+        "n": "05",
+        "t": "Les points de vigilance, expliqués simplement",
+        "lead": "Ce qu’il faut savoir sans paniquer.",
+        "b": [
+          [
+            "ulw",
+            [
+              "Une partie des ventes dépend de la demande d’un seul grand pays. L’entreprise le mentionne dans une note de bas de page, mais sans dire précisément à quel point elle en dépend, ni donner de chiffre {p187}.",
+              "Le stock de marchandises augmente un peu plus vite que les ventes {p160} — cela veut dire que l’entreprise immobilise davantage d’argent dans ses entrepôts, de l’argent qui ne peut pas servir ailleurs en attendant que ce stock soit vendu."
+            ]
+          ],
+          [
+            "p",
+            "Aucun de ces deux points n’est un signal d’alarme en soi. Mais le premier mérite d’être souligné dans un exposé : c’est un exemple typique d’<b>information importante reléguée en petites lignes</b>, un réflexe utile à acquérir quand on apprend à lire un rapport financier."
+          ]
+        ]
+      },
+      {
+        "n": "06",
+        "t": "Points positifs à retenir pour un exposé",
+        "lead": "Ce qui fait la force du dossier.",
+        "b": [
+          [
+            "ul",
+            [
+              "Beaucoup d’argent généré chaque année, et de plus en plus.",
+              "Très peu de dettes, et aucune contrainte qui la rendrait fragile en cas de coup dur.",
+              "Une activité principale qui gagne plus d’argent que la moyenne de l’entreprise.",
+              "De la croissance dans de nouvelles zones géographiques, un relais pour l’avenir."
+            ]
+          ]
+        ]
+      },
+      {
+        "n": "07",
+        "t": "Glossaire complet et pour aller plus loin",
+        "lead": "Tous les mots un peu techniques de cette note, expliqués.",
+        "b": [
+          [
+            "tbl",
+            [
+              "Terme",
+              "Ce que ça veut dire"
+            ],
+            [
+              [
+                "Marge opérationnelle",
+                "Ce qu’il reste sur 100 € de vente, une fois les coûts payés"
+              ],
+              [
+                "Free cash-flow",
+                "L’argent réellement disponible dans les caisses, librement utilisable"
+              ],
+              [
+                "Dette nette",
+                "Ce que l’entreprise doit, moins l’argent qu’elle a déjà en caisse"
+              ],
+              [
+                "EBITDA",
+                "Le bénéfice annuel avant charges financières, impôts et amortissements"
+              ],
+              [
+                "Covenant",
+                "Un engagement pris envers les banques ; s’il n’est pas respecté, la dette peut devenir exigible plus tôt"
+              ],
+              [
+                "BFR (besoin en fonds de roulement)",
+                "L’argent immobilisé pour faire tourner l’activité au quotidien (stocks, factures en attente…)"
+              ]
+            ]
+          ],
+          [
+            "p",
+            "Pour approfondir cette analyse avec un vocabulaire plus technique, les profils <b>Private Equity / Venture Capital</b>, <b>M&amp;A</b> et <b>Audit &amp; Conseil financier</b> couvrent respectivement l’angle investissement, l’angle acquisition et l’angle conformité — disponibles avec une offre FinLens Analyste ou Fonds."
+          ]
+        ]
+      }
+    ],
+    "kpiOrder": [
+      "gCa",
+      "gMarge",
+      "gCash",
+      "gDette",
+      "gStock",
+      "gChine",
+      "gCovenant",
+      "gCroissance"
+    ]
+  },
+  "custom": {
+    "label": "Personnalisé",
+    "short": "Personnalisé",
+    "ic": "sliders",
+    "tier": "pro",
+    "tag": "Vos indicateurs, à la carte",
+    "isCustom": true,
+    "score": 38,
+    "axes": [
+      [
+        "Rentabilité & trajectoire de marge",
+        40
+      ],
+      [
+        "Structure financière & endettement",
+        20
+      ],
+      [
+        "Concentration & diversification",
+        48
+      ],
+      [
+        "Transparence de l’information",
+        55
+      ],
+      [
+        "Risques identifiés & signaux faibles",
+        50
+      ]
+    ],
+    "sections": [
+      [
+        "b",
+        "list",
+        "Lecture d’ensemble",
+        [
+          [
+            "Actif mature à forte génération de trésorerie : croissance organique de 10 % {p148}, résultat opérationnel courant en hausse de 7,1 % {p148}, bilan peu endetté à 0,9× EBITDA {p153}.",
+            0
+          ],
+          [
+            "L’érosion d’un point de marge sur trois exercices {p148} est plus que compensée par la croissance du chiffre d’affaires — un effet de levier opérationnel positif plutôt qu’un signal d’alerte.",
+            0
+          ],
+          [
+            "Deux zones d’ombre identifiées par recoupement des documents : une exposition géographique non quantifiée {p187} et une dérive modérée du besoin en fonds de roulement {p160}.",
+            0
+          ],
+          [
+            "Aucune contradiction chiffrée détectée entre les documents de ce dossier lors du recoupement automatique — un point favorable pour la fiabilité de l’analyse.",
+            0
+          ]
+        ]
+      ],
+      [
+        "g",
+        "check",
+        "Points d’appui",
+        [
+          [
+            "Free cash-flow de 10,5 Md€, en progression régulière de 4,2 %, finançant à la fois la distribution et un désendettement mesuré {p148}.",
+            0
+          ],
+          [
+            "Aucun covenant financier sur les emprunts ni sur les 12,2 Md€ de lignes confirmées non tirées — grande latitude de structuration, quelle que soit l’opération envisagée {p171}.",
+            0
+          ],
+          [
+            "Maturité moyenne de la dette de 6,2 ans, sans mur de refinancement avant 2028 — l’horizon de décision n’est pas contraint par une échéance de marché {p171}.",
+            0
+          ],
+          [
+            "Division principale à la marge supérieure à la moyenne du groupe, portée par une croissance à deux chiffres en Asie hors Chine {p62}.",
+            0
+          ]
+        ]
+      ],
+      [
+        "o",
+        "alert",
+        "Risques et points de vigilance",
+        [
+          [
+            "Érosion de la marge opérationnelle de 26,6 % à 25,6 % sur trois exercices, attribuée à l’investissement retail et à un effet de change d’environ 40 points de base {p148} {p151}.",
+            1
+          ],
+          [
+            "Exposition à la demande chinoise mentionnée en note annexe uniquement, sans quantification ni reprise dans le corps du rapport {p187}.",
+            1
+          ],
+          [
+            "Stocks en progression de 11,3 %, plus rapide que le chiffre d’affaires, avec une rotation qui se dégrade de 212 à 219 jours {p160}.",
+            1
+          ],
+          [
+            "Aucune donnée de comparables sectoriels ni de transactions récentes dans les pièces fournies — toute estimation de multiple reste un repère externe, non sourcé aux documents.",
+            1
+          ]
+        ]
+      ],
+      [
+        "b",
+        "star",
+        "Éléments déterminants, tous angles confondus",
+        [
+          [
+            "La lecture financière et la lecture juridique convergent sur un même point : l’absence de covenant {p171} est autant une facilité de structuration qu’une zone à documenter contractuellement selon l’usage envisagé.",
+            0
+          ],
+          [
+            "La hausse estimée des immobilisations est cohérente avec le discours sur l’investissement retail {p151} — un exemple concret de recoupement entre le bilan et le rapport de gestion.",
+            0
+          ],
+          [
+            "Le résultat net et le tableau de flux de trésorerie se reconstruisent de façon cohérente à partir des seuls agrégats publiés, sans contradiction interne détectée.",
+            0
+          ]
+        ]
+      ],
+      [
+        "o",
+        "folder",
+        "Ce qui manque pour approfondir",
+        [
+          [
+            "Plan d’affaires chiffré à trois-cinq ans, avec hypothèses explicites de marge, d’investissement et de change.",
+            1
+          ],
+          [
+            "Comparables sectoriels et transactions récentes, pour ancrer tout multiple de valorisation.",
+            1
+          ],
+          [
+            "Analyse de la concentration client, absente des pièces fournies quel que soit l’angle d’analyse.",
+            1
+          ],
+          [
+            "Détail des engagements hors bilan et cartographie des clauses contractuelles sensibles (changement de contrôle notamment).",
+            1
+          ]
+        ]
+      ]
+    ],
+    "note": [
+      {
+        "n": "01",
+        "t": "Synthèse générale",
+        "lead": "Une lecture complète, sans angle métier privilégié — tous les éléments d’analyse disponibles sur ce dossier.",
+        "b": [
+          [
+            "p",
+            "Ce dossier présente un profil financier globalement solide : croissance organique de 10 % {p148}, résultat opérationnel courant en hausse de 7,1 % malgré un repli de marge {p148}, bilan peu endetté à 0,9× EBITDA {p153} et absence totale de covenant financier {p171}."
+          ],
+          [
+            "p",
+            "Les réserves identifiées portent sur des <b>informations manquantes</b> plutôt que sur des signaux défavorables avérés : exposition géographique non quantifiée {p187}, absence de comparables de marché, absence de détail sur la concentration client et les engagements hors bilan."
+          ],
+          [
+            "call",
+            "Lecture d’ensemble",
+            "Aucune contradiction chiffrée n’a été détectée entre les documents de ce dossier. L’analyse ci-dessous couvre successivement la rentabilité, la structure financière, la trésorerie, le besoin en fonds de roulement, les risques et signaux faibles, puis les points à vérifier avant toute décision — quel que soit l’usage prévu de cette analyse."
+          ]
+        ]
+      },
+      {
+        "n": "02",
+        "t": "Rentabilité et trajectoire de marge",
+        "lead": "Ce que dit la trajectoire des trois derniers exercices.",
+        "b": [
+          [
+            "p",
+            "La marge opérationnelle courante recule de 26,6 % à 25,6 % sur trois exercices {p148}. La direction attribue cette évolution à l’accélération du plan d’investissement dans le réseau de distribution en propre et à un effet de change défavorable d’environ 40 points de base {p151}."
+          ],
+          [
+            "p",
+            "Malgré ce repli, le résultat opérationnel courant progresse de +7,1 % sur l’exercice (20,2 à 21,7 Md€) : la croissance du chiffre d’affaires (+10,5 %) compense largement l’érosion de marge {p148}. C’est un effet de levier opérationnel positif — l’entreprise gagne en valeur absolue même si elle en cède un peu en pourcentage."
+          ],
+          [
+            "tbl",
+            [
+              "Indicateur",
+              "Niveau",
+              "Lecture"
+            ],
+            [
+              [
+                "Marge opérationnelle courante",
+                "25,6 % (−0,8 pt)",
+                "Repli attribué à l’investissement et au change"
+              ],
+              [
+                "Résultat opérationnel courant",
+                "21,7 Md€ (+7,1 %)",
+                "Porté par la croissance du chiffre d’affaires"
+              ],
+              [
+                "Marge — division principale",
+                "> moyenne groupe",
+                "Résiliente, motrice de la performance"
+              ]
+            ]
+          ],
+          [
+            "callw",
+            "Point de suivi",
+            "La part réversible de l’érosion (effet de change, environ 40 pb) doit être distinguée de la part structurelle (investissement retail) pour projeter une marge normalisée sur les exercices suivants."
+          ]
+        ]
+      },
+      {
+        "n": "03",
+        "t": "Structure financière, dette et flexibilité",
+        "lead": "Ce que le bilan permet, quelle que soit l’opération envisagée.",
+        "b": [
+          [
+            "p",
+            "Le ratio de dette nette sur EBITDA ressort à 0,9×, un niveau que le groupe qualifie lui-même de conservateur {p153}. Les emprunts obligataires et les 12,2 Md€ de lignes de crédit confirmées non tirées ne comportent aucun covenant financier {p171}."
+          ],
+          [
+            "tbl",
+            [
+              "Indicateur",
+              "Niveau",
+              "Portée"
+            ],
+            [
+              [
+                "Dette nette / EBITDA",
+                "0,9×",
+                "Capacité d’endettement additionnelle significative"
+              ],
+              [
+                "Covenants financiers",
+                "Aucun",
+                "Grande latitude de structuration"
+              ],
+              [
+                "Maturité moyenne de la dette",
+                "6,2 ans",
+                "Pas de mur de refinancement avant 2028"
+              ],
+              [
+                "Lignes non tirées",
+                "12,2 Md€",
+                "Réserve de liquidité immédiatement mobilisable"
+              ]
+            ]
+          ],
+          [
+            "p",
+            "Cette configuration est favorable quel que soit l’usage envisagé de l’analyse : elle laisse une latitude de structuration (financement, restructuration du passif) sans négociation préalable avec les prêteurs en place."
+          ]
+        ]
+      },
+      {
+        "n": "04",
+        "t": "Trésorerie et allocation du capital",
+        "lead": "La régularité du free cash-flow et son emploi.",
+        "b": [
+          [
+            "p",
+            "Le free cash-flow progresse de manière continue, +4,2 % sur l’exercice, pour atteindre 10,5 milliards d’euros {p148}. Cette régularité finance à la fois un taux de distribution estimé stable autour de 58 % du résultat net et un désendettement mesuré, la dette nette reculant de 20,9 à 19,8 Md€ {p153}."
+          ],
+          [
+            "callc",
+            "Signal positif",
+            "La progression du free cash-flow est un indicateur plus robuste que le seul niveau de marge d’un exercice : elle traduit une génération de trésorerie structurelle, cohérente d’un exercice à l’autre, plutôt qu’un effet ponctuel."
+          ]
+        ]
+      },
+      {
+        "n": "05",
+        "t": "Besoin en fonds de roulement",
+        "lead": "Le principal point de vigilance opérationnel du dossier.",
+        "b": [
+          [
+            "p",
+            "Les stocks et en-cours progressent de 11,3 %, plus vite que le chiffre d’affaires (+10,5 %), avec une rotation qui se dégrade de 212 à 219 jours sur l’exercice {p160}."
+          ],
+          [
+            "tbl",
+            [
+              "Poste",
+              "2023",
+              "2024",
+              "Écart"
+            ],
+            [
+              [
+                "Stocks et en-cours",
+                "21,3 Md€",
+                "23,7 Md€",
+                "+11,3 %"
+              ],
+              [
+                "Rotation des stocks",
+                "212 j",
+                "219 j",
+                "+7 j"
+              ]
+            ]
+          ],
+          [
+            "callw",
+            "À instruire",
+            "Le groupe relie cette évolution à une politique d’inventaire stratégique sur les matières précieuses {p160}. La part réversible de ce stock et la trajectoire cible de rotation ne sont pas précisées dans les documents disponibles."
+          ]
+        ]
+      },
+      {
+        "n": "06",
+        "t": "Risques, signaux faibles et zones d’ombre",
+        "lead": "Ce que les documents disent à demi-mot.",
+        "b": [
+          [
+            "callc",
+            "Signal faible",
+            "Une sensibilité accrue de la demande chinoise, susceptible d’affecter significativement les volumes de la division principale, figure en note 34 des annexes sans être quantifiée ni reprise dans le corps du rapport de gestion {p187}. Le groupe indique la suivre par des indicateurs hebdomadaires internes non publiés."
+          ],
+          [
+            "ulc",
+            [
+              "Aucune clause de changement de contrôle documentée dans les pièces fournies — silence qui ne préjuge pas de son existence, mais appelle une vérification.",
+              "Concentration client non documentée, quel que soit l’angle d’analyse retenu.",
+              "Aucun comparable sectoriel ni transaction récente dans les documents indexés : toute référence de marché externe reste un repère non sourcé."
+            ]
+          ]
+        ]
+      },
+      {
+        "n": "07",
+        "t": "Points à vérifier avant toute décision",
+        "lead": "Liste consolidée, indépendante de l’usage prévu de cette analyse.",
+        "b": [
+          [
+            "ul",
+            [
+              "Plan d’affaires chiffré à trois-cinq ans, avec hypothèses explicites de marge, d’investissement retail et de change.",
+              "Comparables sectoriels et transactions récentes, pour ancrer tout multiple ou toute fourchette de valorisation.",
+              "Analyse de la concentration client (top 3 et top 10) et durée résiduelle des contrats significatifs.",
+              "Détail des engagements hors bilan et cartographie des clauses de changement de contrôle.",
+              "Quantification de l’exposition à la demande chinoise évoquée en note annexe.",
+              "Part réversible des stocks stratégiques et trajectoire cible de rotation du besoin en fonds de roulement."
+            ]
+          ],
+          [
+            "call",
+            "Position",
+            "Ce dossier ne présente aucun signal disqualifiant. Les réserves identifiées relèvent d’informations à obtenir plutôt que de risques avérés — leur absence limite la précision de l’analyse, pas sa conclusion d’ensemble."
+          ]
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,103 @@
+[
+  {
+    "id": "s1",
+    "lvl": "crit",
+    "dossier": "helios",
+    "dn": "Projet Helios — DD SaaS B2B",
+    "title": "Contradiction sur le chiffre d’affaires 2024",
+    "desc": "Le teaser investisseurs annonce 14,0 M€ tandis que l’annexe des états financiers retient 12,8 M€ net. Écart de 1,2 M€ (9,4 %) non expliqué dans les supports commerciaux.",
+    "src": [
+      [
+        "t12",
+        "p.12",
+        "Teaser investisseurs"
+      ],
+      [
+        "a41",
+        "p.41",
+        "Annexe états financiers"
+      ]
+    ],
+    "unread": true,
+    "when": "il y a 2 h"
+  },
+  {
+    "id": "s2",
+    "lvl": "crit",
+    "dossier": "helios",
+    "dn": "Projet Helios — DD SaaS B2B",
+    "title": "Liquidation préférentielle 1,5× non divulguée",
+    "desc": "Le pacte d’actionnaires prévoit une préférence de rang 1 non participante à 1,5× au profit des investisseurs du tour précédent. Cette clause n’apparaît dans aucun support de présentation.",
+    "src": [
+      [
+        "d08",
+        "p.8",
+        "Pacte d’actionnaires"
+      ]
+    ],
+    "unread": true,
+    "when": "il y a 3 h"
+  },
+  {
+    "id": "s3",
+    "lvl": "warn",
+    "dossier": "lvmh",
+    "dn": "LVMH — Rapport annuel 2024",
+    "title": "Exposition Chine citée uniquement en annexe",
+    "desc": "Une sensibilité significative de la demande chinoise est mentionnée en note 34 mais n’est ni quantifiée ni reprise dans le corps du rapport de gestion.",
+    "src": [
+      [
+        "p187",
+        "p.187",
+        "Note 34 — Facteurs de risque"
+      ]
+    ],
+    "unread": true,
+    "when": "il y a 6 h"
+  },
+  {
+    "id": "s4",
+    "lvl": "warn",
+    "dossier": "lvmh",
+    "dn": "LVMH — Rapport annuel 2024",
+    "title": "Stocks en progression plus rapide que le CA",
+    "desc": "Stocks +11,3 % contre +10,5 % pour le chiffre d’affaires, avec une rotation qui passe de 212 à 219 jours. Alourdissement du BFR à surveiller sur les prochains exercices.",
+    "src": [
+      [
+        "p160",
+        "p.160",
+        "Bilan — Actif circulant"
+      ]
+    ],
+    "unread": false,
+    "when": "hier"
+  },
+  {
+    "id": "s5",
+    "lvl": "warn",
+    "dossier": "meridian",
+    "dn": "Groupe Meridian — LBO",
+    "title": "Concentration client supérieure au seuil de vigilance",
+    "desc": "Les trois premiers clients représentent 47 % du chiffre d’affaires. Le contrat du premier client arrive à échéance dans quatorze mois, sans clause de reconduction tacite.",
+    "src": [
+      [
+        "p153",
+        "p.153",
+        "Structure de la dette"
+      ]
+    ],
+    "unread": false,
+    "when": "il y a 2 j"
+  },
+  {
+    "id": "s6",
+    "lvl": "info",
+    "dossier": "novagrid",
+    "dn": "NovaGrid — Infra énergie",
+    "title": "Documents manquants pour compléter l’analyse",
+    "desc": "Le tableau de flux de trésorerie et les états financiers 2023 sont absents du dossier. Sans eux, l’analyse de la génération de cash reste partielle.",
+    "src": [],
+    "unread": false,
+    "when": "il y a 4 j"
+  }
+]

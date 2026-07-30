@@ -1,0 +1,31 @@
+{
+  "Due diligence": [
+    "Quels sont les covenants bancaires ?",
+    "Détaille la concentration client",
+    "Quels litiges sont mentionnés ?",
+    "Quelle est la structure de la dette ?"
+  ],
+  "LBO": [
+    "Quelle capacité de remboursement de la dette ?",
+    "Quel est le niveau de FCF récurrent ?",
+    "Quels actifs sont nantis ?",
+    "Quelle sensibilité aux taux ?"
+  ],
+  "Série A / B": [
+    "Quelle est la table de capitalisation ?",
+    "Quelles clauses de liquidation préférentielle ?",
+    "Quel est le runway restant ?",
+    "Quel taux de rétention net ?"
+  ],
+  "Screening": [
+    "Résume la thèse en trois points",
+    "Quels sont les trois risques majeurs ?",
+    "Quelle est la dynamique de croissance ?",
+    "Le marché est-il documenté ?"
+  ],
+  "Veille": [
+    "Quels changements par rapport à l’exercice précédent ?",
+    "Quels risques nouveaux sont apparus ?",
+    "Que dit la direction sur ses perspectives ?"
+  ]
+}

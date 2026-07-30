@@ -2,14 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Icon } from "@/components/ui/icon";
 import { initiale } from "@/lib/format";
-import { niveauRisque, TYPES_OPERATION } from "@/lib/offres";
-import { DEMO_DOSSIERS, DEMO_SIGNAUX } from "@/lib/demo/fixtures";
+import { niveauRisque } from "@/lib/offres";
+import { DOSSIERS_ACTIFS, SIGNAUX, ETAPES, DOCUMENTS_MANQUANTS } from "@/lib/demo";
 
 export const metadata: Metadata = { title: "Tableau de bord (démo) — FinLens" };
 
 export default function DemoTableauDeBordPage() {
-  const critiques = DEMO_SIGNAUX.filter((s) => s.gravite === "critique" && s.nonLu);
-  const aSurveiller = DEMO_SIGNAUX.filter((s) => s.gravite === "a_verifier" && s.nonLu);
+  const critiques = SIGNAUX.filter((s) => s.lvl === "crit" && s.unread);
+  const aSurveiller = SIGNAUX.filter((s) => s.lvl === "warn" && s.unread);
+  const incomplets = DOSSIERS_ACTIFS.filter((d) => DOCUMENTS_MANQUANTS[d.id]?.length);
 
   return (
     <>
@@ -22,18 +23,17 @@ export default function DemoTableauDeBordPage() {
 
       <div className="block-h">
         <h2>À traiter en priorité</h2>
+        <Link href="/demo/signaux">Tous les signaux</Link>
       </div>
       <div className="prio">
         {critiques.map((signal) => (
-          <Link href={`/demo/dossiers/${signal.dossierId}`} className="prio__i crit" key={signal.id}>
+          <Link href={`/demo/dossiers/${signal.dossier}`} className="prio__i crit" key={signal.id}>
             <span className="ic">
               <Icon name="split" />
             </span>
             <span className="tx">
-              <span className="t">
-                Contradiction critique — {signal.dossierName}
-              </span>
-              <span className="s">{signal.titre}</span>
+              <span className="t">{signal.title}</span>
+              <span className="s">{signal.dn}</span>
             </span>
             <span className="go">
               Arbitrer
@@ -41,18 +41,37 @@ export default function DemoTableauDeBordPage() {
             </span>
           </Link>
         ))}
-        {aSurveiller.slice(0, 2).map((signal) => (
-          <Link href={`/demo/dossiers/${signal.dossierId}`} className="prio__i warn" key={signal.id}>
+
+        {aSurveiller.slice(0, 1).map((signal) => (
+          <Link href={`/demo/dossiers/${signal.dossier}`} className="prio__i warn" key={signal.id}>
             <span className="ic">
               <Icon name="alert" />
             </span>
             <span className="tx">
-              <span className="t">{signal.titre} — {signal.dossierName}</span>
-              <span className="s">{signal.description.slice(0, 100)}…</span>
+              <span className="t">{signal.title}</span>
+              <span className="s">{signal.dn}</span>
             </span>
             <span className="go">
               Voir
               <Icon name="split" />
+            </span>
+          </Link>
+        ))}
+
+        {incomplets.slice(0, 1).map((dossier) => (
+          <Link href={`/demo/dossiers/${dossier.id}`} className="prio__i info" key={dossier.id}>
+            <span className="ic">
+              <Icon name="doc" />
+            </span>
+            <span className="tx">
+              <span className="t">
+                {DOCUMENTS_MANQUANTS[dossier.id].length} documents manquants — {dossier.name}
+              </span>
+              <span className="s">{DOCUMENTS_MANQUANTS[dossier.id][0][1]}</span>
+            </span>
+            <span className="go">
+              Compléter
+              <Icon name="dl" />
             </span>
           </Link>
         ))}
@@ -65,10 +84,10 @@ export default function DemoTableauDeBordPage() {
             Dossiers ouverts
           </div>
           <div className="val">
-            {DEMO_DOSSIERS.length}
+            {DOSSIERS_ACTIFS.length}
             <small> / 15</small>
           </div>
-          <div className="delta flat">Démonstration — non modifiable</div>
+          <div className="delta flat">Archivez pour libérer un emplacement</div>
         </div>
         <div className="kpi">
           <div className="lbl">
@@ -76,9 +95,9 @@ export default function DemoTableauDeBordPage() {
             Analyses ce mois
           </div>
           <div className="val">
-            6<span className="inf"> illimité</span>
+            14<span className="inf"> illimité</span>
           </div>
-          <div className="delta flat">Extraction complète du dossier</div>
+          <div className="delta up">+4 vs mois dernier</div>
         </div>
         <div className="kpi">
           <div className="lbl">
@@ -86,9 +105,9 @@ export default function DemoTableauDeBordPage() {
             Questions posées
           </div>
           <div className="val">
-            27<span className="inf"> illimité</span>
+            213<span className="inf"> illimité</span>
           </div>
-          <div className="delta flat">Ce mois-ci, tous dossiers confondus</div>
+          <div className="delta up">Aucun dépassement facturé</div>
         </div>
         <div className="kpi">
           <div className="lbl">
@@ -96,29 +115,52 @@ export default function DemoTableauDeBordPage() {
             Temps économisé
           </div>
           <div className="val">
-            42<small> h</small>
+            137<small> h</small>
           </div>
           <div className="delta up">Estimé sur les analyses du mois</div>
         </div>
       </div>
 
       <div className="block-h">
-        <h2>Dossiers récents</h2>
+        <h2>Pipeline</h2>
+      </div>
+      <div className="pipe">
+        {ETAPES.map(([cle, label, couleur]) => {
+          const nb = DOSSIERS_ACTIFS.filter((d) => d.stage === cle).length;
+          return (
+            <Link href="/demo/dossiers" className="st" key={cle}>
+              <div className="n">
+                <i style={{ background: couleur }} />
+                {label}
+              </div>
+              <div className="c">{nb}</div>
+              <div className="m">dossier{nb > 1 ? "s" : ""}</div>
+            </Link>
+          );
+        })}
+      </div>
+
+      <div className="block-h">
+        <h2>Reprendre</h2>
         <Link href="/demo/dossiers">Tous les dossiers</Link>
       </div>
 
-      {DEMO_DOSSIERS.map((dossier) => (
+      {DOSSIERS_ACTIFS.map((dossier) => (
         <Link href={`/demo/dossiers/${dossier.id}`} className="d-row" key={dossier.id}>
           <span className="thumb">{initiale(dossier.name)}</span>
           <span className="meta">
             <span className="t">{dossier.name}</span>
             <span className="s">
-              <span>{TYPES_OPERATION[dossier.type_operation]}</span>
+              <span>
+                <Icon name="doc" />
+                {dossier.docs} documents
+              </span>
+              <span>{dossier.type}</span>
               <span>{dossier.sector}</span>
             </span>
           </span>
-          <span className={`risk risk-${niveauRisque(dossier.risk_score)}`}>{dossier.risk_score}</span>
-          <span className="when">{dossier.updated_at_label}</span>
+          <span className={`risk risk-${niveauRisque(dossier.risk)}`}>{dossier.risk}</span>
+          <span className="when">{dossier.when}</span>
         </Link>
       ))}
     </>

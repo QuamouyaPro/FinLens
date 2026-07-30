@@ -1,0 +1,78 @@
+{
+  "helios": [
+    {
+      "lvl": "high",
+      "title": "Chiffre d’affaires 2024",
+      "cat": "Écart de 1,2 M€ — 9,4 %",
+      "a": {
+        "lbl": "Teaser investisseurs · p.12",
+        "v": "14,0 M€",
+        "q": "« Chiffre d’affaires 2024 : 14,0 M€, en croissance de 38 % »",
+        "k": "t12"
+      },
+      "b": {
+        "lbl": "Annexe états financiers · p.41",
+        "v": "12,8 M€",
+        "q": "« Chiffre d’affaires net 2024 : 12,8 M€ »",
+        "k": "a41"
+      },
+      "note": "L’annexe précise que l’écart provient de l’inclusion, dans les supports commerciaux, des refacturations de frais et du carnet de commandes signé non encore facturé. À faire confirmer par le management : la croissance de 38 % annoncée porte sur la base retraitée, pas sur le CA net."
+    },
+    {
+      "lvl": "high",
+      "title": "Liquidation préférentielle",
+      "cat": "Clause absente des supports",
+      "a": {
+        "lbl": "Pacte d’actionnaires · p.8",
+        "v": "1,5× rang 1",
+        "q": "« Liquidation préférentielle de rang 1, non participante, multiple 1,5× »",
+        "k": "d08"
+      },
+      "b": {
+        "lbl": "Supports de présentation",
+        "v": "Non mentionnée",
+        "q": "Aucune occurrence détectée dans les 4 documents de présentation indexés.",
+        "k": "t12"
+      },
+      "note": "Impact direct sur le waterfall de sortie : à une valorisation de sortie inférieure à environ 21 M€, les fondateurs et les nouveaux entrants ne perçoivent rien. À intégrer impérativement au modèle de retour."
+    },
+    {
+      "lvl": "med",
+      "title": "Effectif au 31/12",
+      "cat": "Écart de 6 ETP",
+      "a": {
+        "lbl": "Présentation management · p.4",
+        "v": "54 ETP",
+        "q": "« Une équipe de 54 collaborateurs au 31 décembre 2024 »",
+        "k": "t12"
+      },
+      "b": {
+        "lbl": "Annexe sociale · p.41",
+        "v": "48 ETP",
+        "q": "« Effectif moyen équivalent temps plein : 48 »",
+        "k": "a41"
+      },
+      "note": "Différence probablement liée au décompte des prestataires indépendants et des alternants. Sans incidence majeure sur la valorisation, mais impacte le calcul du CA par tête souvent mis en avant."
+    }
+  ],
+  "lvmh": [
+    {
+      "lvl": "med",
+      "title": "Périmètre de la marge commentée",
+      "cat": "Base de calcul différente",
+      "a": {
+        "lbl": "Commentaire de gestion · p.151",
+        "v": "25,6 %",
+        "q": "« Marge opérationnelle courante de 25,6 % »",
+        "k": "p151"
+      },
+      "b": {
+        "lbl": "Compte de résultat · p.148",
+        "v": "25,6 % / 26,4 %",
+        "q": "« 25,6 % contre 26,4 % en 2023 et 26,6 % en 2022 »",
+        "k": "p148"
+      },
+      "note": "Les deux sources concordent sur 2024. Le commentaire de gestion ne rappelle toutefois pas la base 2022, ce qui minore optiquement l’érosion sur trois ans lorsqu’on ne lit que cette section."
+    }
+  ]
+}

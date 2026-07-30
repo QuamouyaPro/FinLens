@@ -1,0 +1,39 @@
+[
+  [
+    "Compte de résultat",
+    [
+      "ca",
+      "resOp",
+      "marge",
+      "margeDivision",
+      "croissanceDivision",
+      "croissanceAsie"
+    ]
+  ],
+  [
+    "Structure financière & dette",
+    [
+      "detteEbitda",
+      "detteNette",
+      "covenant",
+      "maturite",
+      "lignesNonTirees"
+    ]
+  ],
+  [
+    "Trésorerie & BFR",
+    [
+      "fcf",
+      "stockRotation",
+      "stockCroissance"
+    ]
+  ],
+  [
+    "Risques & valorisation",
+    [
+      "expositionChine",
+      "multiple",
+      "contradictions"
+    ]
+  ]
+]

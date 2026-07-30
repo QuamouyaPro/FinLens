@@ -5,110 +5,88 @@ import Link from "next/link";
 import { Icon, type IconName } from "@/components/ui/icon";
 import { JaugeRisque } from "@/components/dossiers/jauge-risque";
 import { OngletsDossier } from "@/components/dossiers/onglets-dossier";
-import { PROFILS_ORDRE, PROFIL_ANGLES, PROFIL_LABELS_COURTS } from "@/lib/offres";
-import type { Enums } from "@/types/database";
-import type {
-  DemoChecklistItem,
-  DemoContradiction,
-  DemoDossierMeta,
-  DemoProfilNote,
-  DemoQuestion,
-  DemoSource,
-} from "@/lib/demo/fixtures";
+import { ResumeProfil } from "./resume-profil";
+import { NoteComplete } from "./note-complete";
+import { ChiffresCles } from "./chiffres-cles";
+import { CarteSource } from "./rendu";
+import {
+  PROFILS,
+  KPI_LIB,
+  ETATS_FINANCIERS,
+  CONTRADICTIONS,
+  CHECKLISTS,
+  QPACKS,
+  DOCUMENTS_MANQUANTS,
+} from "@/lib/demo";
+import { ORDRE_PROFILS, type CleProfilPrototype, type DossierPrototype } from "@/lib/demo/types";
+import { CHAT_DEMO } from "@/lib/demo/chat";
 
-type ProfilAnalyse = Enums<"profil_analyse">;
-
-const ICONES_PROFIL: Record<ProfilAnalyse, IconName> = {
-  pe_vc: "rocket", ma: "scale", family_office: "bank", cfo: "tbl",
-  audit_conseil: "shield", generaliste: "star", personnalise: "sliders",
+const ICONES_PROFIL: Record<CleProfilPrototype, IconName> = {
+  pevc: "rocket", ma: "scale", family: "bank", cfo: "tbl",
+  audit: "shield", general: "star", custom: "sliders",
 };
 
-function Citation({ source }: { source: DemoSource }) {
-  return (
-    <span className="cite" title={source.page ? `${source.document} — page ${source.page}` : source.document}>
-      <Icon name="lens" />
-      {source.page ? `p.${source.page}` : source.document}
-    </span>
-  );
-}
-
-function SourcesFixture({ sources }: { sources: DemoSource[] }) {
-  if (!sources.length) return null;
-  return (
-    <div className="sources">
-      <div className="lbl">Sources</div>
-      <div className="sources__list">
-        {sources.map((s, i) => (
-          <span className="src-card" key={i}>
-            <span className="pg">{s.page ? `p.${s.page}` : "—"}</span>
-            <span className="fn">{s.document}</span>
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function PanneauSyntheseDemo({ note }: { note: DemoProfilNote }) {
-  const [complet, setComplet] = useState(false);
+function PanneauDocuments({ dossier }: { dossier: DossierPrototype }) {
+  const manquants = DOCUMENTS_MANQUANTS[dossier.id] ?? [];
 
   return (
     <>
-      <JaugeRisque score={note.score} axes={note.axes} resume={note.resume} />
-
-      <div className="kpimini-head">
-        <h3>Indicateurs clés</h3>
-        <span>Sélectionnés pour ce profil — chaque valeur reste reliée à sa page source</span>
-      </div>
-      <div className="kpimini-grid">
-        {note.indicateurs.map((indicateur, i) => (
-          <div className="kpimini" key={i}>
-            <div className="l">{indicateur.libelle}</div>
-            <div className="v">
-              {indicateur.valeur}
-              {indicateur.source ? <Citation source={indicateur.source} /> : null}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="block-h" style={{ marginBottom: 14 }}>
-        <h2 style={{ fontSize: 17 }}>Note d&apos;analyse</h2>
-        <button type="button" onClick={() => setComplet((o) => !o)}>
-          {complet ? "Replier la note" : "Déplier la note complète"}
-        </button>
-      </div>
-
-      {(complet ? note.sections : note.sections.slice(0, 1)).map((section) => (
-        <div className="summary-sec" key={section.titre}>
-          <div className="sh">
-            <span className="ic g">
-              <Icon name="list" />
-            </span>
-            <h3>{section.titre}</h3>
-          </div>
-          <ul>
-            {section.contenu.map((ligne, i) => (
-              <li key={i}>{ligne}</li>
-            ))}
-          </ul>
-        </div>
-      ))}
-
-      <p className="engine-note">
+      <div className="note-banner">
         <Icon name="lens" />
         <span>
-          Extraction par <b>Claude Fable 5</b>, reformulée pour ce profil par <b>Claude Sonnet 5</b> —
-          contenu fictif de démonstration, aucun appel réel n&apos;a été effectué.
+          {dossier.docs} documents indexés · complétude {dossier.compl} %. En démonstration, le dépôt
+          de fichiers est désactivé : c&apos;est la seule chose qui change par rapport à un vrai
+          espace.
         </span>
-      </p>
+      </div>
+
+      {manquants.length ? (
+        <>
+          <div className="block-h" style={{ margin: "24px 0 13px" }}>
+            <h2 style={{ fontSize: 16 }}>Documents attendus mais absents</h2>
+          </div>
+          {manquants.map(([nom, raison]) => (
+            <div className="doc-item" key={nom}>
+              <span className="ft" style={{ background: "var(--signal-tint)", color: "var(--signal)" }}>
+                ?
+              </span>
+              <span className="info">
+                <span className="n">{nom}</span>
+                <span className="x">{raison}</span>
+              </span>
+              <span className="badge badge--warn">Manquant</span>
+            </div>
+          ))}
+        </>
+      ) : (
+        <div className="empty">
+          <div className="ic">
+            <Icon name="check" />
+          </div>
+          <b>Dossier complet</b>
+          Aucun document attendu ne manque pour le type d&apos;opération déclaré.
+        </div>
+      )}
     </>
   );
 }
 
-function CopiloteDemo({ questions }: { questions: DemoQuestion[] }) {
+function Copilote({ dossierId, typeOperation }: { dossierId: string; typeOperation: string }) {
+  const questions = CHAT_DEMO[dossierId] ?? [];
+  const suggestions = QPACKS[typeOperation] ?? [];
   const [actif, setActif] = useState(0);
-  const [saisie, setSaisie] = useState("");
+
+  if (!questions.length) {
+    return (
+      <div className="empty">
+        <div className="ic">
+          <Icon name="chat" />
+        </div>
+        <b>Copilote non préconstruit pour ce dossier</b>
+        Ouvrez LVMH ou Projet Helios pour tester des réponses sourcées à la page.
+      </div>
+    );
+  }
 
   const question = questions[actif];
 
@@ -116,12 +94,12 @@ function CopiloteDemo({ questions }: { questions: DemoQuestion[] }) {
     <>
       <p className="chat-scope">
         <Icon name="shield" />
-        Démonstration : ces réponses sont préconstruites. Dans l&apos;application réelle, le Copilote lit
-        vos propres documents et cite leur page exacte.
+        Démonstration : ces réponses sont préconstruites. Dans un vrai espace, le Copilote lit vos
+        propres documents et cite leur page exacte.
       </p>
 
       <div className="qpacks">
-        <span className="lb">Questions suggérées</span>
+        <span className="lb">Questions du pack {typeOperation}</span>
         {questions.map((q, i) => (
           <button
             key={q.question}
@@ -146,164 +124,173 @@ function CopiloteDemo({ questions }: { questions: DemoQuestion[] }) {
             </span>
             <div className="msg__body">
               <p>{question.reponse}</p>
-              <SourcesFixture sources={question.sources} />
+              {question.sources.length ? (
+                <div className="sources">
+                  <div className="lbl">Sources — la page exacte</div>
+                  <div className="sources__list">
+                    {question.sources.map((s, i) => (
+                      <span className="src-card" key={i}>
+                        <span className="pg">{s.page ? `p.${s.page}` : "—"}</span>
+                        <span className="fn">{s.document}</span>
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
             </div>
           </div>
         </div>
 
-        <form
-          className="chat__input"
-          onSubmit={(e) => {
-            e.preventDefault();
-            setSaisie("");
-          }}
-        >
-          <textarea
-            value={saisie}
-            onChange={(e) => setSaisie(e.target.value)}
-            placeholder="En démonstration, choisissez une question suggérée ci-dessus…"
-            rows={1}
-          />
-          <button type="submit" className="chat__send" aria-label="Envoyer" disabled>
-            <Icon name="send" />
-          </button>
-        </form>
+        <div className="chat__suggest">
+          {suggestions.slice(0, 3).map((s) => (
+            <span className="sugg" key={s} style={{ opacity: 0.55 }}>
+              {s}
+            </span>
+          ))}
+        </div>
       </div>
     </>
   );
 }
 
-function PanneauControlesDemo({
-  contradictions,
-  checklist,
-}: {
-  contradictions: DemoContradiction[];
-  checklist: DemoChecklistItem[];
-}) {
-  const [coches, setCoches] = useState<Record<string, boolean>>(
-    () => Object.fromEntries(checklist.map((i) => [i.id, i.coche]))
+function Controles({ dossierId }: { dossierId: string }) {
+  const contradictions = CONTRADICTIONS[dossierId] ?? [];
+  const groupes = CHECKLISTS[dossierId] ?? [];
+  const tousItems = groupes.flatMap((g) => g.items);
+
+  const [coches, setCoches] = useState<Record<string, boolean>>(() =>
+    Object.fromEntries(tousItems.map((i) => [i.t, i.done]))
   );
 
-  const CLASSES = { critique: "", a_verifier: " med", mineur: " low" } as const;
-  const LABELS = { critique: "Critique", a_verifier: "À vérifier", mineur: "Mineur" } as const;
-  const total = checklist.length;
-  const total_coches = Object.values(coches).filter(Boolean).length;
+  const CLASSES = { high: "", med: " med", low: " low" } as const;
+  const LABELS = { high: "Critique", med: "À vérifier", low: "Mineur" } as const;
+
+  if (!contradictions.length && !groupes.length) {
+    return (
+      <div className="empty">
+        <div className="ic">
+          <Icon name="check" />
+        </div>
+        <b>Contrôles non préconstruits pour ce dossier</b>
+        Ouvrez Projet Helios pour voir des contradictions détectées entre documents.
+      </div>
+    );
+  }
 
   return (
     <>
-      <div className="block-h" style={{ marginBottom: 14 }}>
-        <h2 style={{ fontSize: 17 }}>Contradictions entre documents</h2>
-      </div>
+      {contradictions.length ? (
+        <>
+          <div className="block-h" style={{ marginBottom: 14 }}>
+            <h2 style={{ fontSize: 17 }}>Contradictions entre documents</h2>
+          </div>
 
-      {contradictions.map((c) => (
-        <div className={`contra${CLASSES[c.gravite]}`} key={c.id}>
-          <div className="contra__h">
-            <span className="ic">
-              <Icon name="split" />
-            </span>
-            <span className="tt">
-              <b>{LABELS[c.gravite]}</b>
-              <span>{c.titre} — {c.categorie}</span>
+          {contradictions.map((c) => (
+            <div className={`contra${CLASSES[c.lvl]}`} key={c.title}>
+              <div className="contra__h">
+                <span className="ic">
+                  <Icon name="split" />
+                </span>
+                <span className="tt">
+                  <b>{c.title}</b>
+                  <span>{c.cat}</span>
+                </span>
+                <span className={`badge badge--${c.lvl === "high" ? "crit" : c.lvl === "med" ? "warn" : "info"}`}>
+                  {LABELS[c.lvl]}
+                </span>
+              </div>
+
+              <div className="contra__vs">
+                <div className="contra__side">
+                  <div className="sl">{c.a.lbl}</div>
+                  <div className="sv">{c.a.v}</div>
+                  <div className="sq">{c.a.q}</div>
+                </div>
+                <div className="contra__mid">vs</div>
+                <div className="contra__side">
+                  <div className="sl">{c.b.lbl}</div>
+                  <div className="sv">{c.b.v}</div>
+                  <div className="sq">{c.b.q}</div>
+                </div>
+              </div>
+
+              <p className="contra__note">{c.note}</p>
+
+              <div className="contra__acts">
+                <CarteSource cle={c.a.k} />
+                <CarteSource cle={c.b.k} />
+              </div>
+            </div>
+          ))}
+        </>
+      ) : null}
+
+      {groupes.map((groupe) => (
+        <div key={groupe.g}>
+          <div className="block-h" style={{ margin: "30px 0 14px" }}>
+            <h2 style={{ fontSize: 16 }}>{groupe.g}</h2>
+            <span className="muted" style={{ fontSize: 12.5 }}>
+              {groupe.items.filter((i) => coches[i.t]).length} / {groupe.items.length}
             </span>
           </div>
-          <div className="contra__vs">
-            <div className="contra__side">
-              <div className="sl">Source A</div>
-              <div className="sv">{c.sourceA.valeur}</div>
-              <div className="sq">{c.sourceA.extrait}</div>
-            </div>
-            <div className="contra__mid">vs</div>
-            <div className="contra__side">
-              <div className="sl">Source B</div>
-              <div className="sv">{c.sourceB.valeur}</div>
-              <div className="sq">{c.sourceB.extrait}</div>
-            </div>
-          </div>
-          <p className="contra__note">{c.note}</p>
+
+          {groupe.items.map((item) => (
+            <label className="doc-item" key={item.t} style={{ cursor: "pointer", alignItems: "center" }}>
+              <input
+                type="checkbox"
+                checked={coches[item.t] ?? false}
+                onChange={() => setCoches((c) => ({ ...c, [item.t]: !c[item.t] }))}
+                style={{ width: 17, height: 17, accentColor: "var(--accent)", flex: "none" }}
+              />
+              <span className="info">
+                <span
+                  className="n"
+                  style={{
+                    textDecoration: coches[item.t] ? "line-through" : "none",
+                    color: coches[item.t] ? "var(--text-faint)" : undefined,
+                  }}
+                >
+                  {item.t}
+                </span>
+              </span>
+              {item.flag === "contra" ? <span className="badge badge--crit">Contradiction</span> : null}
+              {item.flag === "missing" ? <span className="badge badge--warn">Document manquant</span> : null}
+              {!item.auto && !item.flag ? <span className="badge badge--muted">Manuel</span> : null}
+            </label>
+          ))}
         </div>
-      ))}
-
-      <div className="block-h" style={{ margin: "30px 0 14px" }}>
-        <h2 style={{ fontSize: 17 }}>Checklist de due diligence</h2>
-        <span className="muted" style={{ fontSize: 13 }}>
-          {total_coches} / {total} traités
-        </span>
-      </div>
-
-      {checklist.map((item) => (
-        <label className="doc-item" key={item.id} style={{ cursor: "pointer", alignItems: "center" }}>
-          <input
-            type="checkbox"
-            checked={coches[item.id]}
-            onChange={() => setCoches((c) => ({ ...c, [item.id]: !c[item.id] }))}
-            style={{ width: 17, height: 17, accentColor: "var(--accent)", flex: "none" }}
-          />
-          <span className="info">
-            <span
-              className="n"
-              style={{
-                textDecoration: coches[item.id] ? "line-through" : "none",
-                color: coches[item.id] ? "var(--text-faint)" : undefined,
-              }}
-            >
-              {item.label}
-            </span>
-          </span>
-          {item.manuel && !coches[item.id] ? <span className="badge badge--warn">Vérification manuelle</span> : null}
-        </label>
       ))}
     </>
   );
 }
 
-function PanneauDocumentsDemo({ nb }: { nb: number }) {
-  return (
-    <div className="empty">
-      <div className="ic">
-        <Icon name="doc" />
-      </div>
-      <b>{nb} documents indexés (démonstration)</b>
-      Dans l&apos;application réelle, cet onglet liste vos fichiers déposés avec leur statut
-      d&apos;indexation. Créez un compte pour déposer vos propres documents.
-    </div>
-  );
-}
-
-function PanneauExportDemo() {
+function Export() {
   return (
     <div className="empty">
       <div className="ic">
         <Icon name="dl" />
       </div>
-      <b>Export réservé aux comptes réels</b>
+      <b>L&apos;export génère un vrai fichier — réservé aux comptes</b>
       <span style={{ display: "block", marginBottom: 18 }}>
-        La génération de note PDF ou Word s&apos;appuie sur vos vraies analyses — indisponible en mode
-        démonstration.
+        La note part en PDF ou Word, au format de votre fonds, avec les sources conservées en annexe
+        cliquable et vos ajouts épinglés depuis le Copilote.
       </span>
       <Link href="/inscription" className="btn btn--primary">
-        Créer mon vrai espace
+        Créer mon espace
       </Link>
     </div>
   );
 }
 
-export function DemoDossierDetail({
-  dossier,
-  profils,
-  contradictions,
-  checklist,
-  chat,
-}: {
-  dossier: DemoDossierMeta;
-  profils: Partial<Record<ProfilAnalyse, DemoProfilNote>>;
-  contradictions: DemoContradiction[];
-  checklist: DemoChecklistItem[];
-  chat: DemoQuestion[];
-}) {
-  const profilsDisponibles = PROFILS_ORDRE.filter((p) => profils[p]);
-  const [profilActif, setProfilActif] = useState<ProfilAnalyse>(profilsDisponibles[0] ?? "generaliste");
+export function DemoDossierDetail({ dossier }: { dossier: DossierPrototype }) {
+  const detaille = Boolean(PROFILS.pevc && (dossier.id === "lvmh" || dossier.id === "helios"));
+  const [profilActif, setProfilActif] = useState<CleProfilPrototype>("pevc");
+  const [noteOuverte, setNoteOuverte] = useState(false);
 
-  const note = profils[profilActif];
+  const profil = PROFILS[profilActif];
+  const etats = ETATS_FINANCIERS[dossier.id] ?? null;
+  const contradictionsOuvertes = (CONTRADICTIONS[dossier.id] ?? []).filter((c) => c.lvl === "high").length;
+  const kpis = detaille ? profil.kpiOrder.map((k) => KPI_LIB[k]).filter(Boolean) : [];
 
   return (
     <>
@@ -316,85 +303,123 @@ export function DemoDossierDetail({
           </div>
           <h1>{dossier.name}</h1>
           <p>
-            {dossier.sector} · {dossier.nb_documents} documents indexés
+            {dossier.type} · {dossier.sector} · {dossier.docs} documents indexés
           </p>
         </div>
       </div>
 
-      <div className="profbar">
-        <div className="profbar__h">
-          <div className="lt">
-            <Icon name="sliders" />
-            <b>Profil d&apos;analyse</b>
-            <span>Les mêmes documents, lus sous l&apos;angle de votre métier</span>
+      {detaille ? (
+        <div className="profbar">
+          <div className="profbar__h">
+            <div className="lt">
+              <Icon name="sliders" />
+              <b>Profil d&apos;analyse</b>
+              <span>Les mêmes documents, lus sous l&apos;angle de votre métier</span>
+            </div>
+            <span className="badge badge--ink">{profil.short}</span>
+          </div>
+          <div className="profs">
+            {ORDRE_PROFILS.map((cle) => {
+              const p = PROFILS[cle];
+              if (!p) return null;
+              return (
+                <button
+                  key={cle}
+                  type="button"
+                  className={`prof${cle === profilActif ? " is-active" : ""}`}
+                  onClick={() => setProfilActif(cle)}
+                >
+                  <span className="pi">
+                    <Icon name={ICONES_PROFIL[cle]} />
+                  </span>
+                  <span className="pn">{p.short}</span>
+                  <span className="pd">{p.tag}</span>
+                </button>
+              );
+            })}
           </div>
         </div>
-        <div className="profs">
-          {PROFILS_ORDRE.map((profil) => {
-            const disponible = Boolean(profils[profil]);
-            return (
-              <button
-                key={profil}
-                type="button"
-                className={`prof${profil === profilActif ? " is-active" : ""}${disponible ? "" : " is-locked"}`}
-                onClick={() => disponible && setProfilActif(profil)}
-              >
-                <span className="pi">
-                  <Icon name={ICONES_PROFIL[profil]} />
-                </span>
-                <span className="pn">{PROFIL_LABELS_COURTS[profil]}</span>
-                <span className="pd">{PROFIL_ANGLES[profil]}</span>
-                {!disponible ? (
-                  <span className="plk">
-                    <Icon name="lock" />
-                  </span>
-                ) : null}
-              </button>
-            );
-          })}
-        </div>
-      </div>
+      ) : null}
 
       <OngletsDossier
         onglets={[
           {
-            cle: "synthese", label: "Synthèse", icon: "list",
-            contenu: note ? <PanneauSyntheseDemo note={note} /> : (
-              <div className="empty">
-                <div className="ic"><Icon name="doc" /></div>
-                <b>Ce dossier de démonstration n&apos;a pas été détaillé</b>
-                Ouvrez LVMH ou Projet Helios pour explorer une analyse complète, ou consultez la liste
-                pour repérer les autres dossiers.
-              </div>
-            ),
-          },
-          { cle: "documents", label: "Documents", icon: "folder", compteur: dossier.nb_documents, contenu: <PanneauDocumentsDemo nb={dossier.nb_documents} /> },
-          {
-            cle: "copilote", label: "Copilote", icon: "chat",
-            contenu: chat.length ? <CopiloteDemo questions={chat} /> : (
-              <div className="empty">
-                <div className="ic"><Icon name="chat" /></div>
-                <b>Copilote non détaillé pour ce dossier de démonstration</b>
-                Ouvrez LVMH ou Projet Helios pour tester des réponses sourcées.
-              </div>
-            ),
-          },
-          {
-            cle: "controles", label: "Contrôles", icon: "split",
-            alerte: contradictions.some((c) => c.gravite === "critique"),
-            contenu: contradictions.length || checklist.length ? (
-              <PanneauControlesDemo contradictions={contradictions} checklist={checklist} />
+            cle: "synthese",
+            label: "Synthèse",
+            icon: "list",
+            contenu: detaille ? (
+              <>
+                <JaugeRisque
+                  score={profil.score}
+                  axes={profil.axes.map(([axe, poids]) => ({ axe, poids }))}
+                  resume={profil.lens ?? profil.tag}
+                />
+
+                <div className="block-h" style={{ margin: "26px 0 14px" }}>
+                  <h2>Résumé exhaustif</h2>
+                  <button type="button" onClick={() => setNoteOuverte(true)}>
+                    Ouvrir la note complète ({profil.note.length} sections) →
+                  </button>
+                </div>
+
+                <ResumeProfil sections={profil.sections} kpis={kpis} />
+
+                <p className="engine-note">
+                  <Icon name="lens" />
+                  <span>
+                    Extraction du dossier par <b>Claude Fable 5</b>, reformulée pour ce profil par{" "}
+                    <b>Claude Sonnet 5</b> — contenu de démonstration, aucun appel réel effectué.
+                  </span>
+                </p>
+              </>
             ) : (
               <div className="empty">
-                <div className="ic"><Icon name="check" /></div>
-                <b>Aucune contradiction détectée</b>
-                Ce dossier de démonstration n&apos;a pas été détaillé plus avant.
+                <div className="ic">
+                  <Icon name="doc" />
+                </div>
+                <b>Ce dossier n&apos;est pas détaillé dans la démonstration</b>
+                Ouvrez <Link href="/demo/dossiers/lvmh" style={{ color: "var(--accent)", fontWeight: 600 }}>LVMH</Link>{" "}
+                ou{" "}
+                <Link href="/demo/dossiers/helios" style={{ color: "var(--accent)", fontWeight: 600 }}>
+                  Projet Helios
+                </Link>{" "}
+                pour explorer une analyse complète.
               </div>
             ),
           },
-          { cle: "export", label: "Export", icon: "dl", contenu: <PanneauExportDemo /> },
+          {
+            cle: "chiffres",
+            label: "Chiffres clés",
+            icon: "tbl",
+            contenu: <ChiffresCles etats={etats} />,
+          },
+          {
+            cle: "documents",
+            label: "Documents",
+            icon: "folder",
+            compteur: dossier.docs,
+            contenu: <PanneauDocuments dossier={dossier} />,
+          },
+          {
+            cle: "copilote",
+            label: "Copilote",
+            icon: "chat",
+            contenu: <Copilote dossierId={dossier.id} typeOperation={dossier.type} />,
+          },
+          {
+            cle: "controles",
+            label: "Contrôles",
+            icon: "split",
+            alerte: contradictionsOuvertes > 0,
+            contenu: <Controles dossierId={dossier.id} />,
+          },
+          { cle: "export", label: "Export", icon: "dl", contenu: <Export /> },
         ]}
       />
+
+      {noteOuverte && detaille ? (
+        <NoteComplete profil={profil} nomDossier={dossier.name} onFermer={() => setNoteOuverte(false)} />
+      ) : null}
     </>
   );
 }

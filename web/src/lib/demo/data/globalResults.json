@@ -1,0 +1,34 @@
+[
+  {
+    "d": "Projet Helios — DD SaaS B2B",
+    "id": "helios",
+    "doc": "Pacte_actionnaires.pdf",
+    "pg": "p.8",
+    "k": "d08",
+    "q": "Une clause de <mark>liquidation préférentielle</mark> de rang 1, non participante, avec un multiple de 1,5× est consentie aux investisseurs de la série précédente."
+  },
+  {
+    "d": "LVMH — Rapport annuel 2024",
+    "id": "lvmh",
+    "doc": "Rapport_annuel_2024.pdf",
+    "pg": "p.171",
+    "k": "p171",
+    "q": "Les lignes de crédit confirmées non tirées, d’un montant de 12,2 Md€, ne comportent aucun <mark>covenant</mark> financier."
+  },
+  {
+    "d": "LVMH — Rapport annuel 2024",
+    "id": "lvmh",
+    "doc": "Rapport_annuel_2024.pdf",
+    "pg": "p.153",
+    "k": "p153",
+    "q": "Les financements du Groupe ne comportent aucun <mark>covenant</mark> financier susceptible d’affecter la disponibilité des lignes de crédit."
+  },
+  {
+    "d": "Projet Helios — DD SaaS B2B",
+    "id": "helios",
+    "doc": "Etats_financiers_consolides.xlsx",
+    "pg": "p.41",
+    "k": "a41",
+    "q": "Chiffre d’affaires net 2024 : 12,8 M€, dont 11,2 M€ de <mark>revenus récurrents</mark> et 1,6 M€ de prestations non récurrentes."
+  }
+]

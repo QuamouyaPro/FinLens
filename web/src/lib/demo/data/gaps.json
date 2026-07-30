@@ -1,0 +1,40 @@
+{
+  "helios": [
+    [
+      "Tableau de flux de trésorerie",
+      "Bloque l’analyse de la génération de cash"
+    ],
+    [
+      "Table de capitalisation diluée",
+      "Nécessaire au calcul du waterfall"
+    ],
+    [
+      "Contrats clients top 3",
+      "Vérification de la concentration"
+    ]
+  ],
+  "novagrid": [
+    [
+      "États financiers 2023",
+      "Aucune base de comparaison annuelle"
+    ],
+    [
+      "Tableau de flux de trésorerie",
+      "Bloque l’analyse de trésorerie"
+    ],
+    [
+      "Rapport du commissaire aux comptes",
+      "Fiabilisation des comptes"
+    ],
+    [
+      "Contrats de raccordement réseau",
+      "Cœur du modèle économique"
+    ]
+  ],
+  "aventis": [
+    [
+      "Rapport d’essais cliniques phase II",
+      "Élément déterminant de la valorisation"
+    ]
+  ]
+}

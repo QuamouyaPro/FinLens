@@ -1,0 +1,88 @@
+{
+  "helios": [
+    {
+      "g": "Financier",
+      "items": [
+        {
+          "t": "Vérifier la réconciliation CA teaser / états financiers",
+          "done": false,
+          "auto": true,
+          "flag": "contra"
+        },
+        {
+          "t": "Analyser la structure du revenu récurrent (ARR vs non récurrent)",
+          "done": true,
+          "auto": true
+        },
+        {
+          "t": "Contrôler la trésorerie disponible et le runway",
+          "done": true,
+          "auto": true
+        },
+        {
+          "t": "Obtenir le tableau de flux de trésorerie 2023-2024",
+          "done": false,
+          "auto": false,
+          "flag": "missing"
+        },
+        {
+          "t": "Analyser le BFR et les délais de règlement clients",
+          "done": false,
+          "auto": true
+        }
+      ]
+    },
+    {
+      "g": "Juridique & capital",
+      "items": [
+        {
+          "t": "Lire le pacte d’actionnaires — clauses de liquidité",
+          "done": true,
+          "auto": true,
+          "flag": "contra"
+        },
+        {
+          "t": "Cartographier la table de capitalisation entièrement diluée",
+          "done": false,
+          "auto": false,
+          "flag": "missing"
+        },
+        {
+          "t": "Vérifier l’existence de litiges en cours",
+          "done": true,
+          "auto": true
+        },
+        {
+          "t": "Contrôler la propriété intellectuelle et les dépôts",
+          "done": false,
+          "auto": true
+        }
+      ]
+    },
+    {
+      "g": "Commercial & opérations",
+      "items": [
+        {
+          "t": "Mesurer la concentration client (top 3 / top 10)",
+          "done": true,
+          "auto": true
+        },
+        {
+          "t": "Analyser le taux de rétention et le churn déclarés",
+          "done": true,
+          "auto": true
+        },
+        {
+          "t": "Vérifier les durées et clauses de résiliation des contrats cadres",
+          "done": false,
+          "auto": true
+        },
+        {
+          "t": "Évaluer la dépendance aux personnes clés",
+          "done": false,
+          "auto": false
+        }
+      ]
+    }
+  ]
+}
