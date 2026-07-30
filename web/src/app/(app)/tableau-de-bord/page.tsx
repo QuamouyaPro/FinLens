@@ -3,8 +3,27 @@ import Link from "next/link";
 import { requireSession } from "@/lib/session";
 import { getSupabaseServer } from "@/lib/supabase/server";
 import { Icon } from "@/components/ui/icon";
+import { Sparkline } from "@/components/ui/sparkline";
 import { dateRelative, initiale } from "@/lib/format";
 import { OFFRES, TYPES_OPERATION, niveauRisque } from "@/lib/offres";
+
+/**
+ * Courbe cumulative réelle (pas d'historique inventé) : répartit les horodatages
+ * du mois en cours sur N points égaux dans le temps, chacun comptant les
+ * événements survenus jusque-là. Toujours croissante par construction — c'est
+ * le sens d'un compteur mensuel qui se remplit, pas d'une mesure qui varie.
+ */
+function courbeCumulative(dates: string[], debutMois: Date, maintenant: Date, points = 6): number[] {
+  const dureeEcoulee = maintenant.getTime() - debutMois.getTime();
+  if (dureeEcoulee <= 0) return [0, 0];
+
+  const horodatages = dates.map((d) => new Date(d).getTime()).sort((a, b) => a - b);
+
+  return Array.from({ length: points }, (_, i) => {
+    const seuil = debutMois.getTime() + (dureeEcoulee * (i + 1)) / points;
+    return horodatages.filter((t) => t <= seuil).length;
+  });
+}
 
 export const metadata: Metadata = { title: "Tableau de bord — FinLens" };
 
@@ -25,7 +44,7 @@ export default async function TableauDeBordPage() {
     { data: dossiers },
     { data: contradictions },
     { data: extractionsDuMois },
-    { count: questionsDuMois },
+    { data: questionsDuMoisRows },
     { data: dossiersSansDocument },
   ] = await Promise.all([
     supabase
@@ -43,12 +62,12 @@ export default async function TableauDeBordPage() {
       .limit(4),
     supabase
       .from("extractions")
-      .select("id")
+      .select("id, created_at")
       .eq("organization_id", session.organizationId)
       .gte("created_at", debutDuMois.toISOString()),
     supabase
       .from("chat_messages")
-      .select("id", { count: "exact", head: true })
+      .select("created_at")
       .eq("organization_id", session.organizationId)
       .eq("role", "user")
       .gte("created_at", debutDuMois.toISOString()),
@@ -61,11 +80,25 @@ export default async function TableauDeBordPage() {
 
   const actifs = dossiers ?? [];
   const analysesDuMois = (extractionsDuMois ?? []).length;
-  const questions = questionsDuMois ?? 0;
+  const questions = (questionsDuMoisRows ?? []).length;
 
   // Le temps économisé s'appuie sur l'hypothèse produit : ~14 h de lecture par
   // dossier, dont FinLens reprend 70 % (voir le calculateur de la page publique).
   const heuresEconomisees = Math.round(analysesDuMois * 14 * 0.7);
+
+  // Courbes réelles (pas d'historique inventé) : comptage cumulatif du mois en
+  // cours, à partir des horodatages effectivement enregistrés.
+  const courbeAnalyses = courbeCumulative(
+    (extractionsDuMois ?? []).map((e) => e.created_at),
+    debutDuMois,
+    maintenant
+  );
+  const courbeQuestions = courbeCumulative(
+    (questionsDuMoisRows ?? []).map((q) => q.created_at),
+    debutDuMois,
+    maintenant
+  );
+  const courbeTempsEconomise = courbeAnalyses.map((n) => Math.round(n * 14 * 0.7));
 
   const sansDocument = (dossiersSansDocument ?? []).filter(
     (d) => !d.documents || (Array.isArray(d.documents) && d.documents.length === 0)
@@ -201,6 +234,7 @@ export default async function TableauDeBordPage() {
             )}
           </div>
           <div className="delta flat">Extraction complète du dossier</div>
+          {analysesDuMois > 0 ? <Sparkline valeurs={courbeAnalyses} tendance="up" /> : null}
         </div>
 
         <div className="kpi">
@@ -217,6 +251,7 @@ export default async function TableauDeBordPage() {
             )}
           </div>
           <div className="delta flat">Ce mois-ci, tous dossiers confondus</div>
+          {questions > 0 ? <Sparkline valeurs={courbeQuestions} tendance="up" /> : null}
         </div>
 
         <div className="kpi">
@@ -229,6 +264,7 @@ export default async function TableauDeBordPage() {
             <small> h</small>
           </div>
           <div className="delta up">Estimé sur les analyses du mois</div>
+          {heuresEconomisees > 0 ? <Sparkline valeurs={courbeTempsEconomise} tendance="up" /> : null}
         </div>
       </div>
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Icon } from "@/components/ui/icon";
+import { Sparkline, courbeApproximative } from "@/components/ui/sparkline";
 import { initiale } from "@/lib/format";
 import { niveauRisque } from "@/lib/offres";
 import { DOSSIERS_ACTIFS, SIGNAUX, ETAPES, DOCUMENTS_MANQUANTS } from "@/lib/demo";
@@ -98,6 +99,7 @@ export default function DemoTableauDeBordPage() {
             14<span className="inf"> illimité</span>
           </div>
           <div className="delta up">+4 vs mois dernier</div>
+          <Sparkline valeurs={courbeApproximative(14, "up")} tendance="up" />
         </div>
         <div className="kpi">
           <div className="lbl">
@@ -108,6 +110,7 @@ export default function DemoTableauDeBordPage() {
             213<span className="inf"> illimité</span>
           </div>
           <div className="delta up">Aucun dépassement facturé</div>
+          <Sparkline valeurs={courbeApproximative(213, "up")} tendance="up" />
         </div>
         <div className="kpi">
           <div className="lbl">
@@ -118,6 +121,7 @@ export default function DemoTableauDeBordPage() {
             137<small> h</small>
           </div>
           <div className="delta up">Estimé sur les analyses du mois</div>
+          <Sparkline valeurs={courbeApproximative(137, "up")} tendance="up" />
         </div>
       </div>
 

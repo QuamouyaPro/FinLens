@@ -7,6 +7,7 @@ import { AncreDouce } from "@/components/ui/anchor-link";
 import { DemoCopilote } from "@/components/landing/demo-copilote";
 import { CalculateurRoi } from "@/components/landing/calculateur-roi";
 import { Tarifs } from "@/components/landing/tarifs";
+import { ScrollReveal } from "@/components/landing/scroll-reveal";
 import { getOptionalSession } from "@/lib/session";
 
 const MODULES = [
@@ -69,6 +70,10 @@ export default async function LandingPage() {
   return (
     <>
       <IconSprite />
+      <noscript>
+        <style>{`.reveal{opacity:1!important;transform:none!important}`}</style>
+      </noscript>
+      <ScrollReveal />
       <TopbarPublique connecte={connecte} />
 
       <section className="hero noise">
@@ -114,7 +119,18 @@ export default async function LandingPage() {
             </div>
           </div>
 
-          <DemoCopilote />
+          <div className="hero__stage">
+            <span className="hero__float hero__float--a" aria-hidden="true">
+              p.148
+            </span>
+            <span className="hero__float hero__float--b" aria-hidden="true">
+              p.62
+            </span>
+            <span className="hero__float hero__float--c" aria-hidden="true">
+              p.171
+            </span>
+            <DemoCopilote />
+          </div>
         </div>
       </section>
 
@@ -139,8 +155,12 @@ export default async function LandingPage() {
             l&apos;investissement — pas pour un chatbot généraliste.
           </p>
           <div className="grid-3">
-            {MODULES.map((module) => (
-              <div className={`card feat${module.accent ? " feat--accent" : ""}`} key={module.num}>
+            {MODULES.map((module, i) => (
+              <div
+                className={`card feat reveal${module.accent ? " feat--accent" : ""}`}
+                key={module.num}
+                style={{ "--reveal-delay": `${i * 0.07}s` } as React.CSSProperties}
+              >
                 <span className="num">{module.num}</span>
                 <div className="ic">
                   <Icon name={module.icon} />
@@ -156,8 +176,12 @@ export default async function LandingPage() {
           <span className="eyebrow">En pratique</span>
           <h2>Du PDF au mémo, en quatre temps</h2>
           <div className="grid-4">
-            {ETAPES.map((etape) => (
-              <div className="step" key={etape.n}>
+            {ETAPES.map((etape, i) => (
+              <div
+                className="step reveal"
+                key={etape.n}
+                style={{ "--reveal-delay": `${i * 0.07}s` } as React.CSSProperties}
+              >
                 <div className="n">{etape.n}</div>
                 <h3>{etape.titre}</h3>
                 <p>{etape.texte}</p>
@@ -173,7 +197,7 @@ export default async function LandingPage() {
             La question n&apos;est pas « IA ou pas », mais qui lit le document — et si vous pouvez vérifier
             ce qu&apos;on vous en dit.
           </p>
-          <div className="vstable">
+          <div className="vstable reveal">
             <table>
               <thead>
                 <tr>
@@ -317,7 +341,7 @@ export default async function LandingPage() {
             C&apos;est la contrainte qui a dicté l&apos;architecture.
           </p>
           <div className="trust">
-            <div className="t">
+            <div className="t reveal">
               <div className="ic">
                 <Icon name="lens" />
               </div>
@@ -329,7 +353,7 @@ export default async function LandingPage() {
                 </p>
               </div>
             </div>
-            <div className="t">
+            <div className="t reveal" style={{ "--reveal-delay": "0.07s" } as React.CSSProperties}>
               <div className="ic">
                 <Icon name="shield" />
               </div>
@@ -341,7 +365,7 @@ export default async function LandingPage() {
                 </p>
               </div>
             </div>
-            <div className="t">
+            <div className="t reveal" style={{ "--reveal-delay": "0.14s" } as React.CSSProperties}>
               <div className="ic">
                 <Icon name="trash" />
               </div>

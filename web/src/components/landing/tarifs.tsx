@@ -47,7 +47,7 @@ export function Tarifs() {
       </div>
 
       <div className="pricing">
-        <div className="plan">
+        <div className="plan reveal">
           <span className="plan__tag">Essentiel</span>
           <h3>Pour découvrir</h3>
           <div className="price">
@@ -86,7 +86,7 @@ export function Tarifs() {
           </p>
         </div>
 
-        <div className="plan plan--feat">
+        <div className="plan plan--feat reveal" style={{ "--reveal-delay": "0.07s" } as React.CSSProperties}>
           <span className="plan__flag">Le plus choisi</span>
           <span className="plan__tag">Analyste</span>
           <h3>Illimité, 1 siège</h3>
@@ -128,7 +128,7 @@ export function Tarifs() {
           </p>
         </div>
 
-        <div className="plan">
+        <div className="plan reveal" style={{ "--reveal-delay": "0.14s" } as React.CSSProperties}>
           <span className="plan__tag">Fonds</span>
           <h3>Équipe, sur devis</h3>
           <div className="price">
