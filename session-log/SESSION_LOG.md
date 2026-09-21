@@ -18,6 +18,27 @@ Format d'une entrée :
 
 ---
 
+## 2026-09-21 (2) — Authentification GitHub CLI + déplacement du journal
+
+- Installation de GitHub CLI (`winget install --id GitHub.cli -e`) et
+  authentification via `gh auth login` (device code flow, compte
+  `QuamouyaPro`). `gh auth setup-git` configure Git pour utiliser ce compte
+  comme credential helper — je peux désormais committer/pousser directement
+  sans intervention manuelle de l'utilisateur.
+- Déplacement de `SESSION_LOG.md` vers **`session-log/SESSION_LOG.md`** (dans
+  un répertoire dédié plutôt qu'à la racine), à la demande de l'utilisateur —
+  plus facile à repérer/lire depuis une autre session Claude Code sur GitHub.
+  `CLAUDE.md` mis à jour en conséquence.
+- État : terminé pour la partie infra (auth Git + réorganisation du journal).
+- Toujours en attente : décision sur les fichiers OAuth/`risk.ts` non commités
+  d'une session antérieure (voir entrée précédente) — non traités dans cette
+  session.
+- Prochaine étape suggérée : sur l'autre PC, lancer `gh auth login` une fois
+  (même procédure) si Git/GitHub CLI n'y sont pas encore configurés, puis
+  `git pull origin main`.
+
+---
+
 ## 2026-09-21 — Mise en place du suivi de session + installation de Git
 
 - Git n'était pas installé sur ce PC ; installé via `winget install --id Git.Git -e`
