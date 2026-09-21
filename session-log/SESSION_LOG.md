@@ -18,6 +18,47 @@ Format d'une entrée :
 
 ---
 
+## 2026-09-21 (4) — Explications du flux applicatif + création de TODO.txt
+
+- **Aucune modification de code.** Session de questions/réponses sur
+  l'architecture V2 livrée précédemment :
+  - Clarification du rôle de `finlens-worker` (proposition non construite,
+    pas un composant existant).
+  - Confirmation que l'identification utilisateur existe déjà et est solide :
+    `auth.users` (Supabase Auth) + `organizations` + `memberships` comme
+    table de liaison, exploitées via `requireAuthContext()`
+    (`web/src/lib/api-context.ts`) sur toutes les routes API pour l'isolation
+    RLS par `organization_id`.
+  - Confirmation que l'ingestion tourne **aujourd'hui entièrement sur
+    Vercel** (pas sur un VPS) — la migration vers `finlens-ingest` fait
+    partie de la V2 proposée, pas de l'état actuel.
+  - Explication complète du flux réel, relu dans le code : upload
+    (`api/documents/upload`) → Storage bucket `documents` → indexation
+    (`api/documents/[id]/indexer`, PDF uniquement, chunking 3000
+    caractères/300 chevauchement, embeddings Voyage) → analyse
+    (`api/dossiers/[id]/analyser`, extraction Fable 5 puis 6 reformulations
+    Sonnet 5) → lecture des profils (`api/dossiers/[id]/profils/[profil]`,
+    instantanée, aucun appel IA sauf profil Personnalisé) → Copilote
+    (`api/copilote/chat`, RAG vectoriel top-8, classification Haiku 4.5,
+    routage Sonnet 5/Fable 5) → export (`api/exports`, bucket Storage
+    `exports`, URL signée 10 min).
+  - Confirmé au passage : les prompts système qui donnent leur "rôle expert"
+    aux modèles sont en clair, en français, dans
+    `web/src/lib/ai/prompts/*.ts` (ex. `extraction.ts`, `profils.ts`) — pas
+    un réglage caché de l'API.
+- **Création de [`TODO.txt`](../TODO.txt)** à la racine du repo : liste
+  consolidée de toutes les tâches identifiées jusqu'ici (décision sur les
+  fichiers OAuth/risk.ts non commités, vérif clés API Vercel manquantes,
+  vérif VPS, les 4 étapes du plan de la Note d'Architecture V2, points
+  ouverts sécurité/juridique/produit). Pensé pour être lu en un coup d'œil
+  au début d'une session sur l'autre PC.
+- État : toujours en attente — décision sur les fichiers OAuth/`risk.ts` non
+  commités (voir entrée initiale du 2026-09-21), et vérification des clés API
+  Vercel manquantes.
+- Prochaine étape suggérée : voir `TODO.txt`, section "A DECIDER EN PREMIER".
+
+---
+
 ## 2026-09-21 (3) — Audit d'architecture + Note d'Architecture V2
 
 - **Audit du code réellement déployé**, confronté à

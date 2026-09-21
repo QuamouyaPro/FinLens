@@ -1,0 +1,122 @@
+FinLens — Prochaines tâches
+Dernière mise à jour : 2026-09-21
+
+=== A DECIDER EN PREMIER (bloque le reste) ===
+
+[ ] Décider du sort des fichiers non commités depuis une session ancienne :
+    - web/src/components/auth/oauth-buttons.tsx (connexion Google/Microsoft)
+    - web/src/app/auth/callback/route.ts
+    - web/src/components/dossiers/panneau-source.tsx (citation cliquable)
+    - web/src/lib/risk.ts (score de risque par profil)
+    - web/supabase/migrations/20260810120000_oauth_org_name_fallback.sql
+      -> ATTENTION : le nom de ce fichier local ne correspond pas au
+      timestamp réellement appliqué sur Supabase (20260810153246). A
+      renommer avant de committer, sinon une future session pourrait croire
+      que la migration n'a jamais été appliquée et tenter de la rejouer.
+    Ces changements ont été relus et semblent complets et cohérents (session
+    du 2026-09-21). Décision : les committer tels quels, ou les tester en
+    local d'abord ?
+
+[ ] Vérifier si ANTHROPIC_API_KEY et VOYAGE_API_KEY sont bien renseignées
+    dans les variables d'environnement Vercel (projet "fin-lens"). Si elles
+    manquent : le Copilote ne répond à aucune question et aucune indexation
+    RAG ne fonctionne en production, malgré une app par ailleurs opérationnelle.
+
+[ ] Vérifier si le VPS Hostinger (KVM 2) est réellement actif/accessible.
+    La note d'architecture V1 le décrit comme "déjà payé" mais rien n'y
+    tourne actuellement (ni n8n, ni Qdrant, ni aucun service).
+
+
+=== CORRECTIFS CODE — étape 1 de la Note d'Architecture V2 ===
+(dans le code existant, sans nouvelle infra — gain immédiat)
+
+[ ] web/src/lib/ai/embeddings.ts : découper l'envoi des chunks à Voyage AI
+    par lots au lieu d'un seul appel avec tous les chunks. Un PDF de 300
+    pages fait échouer l'indexation aujourd'hui.
+
+[ ] web/src/app/api/dossiers/[id]/analyser/route.ts : fusionner l'extraction
+    et la détection de contradictions pour ne plus envoyer le corpus complet
+    deux fois à Fable 5 (faire lire les contradictions sur l'extraction
+    structurée déjà produite, pas sur le corpus brut).
+
+[ ] Même fichier : paralléliser les 5 dernières reformulations par profil
+    (actuellement une boucle séquentielle "for...await"). Seule la 1ère doit
+    rester isolée pour amorcer le cache de prompt.
+
+[ ] web/src/lib/pdf/extract.ts : implémenter réellement la bascule
+    map-reduce au-delà de SEUIL_PAGES_MAP_REDUCE (déclarée mais jamais
+    utilisée nulle part dans le code).
+
+
+=== ETAPE 2 — worker asynchrone + file de jobs (dépend du VPS) ===
+
+[ ] Créer la table "jobs" dans Supabase (voir docs/FinLens_Note_d_Architecture_V2.docx
+    section 7 pour le schéma complet et la requête FOR UPDATE SKIP LOCKED).
+
+[ ] Déployer un service "finlens-worker" sur le VPS (via Coolify) qui tire
+    les jobs de la file et exécute extraction / reformulations /
+    contradictions / indexation — réutilise lib/ai/* tel quel.
+
+[ ] Afficher la progression du job dans l'interface (ex. "Profil 5 sur 8")
+    au lieu d'un simple spinner.
+
+
+=== ETAPE 3 — ingestion lourde (dépend du VPS) ===
+
+[ ] Service "finlens-ingest" sur le VPS : OCR (documents scannés sans
+    couche texte) + conversion Word/Excel via LibreOffice headless. Ça
+    débloque en même temps deux limites actuelles : les PDF scannés
+    (aujourd'hui indexés "avec succès" mais vides) et l'extraction
+    Word/Excel (aujourd'hui refusée, PDF uniquement).
+
+
+=== ETAPE 4 — qualité de récupération (indépendante du VPS) ===
+
+[ ] Recherche hybride : combiner recherche vectorielle (pgvector) et
+    recherche plein texte français (Postgres), fusion RRF.
+
+[ ] Ajouter un reclassement (rerank) Voyage AI sur les ~30 passages fusionnés
+    avant de n'en garder que 8 pour le modèle.
+
+[ ] Faire passer le Copilote en réponse streamée (SSE) au lieu d'attendre la
+    réponse complète.
+
+
+=== ETAPE 5 — n8n : supervision (dépend du VPS) ===
+
+[ ] Flux n8n : détection de vélocité anormale par siège (alerte pour revue
+    humaine, pas de blocage automatique).
+
+[ ] Flux n8n : purge RGPD programmée (dossiers en corbeille arrivés à
+    échéance + demandes d'effacement).
+
+[ ] Flux n8n : notifications (échec d'indexation répété, job abandonné,
+    seuil de coût franchi).
+
+
+=== AUTRES POINTS OUVERTS (issus de web/README.md et de l'audit sécurité) ===
+
+[ ] Revue des 4 fonctions Postgres SECURITY DEFINER exposées à l'API
+    publique (current_org_role, detect_velocity_anomalies, handle_new_user,
+    is_org_member) — vérifier que c'est voulu pour les 3 dernières
+    (handle_new_user l'est très probablement, pour la création de compte).
+
+[ ] Décider si la confirmation d'e-mail Supabase doit rester activée
+    (bloque l'accès immédiat après inscription si activée).
+
+[ ] Revue juridique des CGU (clause d'usage raisonnable, droit à
+    l'effacement des tiers mentionnés dans un dossier) — hors périmètre
+    technique, à faire trancher par un juriste avant lancement commercial.
+
+[ ] Module "Chiffres clés" (états financiers reconstruits) pas encore un
+    onglet dédié — actuellement noyé dans la synthèse de chaque profil.
+
+
+=== REFERENCE ===
+
+Note d'Architecture V2 complète (avec schémas) :
+  docs/FinLens_Note_d_Architecture_V2.docx
+Sources régénérables des schémas/document :
+  docs/architecture-v2-src/
+Journal détaillé de chaque session :
+  session-log/SESSION_LOG.md

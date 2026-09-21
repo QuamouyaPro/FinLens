@@ -6,10 +6,9 @@ Ce projet est travaillé depuis plusieurs PC (le dossier de travail vit sur un
 disque dur externe transporté d'un PC à l'autre). Pour reprendre le contexte
 correctement :
 
-1. **Au début de toute session, lire [`session-log/SESSION_LOG.md`](session-log/SESSION_LOG.md)** —
-   l'entrée la plus récente (en haut du fichier) décrit ce qui a été fait
-   lors de la dernière session, les décisions prises, et l'état où le travail
-   s'est arrêté.
+1. **Au début de toute session, lire [`session-log/SESSION_LOG.md`](session-log/SESSION_LOG.md)
+   et [`TODO.txt`](TODO.txt)** — le journal décrit ce qui a été fait lors de
+   la dernière session ; `TODO.txt` liste les tâches restantes, par priorité.
 2. **À la fin de toute session de travail** (avant que l'utilisateur ne
    ferme/change de PC), ajouter une nouvelle entrée en haut de
    `session-log/SESSION_LOG.md` résumant les changements de la session, puis
