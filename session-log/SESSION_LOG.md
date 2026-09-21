@@ -18,6 +18,55 @@ Format d'une entrée :
 
 ---
 
+## 2026-09-21 (3) — Audit d'architecture + Note d'Architecture V2
+
+- **Audit du code réellement déployé**, confronté à
+  `docs/Note_d_Architecture_et_Stack_Technique___Projet_FinLens.docx` (V1).
+  Six défauts identifiés, dont trois bloquants :
+  1. `web/src/app/api/dossiers/[id]/analyser/route.ts` fait extraction + 6
+     reformulations **séquentielles** + contradictions dans **une seule requête
+     HTTP synchrone** → 10-20 min sur un dossier de 300 pages, dépasse le
+     plafond d'une fonction Vercel. **L'analyse d'un dossier réel ne peut pas
+     aboutir en production.**
+  2. `runExtraction` et `detectContradictions` (`lib/ai/router.ts`) envoient
+     tous deux le corpus **intégral** à Fable 5, sans cache partagé → coût
+     d'analyse payé deux fois.
+  3. `lib/ai/embeddings.ts` envoie tous les chunks en **un seul appel** Voyage,
+     sans découpage par lot → l'indexation d'un gros PDF échoue.
+  4. `SEUIL_PAGES_MAP_REDUCE` (`lib/pdf/extract.ts:13`) déclaré mais **utilisé
+     nulle part** — le map-reduce promis en section E de la V1 n'existe pas.
+  5. Aucun OCR (`unpdf` ne lit que la couche texte) → PDF scanné = document vide.
+  6. Chat non streamé, récupération vectorielle pure sans rerank ni hybride.
+- **Décision d'architecture prise et documentée** : garder pgvector, **ne pas**
+  réintroduire Qdrant (la V1 signalait elle-même en section H que Qdrant rend
+  l'effacement RGPD impossible sans tag `owner_id`/`dossier_id` — problème qui
+  disparaît par construction avec pgvector + RLS). n8n est **conservé mais
+  déplacé** : supervision, alertes vélocité, purge RGPD — plus l'orchestration
+  du pipeline IA, confiée à un worker Node qui réutilise `lib/ai/*` tel quel.
+- **Livrable produit** : `docs/FinLens_Note_d_Architecture_V2.docx` (15
+  sections, 14 tableaux, 5 schémas, sommaire automatique). Sources
+  régénérables dans `docs/architecture-v2-src/` (`diagrams.js` génère les SVG +
+  PNG via sharp, `build-note.js` assemble le .docx via la lib `docx`).
+  Pour régénérer : `npm install docx` dans ce dossier puis
+  `node diagrams.js && node build-note.js`.
+- **Limite de vérification** : ni LibreOffice ni pdftoppm sur ce PC, donc le
+  rendu final du .docx dans Word n'a **pas** pu être contrôlé visuellement. Ont
+  été vérifiés : validité du zip OOXML, 5 images embarquées, 14 tableaux, texte
+  relu intégralement (accents corrects). **À ouvrir dans Word pour confirmer la
+  mise en page**, et penser à mettre à jour le sommaire (F9).
+- **Constat infra non résolu** : `ANTHROPIC_API_KEY` et `VOYAGE_API_KEY`
+  n'apparaissent pas dans les variables d'environnement Vercel du projet
+  `fin-lens`. Si confirmé, le Copilote et l'indexation sont inopérants en prod.
+- État : note V2 livrée, **aucun code applicatif modifié**. Les 6 défauts sont
+  documentés mais non corrigés.
+- Prochaine étape suggérée : étape 1 du plan de la V2 (batch embeddings, fusion
+  des deux passages Fable 5, parallélisation des reformulations) — ces trois
+  correctifs sont dans le code existant et ne dépendent d'aucune infra nouvelle.
+- Toujours en attente : les fichiers OAuth/`risk.ts` non commités (voir entrée
+  du 2026-09-21 initiale) — non traités.
+
+---
+
 ## 2026-09-21 (2) — Authentification GitHub CLI + déplacement du journal
 
 - Installation de GitHub CLI (`winget install --id GitHub.cli -e`) et
