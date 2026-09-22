@@ -4,6 +4,7 @@ import { getSupabaseServer } from "@/lib/supabase/server";
 import { ListeDossiers, type DossierListe } from "@/components/dossiers/liste-dossiers";
 import { NouveauDossier } from "@/components/dossiers/nouveau-dossier";
 import { OFFRES } from "@/lib/offres";
+import { resoudreScoresRisque } from "@/lib/risk";
 
 export const metadata: Metadata = { title: "Dossiers — FinLens" };
 
@@ -13,7 +14,7 @@ export default async function DossiersPage() {
 
   const { data: dossiers } = await supabase
     .from("dossiers")
-    .select("id, name, status, type_operation, risk_score, updated_at, purge_at")
+    .select("id, name, status, type_operation, active_profil, updated_at, purge_at")
     .eq("organization_id", session.organizationId)
     .order("updated_at", { ascending: false });
 
@@ -21,13 +22,14 @@ export default async function DossiersPage() {
 
   // Un dossier affiche son nombre de documents indexés et de contradictions
   // ouvertes : deux requêtes groupées plutôt qu'une par ligne.
-  const [{ data: documents }, { data: contradictions }] = await Promise.all([
+  const [{ data: documents }, { data: contradictions }, scoresRisque] = await Promise.all([
     ids.length
       ? supabase.from("documents").select("dossier_id").in("dossier_id", ids).is("is_duplicate_of", null)
       : Promise.resolve({ data: [] as { dossier_id: string }[] }),
     ids.length
       ? supabase.from("contradictions").select("dossier_id").in("dossier_id", ids).eq("status", "ouverte")
       : Promise.resolve({ data: [] as { dossier_id: string }[] }),
+    resoudreScoresRisque(supabase, dossiers ?? []),
   ]);
 
   function compter(lignes: { dossier_id: string }[] | null, id: string) {
@@ -36,6 +38,7 @@ export default async function DossiersPage() {
 
   const liste: DossierListe[] = (dossiers ?? []).map((d) => ({
     ...d,
+    risk_score: scoresRisque.get(d.id) ?? null,
     nb_documents: compter(documents, d.id),
     nb_signaux: compter(contradictions, d.id),
   }));

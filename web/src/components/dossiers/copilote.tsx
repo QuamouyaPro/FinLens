@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Icon } from "@/components/ui/icon";
+import { PanneauSource } from "@/components/dossiers/panneau-source";
 import { PROFIL_LABELS_COURTS } from "@/lib/offres";
 import type { Enums } from "@/types/database";
 import type { SourceCitation } from "@/types/domain";
@@ -68,6 +69,7 @@ export function Copilote({
   const [question, setQuestion] = useState("");
   const [enAttente, setEnAttente] = useState(false);
   const [erreur, setErreur] = useState<string | null>(null);
+  const [sourceOuverte, setSourceOuverte] = useState<SourceCitation | null>(null);
   const flux = useRef<HTMLDivElement>(null);
   /** Identifiants locaux des messages en attente de l'identifiant serveur. */
   const compteurLocal = useRef(0);
@@ -209,10 +211,15 @@ export function Copilote({
                       <div className="lbl">Sources — la page exacte</div>
                       <div className="sources__list">
                         {message.sources.map((source, index) => (
-                          <span className="src-card" key={index}>
+                          <button
+                            type="button"
+                            className="src-card"
+                            key={index}
+                            onClick={() => setSourceOuverte(source)}
+                          >
                             <span className="pg">{source.page ? `p.${source.page}` : "—"}</span>
                             <span className="fn">{source.document}</span>
-                          </span>
+                          </button>
                         ))}
                       </div>
                     </div>
@@ -289,6 +296,8 @@ export function Copilote({
           </button>
         </form>
       </div>
+
+      <PanneauSource source={sourceOuverte} onClose={() => setSourceOuverte(null)} />
     </>
   );
 }

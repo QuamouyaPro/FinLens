@@ -6,6 +6,7 @@ import { Icon } from "@/components/ui/icon";
 import { Sparkline } from "@/components/ui/sparkline";
 import { dateRelative, initiale } from "@/lib/format";
 import { OFFRES, TYPES_OPERATION, niveauRisque } from "@/lib/offres";
+import { resoudreScoresRisque } from "@/lib/risk";
 
 /**
  * Courbe cumulative réelle (pas d'historique inventé) : répartit les horodatages
@@ -49,7 +50,7 @@ export default async function TableauDeBordPage() {
   ] = await Promise.all([
     supabase
       .from("dossiers")
-      .select("id, name, status, type_operation, risk_score, updated_at")
+      .select("id, name, status, type_operation, active_profil, updated_at")
       .eq("organization_id", session.organizationId)
       .eq("status", "actif")
       .order("updated_at", { ascending: false }),
@@ -79,6 +80,7 @@ export default async function TableauDeBordPage() {
   ]);
 
   const actifs = dossiers ?? [];
+  const scoresRisque = await resoudreScoresRisque(supabase, actifs);
   const analysesDuMois = (extractionsDuMois ?? []).length;
   const questions = (questionsDuMoisRows ?? []).length;
 
@@ -299,23 +301,26 @@ export default async function TableauDeBordPage() {
             <Link href="/dossiers">Tous les dossiers</Link>
           </div>
 
-          {actifs.slice(0, 5).map((dossier) => (
-            <Link href={`/dossiers/${dossier.id}`} className="d-row" key={dossier.id}>
-              <span className="thumb">{initiale(dossier.name)}</span>
-              <span className="meta">
-                <span className="t">{dossier.name}</span>
-                <span className="s">
-                  <span>{TYPES_OPERATION[dossier.type_operation]}</span>
+          {actifs.slice(0, 5).map((dossier) => {
+            const riskScore = scoresRisque.get(dossier.id) ?? null;
+            return (
+              <Link href={`/dossiers/${dossier.id}`} className="d-row" key={dossier.id}>
+                <span className="thumb">{initiale(dossier.name)}</span>
+                <span className="meta">
+                  <span className="t">{dossier.name}</span>
+                  <span className="s">
+                    <span>{TYPES_OPERATION[dossier.type_operation]}</span>
+                  </span>
                 </span>
-              </span>
-              {dossier.risk_score !== null ? (
-                <span className={`risk risk-${niveauRisque(dossier.risk_score)}`}>{dossier.risk_score}</span>
-              ) : (
-                <span className="badge badge--muted">Non analysé</span>
-              )}
-              <span className="when">{dateRelative(dossier.updated_at)}</span>
-            </Link>
-          ))}
+                {riskScore !== null ? (
+                  <span className={`risk risk-${niveauRisque(riskScore)}`}>{riskScore}</span>
+                ) : (
+                  <span className="badge badge--muted">Non analysé</span>
+                )}
+                <span className="when">{dateRelative(dossier.updated_at)}</span>
+              </Link>
+            );
+          })}
         </>
       ) : null}
     </>

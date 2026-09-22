@@ -121,11 +121,10 @@ export async function POST(_request: Request, context: RouteContext) {
       );
     }
 
-    // Mise à jour du score de risque global du dossier (profil actif par défaut)
-    await supabase
-      .from("dossiers")
-      .update({ risk_score: null }) // recalculé côté lecture selon le profil sélectionné
-      .eq("id", id);
+    // Le score de risque est propre à chaque (dossier, profil) : déjà écrit
+    // ci-dessus dans notes_profils. dossiers.risk_score n'est pas maintenu --
+    // les écrans de liste le résolvent à la lecture via resoudreScoresRisque()
+    // (lib/risk.ts), selon le profil actif du dossier.
 
     // Détection de contradictions entre documents du dossier
     const contradictions = await detectContradictions({ organizationId, dossierId: id, documentsText });
