@@ -18,6 +18,43 @@ Format d'une entrée :
 
 ---
 
+## 2026-09-22 — Vérification des accès + tri des fichiers non commités
+
+- **Vérification des outils/accès** : `gh` CLI déjà authentifié (QuamouyaPro,
+  accès confirmé à QuamouyaPro/FinLens), souci "dubious ownership" du disque
+  externe corrigé (`safe.directory` déjà en place), accès confirmé aux MCP
+  Vercel (projet "fin-lens", équipe BIACORP) et Supabase (projet "finlens",
+  17 migrations, statut sain hors les 4 avertissements SECURITY DEFINER déjà
+  connus).
+- **Confirmation du point bloquant de TODO.txt** : `ANTHROPIC_API_KEY` et
+  `VOYAGE_API_KEY` sont bien absentes des variables d'environnement Vercel
+  (27 variables listées, aucune des deux) et de `web/.env.local`. Le Copilote
+  et l'indexation RAG sont donc cassés en production ET impossibles à tester
+  en local tant que ce n'est pas réglé. Décision utilisateur : reporter
+  l'ajout de ces clés après une revue de conformité RGPD (traitement par
+  Anthropic/Voyage — localisation, DPA, rétention).
+- **Tri des fichiers non commités** (hérités d'une session du 2026-09-21,
+  jamais committés) :
+  - Connexion Google/Microsoft (OAuth) → **retirée du dépôt** à la demande de
+    l'utilisateur (`oauth-buttons.tsx`, `auth/callback/route.ts`, message
+    d'erreur associé sur `/connexion`). A reprendre plus tard. La migration
+    Postgres `handle_new_user` associée reste elle appliquée en production
+    (`20260810153246_oauth_org_name_fallback`) — seul le code applicatif a
+    été retiré, pas la correction en base.
+  - Score de risque par profil (`lib/risk.ts`) et citation source cliquable
+    du Copilote (`panneau-source.tsx`) → **committés** (commit
+    `a07e6a9`), avec les modifs associées de `dossiers/page.tsx`,
+    `tableau-de-bord/page.tsx` et `api/dossiers/[id]/analyser/route.ts`.
+  - `web/.gitignore` : ajout de `supabase/.temp/` (cache local créé par la
+    CLI Supabase, apparu comme fichier non suivi pendant cette session).
+- État : commit local fait, **pas encore poussé sur origin/main** (à
+  confirmer avec l'utilisateur).
+- Prochaine étape suggérée : trancher la conformité RGPD des clés
+  Anthropic/Voyage avant de les ajouter à Vercel ; reprendre l'OAuth
+  Google/Microsoft quand l'utilisateur le souhaite.
+
+---
+
 ## 2026-09-21 (4) — Explications du flux applicatif + création de TODO.txt
 
 - **Aucune modification de code.** Session de questions/réponses sur
