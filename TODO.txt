@@ -1,5 +1,69 @@
 FinLens — Prochaines tâches
-Dernière mise à jour : 2026-09-21
+Dernière mise à jour : 2026-11-03
+
+=== NOUVEAU 2026-11-03 — constats issus de la rédaction des 8 documents ===
+(détail et justification : docs/documentation/, surtout les documents 04, 06, 07, 08)
+
+CRITIQUE — à corriger avant tout client :
+[ ] EFFACEMENT DE COMPTE CASSE. 5 clés étrangères vers auth.users sont en NO ACTION
+    (erasure_requests.requested_by, usage_logs.user_id, velocity_alerts.user_id,
+    velocity_alerts.reviewed_by, contradictions.arbitre_par). La route
+    api/erasure insère d'abord erasure_requests puis supprime l'utilisateur : la
+    base refuse -> l'effacement échoue toujours (erreur 500).
+    Correctif : migration passant ces 5 clés en ON DELETE SET NULL.
+    A confirmer par un essai sur une BRANCHE Supabase (rien testé en production).
+[ ] Même corrigé, l'effacement ne supprime ni l'organisation, ni les dossiers, ni
+    les fichiers Storage, ni les passages : le contenu d'une organisation à un
+    seul membre reste. Supprimer l'organisation quand le dernier membre part
+    (réutiliser la purge par dossier de api/cron/purge-corbeille).
+[ ] Région des fonctions Vercel non fixée (vercel.json) = hors UE par défaut.
+    Ajouter "regions" européenne. Confirmer aussi le plan Vercel : le code parle
+    de plan Hobby, réservé à un usage non commercial.
+[ ] Voyage AI = sous-traitant à part entière (reçoit TOUS les passages) absent
+    des notes d'architecture précédentes. L'inclure dans la revue RGPD avec
+    Anthropic. Options A/B/C dans le document 06 (section 4.1).
+
+BLOQUANT TECHNIQUE (indépendant des clés d'API) :
+[ ] Upload via fonction Vercel (api/documents/upload) : plafond de requête de
+    l'hébergeur (4,5 Mo selon sa doc, à confirmer) -> déposer directement dans
+    Supabase Storage par URL signée.
+[ ] VERIFIER AVANT D'AJOUTER VOYAGE_API_KEY : le code demande output_dimension 1536
+    à voyage-3-large et la colonne est vector(1536). A notre connaissance ce modèle
+    n'accepte que 256/512/1024/2048. Si confirmé : changer la dimension (migration
+    + code) AVANT la première indexation.
+[ ] Buckets documents/exports sans limite de taille ni de type MIME ; le type est
+    pris sur file.type (déclaré par le navigateur).
+
+COUT / PRIX (document 07) :
+[ ] Le pipeline actuel envoie le corpus complet à Fable 5 pour les CONTRADICTIONS
+    (+~3,10 $ par dossier, non compté dans le modèle de marge de Coûts & Pricing).
+    Avec ce coût : Essentiel au quota max et Fonds 10 sièges en usage extrême
+    passent en marge négative. Faire lire les contradictions sur l'extraction
+    (~0,40 $). C'est un prérequis de viabilité, pas un confort.
+[ ] Décider HT ou TTC pour 23 € (aucun écran ne le dit) et si l'engagement annuel
+    (2 mois offerts, déjà dans tarifs.tsx) s'applique à Essentiel : dans le pire
+    cas la marge Essentiel devient négative.
+[ ] Cache de prompt du chat probablement inefficace : le bloc caché = les 8
+    passages propres à chaque question (change à chaque fois). Cacher un préfixe
+    stable (consignes + extraction JSON) puis ajouter les passages. Mesurer
+    cache_read_tokens avant/après.
+[ ] Plans payants Supabase (sauvegardes, taille : ~6-7 Mo/dossier de 300 pages,
+    plan gratuit ~500 Mo = ~78 dossiers) et Vercel avant le premier client.
+
+QUALITE IA / SECURITE :
+[ ] Vérification programmatique des citations (l'extrait cité figure-t-il mot pour
+    mot dans les passages fournis ?) — le moyen de rendre la promesse mesurable.
+[ ] Valider les JSON d'IA par un schéma (zod) + relance, au lieu de JSON.parse brut.
+[ ] Jeu d'évaluation + benchmark (document 08, section 3) ; peut démarrer sur des
+    DOCUMENTS PUBLICS avec une clé d'essai, sans attendre la revue RGPD.
+[ ] Repli de modèle (Opus) prévu dans la config mais non câblé.
+[ ] Aucune intégration continue (.github absent) : ajouter tsc + eslint sur PR.
+[ ] En-têtes de sécurité HTTP absents (next.config.ts) ; MFA absente.
+[ ] Vérifier STRIPE_WEBHOOK_SECRET sur Vercel (absent de la liste relevée le 21/09).
+[ ] Chiffrer le disque externe (BitLocker) : il transporte code + .env.local.
+[ ] Reformuler l'allégation de la landing « Risque d'information inventée : Nul ».
+[ ] Journal d'usage : classification loguée en dur (50/10 jetons) et contradictions
+    loguées comme "extraction" (task_type) -> fausse le suivi par tâche.
 
 === A DECIDER EN PREMIER (bloque le reste) ===
 
@@ -111,7 +175,9 @@ Dernière mise à jour : 2026-09-21
 
 === REFERENCE ===
 
-Note d'Architecture V2 complète (avec schémas) :
+Collection documentaire (8 documents Word, remplace les notes précédentes) :
+  docs/documentation/   (sources régénérables : docs/documentation-src/)
+Note d'Architecture V2 (brouillon, remplacé par le document 04) :
   docs/FinLens_Note_d_Architecture_V2.docx
 Sources régénérables des schémas/document :
   docs/architecture-v2-src/

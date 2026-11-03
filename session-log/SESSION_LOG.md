@@ -18,6 +18,49 @@ Format d'une entrée :
 
 ---
 
+## 2026-11-03 — Collection documentaire FinLens (8 documents Word) + constats
+
+- **Livrable** : 8 documents Word dans `docs/documentation/` (≈ 104 pages, 13 schémas) :
+  01 Note de présentation · 02 Cahier des charges · 03 UX/UI parcours et design ·
+  04 Architecture technique et infrastructure · 05 Architecture des données et
+  gestion documentaire · 06 RGPD, cybersécurité et conformité · 07 Business model,
+  pricing, coûts et prévisionnel · 08 Stratégie IA (benchmark, routage, RAG, agents).
+  Sources régénérables dans `docs/documentation-src/` (voir son README) ; tous les
+  chiffres dérivés (marges, seuils, volumétrie) sont CALCULÉS par `model.js`.
+  Le doc 04 remplace la Note d'Architecture V2 (brouillon du 21/09, conservée).
+- **Rendu vérifié dans Word lui-même** (COM, copie en lecture seule) : les 8
+  fichiers s'ouvrent sans erreur ; pages et captures contrôlées. Sommaire = liens
+  internes (pas de champ à mettre à jour). Aucun code applicatif modifié.
+- **Constats nouveaux, tirés du code ET de la base (détail dans TODO.txt)** :
+  1. **Effacement de compte cassé** : 5 FK vers auth.users en NO ACTION (dont
+     erasure_requests.requested_by que la route insère juste avant de supprimer
+     l'utilisateur) -> échec systématique. Et même corrigé il laisse le contenu
+     des organisations mono-siège. (Analyse du schéma ; non testé en prod.)
+  2. **Coût réel du pipeline > modèle de marge** : les contradictions relisent le
+     corpus complet sur Fable 5 (+~3,10 $/dossier, absent de Coûts & Pricing).
+     Marges négatives en usage intensif tant que non corrigé (doc 07, §5).
+  3. **Cache du chat probablement inefficace** (bloc caché = passages variables).
+  4. **Upload via fonction Vercel** plafonné en taille par l'hébergeur (~4,5 Mo,
+     à confirmer) ; région des fonctions Vercel non fixée (hors UE par défaut) ;
+     plan Hobby (usage non commercial).
+  5. **Voyage AI** est un sous-traitant qui reçoit tout le texte : absent des notes
+     précédentes ; et `output_dimension: 1536` probablement non supporté par
+     voyage-3-large (à vérifier AVANT d'ajouter la clé).
+  6. Buckets sans limite taille/MIME ; pas de CI ; pas d'en-têtes de sécurité ; pas
+     de MFA ; disque externe à chiffrer ; allégation « Risque … Nul » à reformuler.
+  7. HT/TTC non précisé pour 23 € ; avec TTC ou engagement annuel la marge
+     Essentiel du pire cas devient négative (doc 07, §6).
+- **Limites assumées** : aucune demande n'a été mesurée -> le prévisionnel est fait
+  de scénarios d'illustration (seuils de rentabilité et coûts unitaires fiables ;
+  volumes de clients non). Aucun benchmark IA exécuté (clés absentes). Documents
+  juridiques/RGPD = cadre technique à faire valider par un juriste.
+- Contexte inchangé : OAuth Google/Microsoft retiré (à reprendre) ; clés Anthropic
+  et Voyage non configurées en attendant la revue RGPD (options A/B/C, doc 06 §4.1).
+- Prochaine étape suggérée : lot 0 du cahier des charges (voir TODO.txt « NOUVEAU
+  2026-11-03 »), en commençant par la migration des 5 FK (testée sur branche).
+
+---
+
 ## 2026-09-22 — Vérification des accès + tri des fichiers non commités
 
 - **Vérification des outils/accès** : `gh` CLI déjà authentifié (QuamouyaPro,
